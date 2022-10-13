@@ -11,18 +11,52 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-class Test123():
+class GetAuctionInfo():
     def setup_method(self, method):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Chrome('./chromedriver')
         self.vars = {}
 
     def teardown_method(self, method):
         self.driver.quit()
 
-    def test_123(self):
+    def crawler_data(self):
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
         self.driver.find_element(By.LINK_TEXT, "아파트").click()
         self.driver.find_element(
             By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202001300035681").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202001300044311").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202001300050381").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202001300060311").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202101300023711").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202101300028211").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202101300032371").click()
+        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
+        self.driver.find_element(By.NAME, "202101300041001").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, ".tbl_btn:nth-child(2) > a:nth-child(3) > img").click()
+        self.driver.find_element(By.NAME, "202101300043841").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, ".tbl_btn > a:nth-child(3) > img").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(2) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, ".tbl_btn:nth-child(2) > a:nth-child(3) > img").click()
+
+
+crawler = GetAuctionInfo()
+
+crawler.setup_method("")
+crawler.crawler_data()
+crawler.teardown_method("")
