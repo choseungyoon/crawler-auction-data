@@ -29,34 +29,160 @@ class GetAuctionInfo():
 
         itemList = []
 
-        # Table에서 Name 리스트 가져오기
-        table = self.driver.find_elements(
-            By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
+        currentPageIndex = 1
 
-        for line in table:
-            chks = line.find_elements(By.NAME, "chk")
-            for chk in chks:
-                inputValue = chk.get_attribute("value").split(',')
-                itemList.append(inputValue[1]+inputValue[2])
+        while True:
 
-        for item in itemList:
-            # 매물 클릭
-            if (item == itemList[0]):
-                # 첫번째 매물
+            itemList.clear()
+            finished = False
+
+            # Table에서 Name 리스트 가져오기
+            table = self.driver.find_elements(
+                By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
+
+            for line in table:
+                chks = line.find_elements(By.NAME, "chk")
+                for chk in chks:
+                    inputValue = chk.get_attribute("value").split(',')
+                    itemList.append(inputValue[1]+inputValue[2])
+
+            for item in itemList:
+                # 매물 클릭
+                if (item == itemList[0]):
+                    # 첫번째 매물
+                    self.driver.find_element(
+                        By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+
+                else:
+                    # 그외 매물
+                    self.driver.find_element(By.NAME, item).click()
+
+                # 데이터 크롤링
+
+                # 기본정보
+                caseNumber = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
+
+                print("사건번호 : ", caseNumber.text)
+                itemNumber = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]")
+
+                print("물건번호 : ", itemNumber.text)
+
+                itemType = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[3]")
+
+                print("물건종류 : ", itemType.text)
+
+                initialPrice = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[1]")
+
+                print("감정평가액 : ", initialPrice.text)
+
+                minPrice = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[2]")
+                print("최저매각가격 : ", minPrice.text)
+
+                bidType = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[3]")
+                print("입찰방법 : ", bidType.text)
+
+                saleDate = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[3]/td")
+
+                print("매각기일 : ", saleDate.text)
+
+                description = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[4]/td")
+                print("물건비고 : ", description.text)
+
+                itemLocation = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[5]/td")
+                print("소재지 : ", itemLocation.text)
+
+                court = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[6]/td")
+                print("담당 : ", court.text)
+
+                caseApplyDate = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[1]")
+                print("사건접수 : ", caseApplyDate.text)
+
+                auctionApplyDate = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[2]")
+                print("경매개시일 : ", auctionApplyDate.text)
+
+                allocationApplyDate = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[1]")
+                print("배당요구종기 : ", allocationApplyDate.text)
+
+                requestPrice = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[2]")
+                print("청구금액 : ", requestPrice.text + "\n")
+
+                # 기일내역
+                DetailOfSaleDate = ""
+
+                # 목록내역
+                DetailOfList = self.driver.find_element(
+                    By.XPATH, "//*[@id='contents']/div[6]/table/tbody/tr/td[3]")
+
+                for line in DetailOfList.text.split("\n"):
+                    if "구          조" in line and "㎡" in line:
+                        print(line.rsplit(' ', 1)[-1])
+                    if "면          적" in line and "㎡" in line:
+                        print(line.rsplit(' ', 1)[-1])
+                    if "대지권의 비율" in line:
+                        print(line)
+                    if "지분" in line:
+                        print("*****", line, "\n")
+
+                print("목록내역", DetailOfList.text + "\n")
+
+                appraisal = ""
+                try:
+                    ulOfAppraisal = self.driver.find_element(
+                        By.XPATH, "//*[@id='contents']/div[7]/table/tbody/tr/td/ul")
+
+                    all_li = ulOfAppraisal.find_elements(By.TAG_NAME, "li")
+
+                    for li in all_li:
+                        text = li.text
+                        appraisal += li.text + "\n"
+                except:
+                    appraisal = "2008년 8월 18일 이전에 감정평가 완료된 물건에 대해서는 본 정보를 제공하지 않습니다.\n감정평가서를 참조하시기 바랍니다."
+
+                print("감정평가요약 ", appraisal)
+
+                # 이전
                 self.driver.find_element(
-                    By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+                    By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
 
-            else:
-                # 그외 매물
-                self.driver.find_element(By.NAME, item).click()
+            # Page 리스트 가져오기
+            pagination = self.driver.find_element(By.CLASS_NAME, "page2")
+            pages = pagination.find_elements(By.TAG_NAME, 'a')
 
-            time.sleep(2)
+            for page in pages:
+                if not page.text:
+                    if page.find_element(By.TAG_NAME,
+                                         ("img")).get_attribute("alt") == "다음":
+                        print(page.find_element(By.TAG_NAME,
+                                                ("img")).get_attribute("alt"))
+                        currentPageIndex = currentPageIndex + 1
+                        print("Go to " + str(currentPageIndex) + "page")
+                        finished = True
+                        page.click()
+                        break
+                else:
+                    if int(page.text) == currentPageIndex+1:
+                        currentPageIndex = currentPageIndex + 1
+                        print("Go to " + str(currentPageIndex) + "page")
+                        finished = True
+                        page.click()
+                        break
 
-            # 데이터 크롤링
-
-            # 이전
-            self.driver.find_element(
-                By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
+            if finished == False:
+                break
 
 
 crawler = GetAuctionInfo()
