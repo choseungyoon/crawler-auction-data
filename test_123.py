@@ -11,7 +11,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 
 
-class GetAuctionInfo():
+class Test123():
     def setup_method(self, method):
         self.driver = webdriver.Chrome('./chromedriver')
         self.vars = {}
@@ -19,44 +19,52 @@ class GetAuctionInfo():
     def teardown_method(self, method):
         self.driver.quit()
 
-    def crawler_data(self):
+    def wait_for_window(self, timeout=2):
+        time.sleep(round(timeout / 1000))
+        wh_now = self.driver.window_handles
+        wh_then = self.vars["window_handles"]
+        if len(wh_now) > len(wh_then):
+            return set(wh_now).difference(set(wh_then)).pop()
+
+    def test_123(self):
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
         self.driver.find_element(By.LINK_TEXT, "아파트").click()
         self.driver.find_element(
             By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202001300035681").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202001300044311").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202001300050381").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202001300060311").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202101300023711").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202101300028211").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202101300032371").click()
-        self.driver.find_element(By.XPATH, "(//img[@alt=\'이전\'])[2]").click()
-        self.driver.find_element(By.NAME, "202101300041001").click()
+        self.vars["window_handles"] = self.driver.window_handles
         self.driver.find_element(
-            By.CSS_SELECTOR, ".tbl_btn:nth-child(2) > a:nth-child(3) > img").click()
-        self.driver.find_element(By.NAME, "202101300043841").click()
-        self.driver.find_element(
-            By.CSS_SELECTOR, ".tbl_btn > a:nth-child(3) > img").click()
+            By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
+        self.vars["win1583"] = self.wait_for_window(2000)
+        self.vars["root"] = self.driver.current_window_handle
+        self.driver.switch_to.window(self.vars["win1583"])
         self.driver.find_element(
             By.CSS_SELECTOR, "a:nth-child(2) > span").click()
         self.driver.find_element(
-            By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+            By.CSS_SELECTOR, "a:nth-child(4) > span").click()
         self.driver.find_element(
-            By.CSS_SELECTOR, ".tbl_btn:nth-child(2) > a:nth-child(3) > img").click()
+            By.CSS_SELECTOR, "a:nth-child(5) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(6) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(7) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(8) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(9) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(10) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(11) > span").click()
+        self.driver.find_element(
+            By.CSS_SELECTOR, "a:nth-child(12) > img").click()
+        self.driver.find_element(By.CSS_SELECTOR, "#pop_footer img").click()
+        self.driver.switch_to.window(self.vars["root"])
 
 
-crawler = GetAuctionInfo()
+crawler = Test123()
 
 crawler.setup_method("")
-crawler.crawler_data()
+crawler.test_123()
 crawler.teardown_method("")
