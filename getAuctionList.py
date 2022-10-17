@@ -4,7 +4,7 @@ from email.mime import image
 import time
 import json
 from datetime import datetime
-import prisma
+from prisma import Prisma
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
@@ -35,28 +35,33 @@ class GetAuctionInfo():
     async def insertItem(self, caseNumber, itemNumber, itemType, initialPrice, minPrice, bidType, saleDate,
                          description, itemLocation, court, caseApplyDate, auctionApplyDate, allocationApplyDate,
                          requestPrice, detailOfList, appraisal):
-        #db = prisma()
-        # await db.connect()
+        db = Prisma()
+        await db.connect()
 
-        # items = await db.item.find_many()
-        # print(items)
-        print("사건번호 : ", caseNumber)
-        print("물건번호 : ", itemNumber)
-        print("물건종류 : ", itemType)
-        print("감정평가액 : ", initialPrice)
-        print("최저매각가격 : ", minPrice)
-        print("입찰방법 : ", bidType)
-        print("매각기일 : ", saleDate)
-        print("물건비고 : ", description)
-        print("소재지 : ", itemLocation)
-        print("담당법원 : ", court)
-        print("사건접수 : ", caseApplyDate)
-        print("경매개시일 : ", auctionApplyDate)
-        print("배당요구종기 : ", allocationApplyDate)
-        print("청구금액 : ", requestPrice)
-        print("목록내역", detailOfList)
-        print("감정평가요약 ", appraisal)
-        # await db.disconnect()
+        item = await db.item.create(
+            data={
+                'caseNumber': caseNumber,
+                'itemNumber': itemNumber,
+                'itemType': itemType,
+                'initialPrice': initialPrice,
+                'minPrice': minPrice,
+                'bidType': bidType,
+                'saleDate': saleDate,
+                'description': description,
+                'itemLocation': itemLocation,
+                'court': court,
+                'caseApplyDate': caseApplyDate,
+                'auctionApplyDate': auctionApplyDate,
+                'allocationApplyDate': allocationApplyDate,
+                'requestPrice': requestPrice,
+                'detailOfList': detailOfList,
+                'appraisal': appraisal,
+                'areaOfBuilding':     0.01,
+                'areaOfGround': 0.01
+            }
+        )
+        print("Insert : ", caseNumber)
+        await db.disconnect()
 
     def updateItem():
         print("Update Item")
