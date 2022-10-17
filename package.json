@@ -1,5 +1,9 @@
 {
   "dependencies": {
+    "@prisma/client": "^4.4.0",
     "selenium": "^2.20.0"
+  },
+  "devDependencies": {
+    "prisma": "^4.4.0"
   }
 }
