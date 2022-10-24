@@ -1,6 +1,7 @@
 datasource db {
-    provider = "mysql"
-    url      = "mysql://127.0.0.1:3306/auction-market"
+    provider             = "mysql"
+    url                  = "mysql://127.0.0.1:3306/auction-market"
+    referentialIntegrity = "prisma"
 }
 
 // generator
@@ -8,28 +9,54 @@ generator client {
     provider             = "prisma-client-py"
     interface            = "asyncio"
     recursive_type_depth = 5
+    previewFeatures      = ["referentialIntegrity"]
 }
 
 model Item {
-    id                  Int      @id @default(autoincrement())
-    createdAt           DateTime @default(now())
-    updatedAt           DateTime @updatedAt
+    id                  Int             @id @default(autoincrement())
+    createdAt           DateTime        @default(now())
+    updatedAt           DateTime        @updatedAt
     caseNumber          String
+    caseIndex           String
     itemNumber          String
     itemType            String
-    initialPrice        BigInt
-    minPrice            BigInt
+    initialPrice        String
+    minPrice            String
     bidType             String
     saleDate            DateTime
-    description         String   @db.MediumText
+    description         String          @db.MediumText
     itemLocation        String
     court               String
     caseApplyDate       DateTime
     auctionApplyDate    DateTime
     allocationApplyDate DateTime
-    requestPrice        BigInt
-    detailOfList        String   @db.MediumText
+    requestPrice        String
+    detailOfList        String          @db.MediumText
     areaOfBuilding      Float
     areaOfGround        Float
-    appraisal           String   @db.MediumText
+    appraisal           String          @db.MediumText
+    Image               Image[]
+    resultAuction       resultAuction[]
+}
+
+model Image {
+    id              Int      @id @default(autoincrement())
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @updatedAt
+    item            Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+    itemId          Int
+    cloudflareImgId String
+}
+
+model resultAuction {
+    id           Int       @id @default(autoincrement())
+    createdAt    DateTime  @default(now())
+    updatedAt    DateTime  @updatedAt
+    date         DateTime?
+    type         String?
+    location     String?
+    minSalePrice String?
+    result       String?
+    item         Item      @relation(fields: [itemId], references: [id], onDelete: Cascade)
+    itemId       Int
 }
