@@ -63,9 +63,6 @@ class GetAuctionInfo():
         return response.json()['result']
 
     async def insertImage(self, itemId, imageId):
-        print('itemId :', itemId)
-        print('imageId :', imageId)
-
         db = Prisma()
         await db.connect()
 
@@ -75,18 +72,10 @@ class GetAuctionInfo():
                 'itemId': itemId
             }
         )
-
-        print(image)
-
+        print('Add image ', imageId, ' of ', itemId)
         await db.disconnect()
 
     async def insertResultAuction(self, saleDate, saleType, saleLocation, salePrice, saleResult, itemId):
-        print('saleDate :', saleDate)
-        print('saleType : ', saleType)
-        print('saleLocation: ', saleLocation)
-        print('salePrice : ', salePrice)
-        print('saleResult : ',  saleResult)
-        print('itemId : ', itemId)
         db = Prisma()
         await db.connect()
 
@@ -100,7 +89,7 @@ class GetAuctionInfo():
                 'itemId': itemId
             }
         )
-
+        print("Add result auction about ", itemId)
         await db.disconnect()
 
     async def selectItem(self, caseNumber):
@@ -207,11 +196,11 @@ class GetAuctionInfo():
                 caseNumber = self.driver.find_element(
                     By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
 
-                # existed = await self.selectItem(caseNumber.text)
-                # if existed > 0:
-                #     self.driver.find_element(
-                #         By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
-                #     continue
+                existed = await self.selectItem(caseNumber.text)
+                if existed > 0:
+                    self.driver.find_element(
+                        By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
+                    continue
 
                 itemNumber = self.driver.find_element(
                     By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]")
@@ -334,85 +323,84 @@ class GetAuctionInfo():
                         saleDate, saleType, saleLocation, salePrice, saleResult, itemId)
 
                 # 사진
-                # self.vars["window_handles"] = self.driver.window_handles
-                # self.driver.find_element(
-                #     By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
-                # self.vars["win1583"] = self.wait_for_window(2000)
-                # self.vars["root"] = self.driver.current_window_handle
-                # self.driver.switch_to.window(self.vars["win1583"])
+                self.vars["window_handles"] = self.driver.window_handles
+                self.driver.find_element(
+                    By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
+                self.vars["win1583"] = self.wait_for_window(2000)
+                self.vars["root"] = self.driver.current_window_handle
+                self.driver.switch_to.window(self.vars["win1583"])
 
-                # nameOfImage = self.driver.find_element(
-                #     By.XPATH, "//*[@id = 'pop_contents_1']/form/div[1]/table/tbody/tr[1]/td[2]").text
-                # numOfImg = int(self.driver.find_element(
-                #     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
+                nameOfImage = self.driver.find_element(
+                    By.XPATH, "//*[@id = 'pop_contents_1']/form/div[1]/table/tbody/tr[1]/td[2]").text
+                numOfImg = int(self.driver.find_element(
+                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
 
-                # print(nameOfImage)
-                # print(numOfImg)
+                imagePageIndex = 1
+                for i in range(numOfImg-1):
+                    # something
+                    # Download image file
+                    with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
+                        # identify image to be captured
+                        img = self.driver.find_element(
+                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
 
-                # imageIndex = 1
-                # for i in range(numOfImg-1):
-                #     # something
-                #     # Download image file
-                #     with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
-                #         # identify image to be captured
-                #         img = self.driver.find_element(
-                #             By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                        # write file
+                        with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+                            response = requests.get(
+                                img.get_attribute('src'), stream=True)
 
-                #         # write file
-                #         with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                #             response = requests.get(
-                #                 img.get_attribute('src'), stream=True)
+                            if not response.ok:
+                                print(response)
 
-                #             if not response.ok:
-                #                 print(response)
+                            for block in response.iter_content(1024):
+                                if not block:
+                                    break
+                                handle.write(block)
 
-                #             for block in response.iter_content(1024):
-                #                 if not block:
-                #                     break
-                #                 handle.write(block)
+                        res = self.req(
+                            '/client/v4/accounts/{}/images/v1/direct_upload'.format(os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
+                        files = {'file': open(
+                            'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
+                        r = requests.post(
+                            res['uploadURL'], files=files, data={}).json()['result']
 
-                #         res = self.req(
-                #             '/client/v4/accounts/{}/images/v1/direct_upload'.format(os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
-                #         files = {'file': open(
-                #             'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-                #         r = requests.post(
-                #             res['uploadURL'], files=files, data={}).json()['result']
-
-                #         print(r['id'])
-                #         await self.insertImage(itemId, r['id'])
+                        await self.insertImage(itemId, r['id'])
 
                     # nextpage
-                    # if imageIndex == 1:
-                    #     imageIndex = 2
-                    #     self.driver.find_element(
-                    #         By.CSS_SELECTOR, "a:nth-child(" + str(imageIndex) + ") > span").click()
-                    # elif imageIndex == 2:
-                    #     imageIndex = 4
-                    #     self.driver.find_element(
-                    #         By.CSS_SELECTOR, "a:nth-child(" + str(imageIndex) + ") > span").click()
-                    # elif imageIndex == 11:
-                    #     imageIndex = 3
-                    #     self.driver.find_element(
-                    #         By.CSS_SELECTOR, "a:nth-child(12) > img").click()
-                    # else:
-                    #     imageIndex = imageIndex + 1
-                    #     self.driver.find_element(
-                    #         By.CSS_SELECTOR, "a:nth-child(" + str(imageIndex) + ") > span").click()
-                    # print("Go to ", imageIndex)
-                    # time.sleep(1)
+                    pagination = self.driver.find_element(
+                        By.CLASS_NAME, "page2")
+                    pages = pagination.find_elements(By.TAG_NAME, 'a')
 
-                # self.driver.close()
-                # self.driver.switch_to.window(self.vars["root"])
-                # self.driver.switch_to.frame(0)
+                    for page in pages:
+                        if not page.text:
+                            if page.find_element(By.TAG_NAME,
+                                                 ("img")).get_attribute("alt") == "다음":
+                                print(page.find_element(By.TAG_NAME,
+                                                        ("img")).get_attribute("alt"))
+                                imagePageIndex = imagePageIndex + 1
+                                print("Go to " + str(imagePageIndex) + "page")
+                                finished = True
+                                page.click()
+                                break
+                        else:
+                            if int(page.text) == imagePageIndex+1:
+                                imagePageIndex = imagePageIndex + 1
+                                print("Go to " + str(imagePageIndex) + "page")
+                                finished = True
+                                page.click()
+                                break
+
+                self.driver.close()
+                self.driver.switch_to.window(self.vars["root"])
+                self.driver.switch_to.frame(0)
+
                 # 이전으로 돌아가기
-
                 self.driver.find_element(
                     By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
 
             # Page 리스트 가져오기
             pagination = self.driver.find_element(By.CLASS_NAME, "page2")
             pages = pagination.find_elements(By.TAG_NAME, 'a')
-
             for page in pages:
                 if not page.text:
                     if page.find_element(By.TAG_NAME,
