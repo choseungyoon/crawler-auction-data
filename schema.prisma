@@ -1,6 +1,6 @@
 datasource db {
     provider             = "mysql"
-    url                  = "mysql://127.0.0.1:3306/auction-market"
+    url                  = "mysql://127.0.0.1/auction-market"
     referentialIntegrity = "prisma"
 }
 
@@ -35,6 +35,9 @@ model Item {
     areaOfBuilding      Float
     areaOfGround        Float
     appraisal           String          @db.MediumText
+    status              Int             @default(0)
+    numOfPass           Int             @default(0)
+    share               Boolean         @default(false)
     Image               Image[]
     resultAuction       resultAuction[]
 }
