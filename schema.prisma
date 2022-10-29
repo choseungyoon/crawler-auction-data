@@ -1,6 +1,6 @@
 datasource db {
     provider             = "mysql"
-    url                  = "mysql://127.0.0.1/auction-market"
+    url                  = "mysql://e9j32c9r4gylbz0mb95c:pscale_pw_kZkU8yyLVbNkYwJH9ROEpDxpjJhO7pw7u6bWor65P3e@us-east.connect.psdb.cloud/auction-market?sslaccept=strict"
     referentialIntegrity = "prisma"
 }
 
