@@ -42,7 +42,10 @@ jobs:
           # sudo apt-get install google-chrome-stable    
           # wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
           # unzip ./chromedriver_linux64.zip
-      - name: Test with pytest
+      - name: Create folder
+        run: |
+          mkdir -p images
+      - name: Run crawler
         run: |
           prisma generate
           python getAuctionList.py
