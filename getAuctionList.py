@@ -47,10 +47,9 @@ class GetAuctionInfo():
         options.headless = True
 
         #self.driver = webdriver.Chrome('chromedriver', options=options)
-        # self.driver = webdriver.Firefox(
-        #     executable_path='/Users/seungyuncho/Project/crawler_auction_info/geckodriver', options=options)
         self.driver = webdriver.Firefox(
-            executable_path='geckodriver', options=options)
+            executable_path='linux/geckodriver', options=options)
+        #self.driver = webdriver.Firefox(executable_path='geckodriver', options=options)
 
         self.driver.implicitly_wait(3)
 
