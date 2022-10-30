@@ -44,8 +44,7 @@ class GetAuctionInfo():
         # options.add_argument("disable-gpu")
         # options.add_argument("--no-sandbox")
 
-        options.headless = True
-
+        options.add_argument("--headless")
         #self.driver = webdriver.Chrome('chromedriver', options=options)
         self.driver = webdriver.Firefox(
             executable_path='linux/geckodriver', options=options)
