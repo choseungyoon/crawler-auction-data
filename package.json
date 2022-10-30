@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@prisma/client": "^4.4.0",
+    "geckodriver": "^3.2.0",
     "selenium": "^2.20.0"
   },
   "devDependencies": {
