@@ -36,7 +36,7 @@ class GetAuctionInfo():
         options = webdriver.ChromeOptions()
         # 창 숨기는 옵션 추가
         options.add_argument("headless")
-        self.driver = webdriver.Chrome('./chromedriver', options=options)
+        self.driver = webdriver.Chrome('chromedriver', options=options)
         self.vars = {}
 
     def teardown_method(self, method):
