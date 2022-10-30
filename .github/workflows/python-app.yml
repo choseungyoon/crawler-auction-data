@@ -17,6 +17,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: browser-actions/setup-geckodriver@latest
+      - run: geckodriver --version
+    steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
@@ -39,9 +42,9 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Install ubuntu package
         run: |
-          sudo apt-get install google-chrome-stable    
-          wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
-          unzip ./chromedriver_linux64.zip
+          # sudo apt-get install google-chrome-stable    
+          # wget https://chromedriver.storage.googleapis.com/81.0.4044.69/chromedriver_linux64.zip
+          # unzip ./chromedriver_linux64.zip
       - name: Create folder
         run: |
           mkdir -p images
