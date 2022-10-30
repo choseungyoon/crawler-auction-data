@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
+    step:
       - uses: browser-actions/setup-geckodriver@latest
       - run: geckodriver --version
     steps:
