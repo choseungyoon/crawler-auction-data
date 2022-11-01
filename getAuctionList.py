@@ -33,8 +33,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        options = webdriver.ChromeOptions()
-        #options = webdriver.FirefoxOptions()
+        #options = webdriver.ChromeOptions()
+        options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -45,9 +45,9 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver', options=options)
-        # self.driver = webdriver.Firefox(
-        #     executable_path='mac/geckodriver', options=options)
+        #self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Firefox(
+            executable_path='mac/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -370,15 +370,20 @@ class GetAuctionInfo():
                     for i in range(numOfImg-1):
                         # something
                         # Download image file
+                        time.sleep(1)
                         with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                             # identify image to be captured
+                            time.sleep(1)
                             img = self.driver.find_element(
                                 By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-
+                            time.sleep(1)
                             # write file
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+                                time.sleep(1)
+
                                 response = requests.get(
                                     img.get_attribute('src'), stream=True)
+                                time.sleep(1)
 
                                 if not response.ok:
                                     print(response)
@@ -419,26 +424,27 @@ class GetAuctionInfo():
                         # nextpage
                         pagination = self.driver.find_element(
                             By.CLASS_NAME, "page2")
+
+                        time.sleep(1)
+
                         pages = pagination.find_elements(By.TAG_NAME, 'a')
                         time.sleep(1)
                         for page in pages:
                             if not page.text:
                                 if page.find_element(By.TAG_NAME,
                                                      ("img")).get_attribute("alt") == "다음":
-                                    print(page.find_element(By.TAG_NAME,
-                                                            ("img")).get_attribute("alt"))
                                     imagePageIndex = imagePageIndex + 1
                                     print("Go to " + str(imagePageIndex) + "page")
-                                    finished = True
-                                    time.sleep(5)
+                                    time.sleep(2)
                                     page.click()
                                     break
                             else:
                                 if int(page.text) == imagePageIndex+1:
+                                    time.sleep(1)
                                     imagePageIndex = imagePageIndex + 1
+                                    time.sleep(1)
                                     print("Go to " + str(imagePageIndex) + "page")
-                                    finished = True
-                                    time.sleep(5)
+                                    time.sleep(2)
                                     page.click()
                                     break
 
