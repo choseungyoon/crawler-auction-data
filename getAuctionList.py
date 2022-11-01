@@ -370,21 +370,24 @@ class GetAuctionInfo():
                     for i in range(numOfImg-1):
                         # something
                         # Download image file
+                        print("Enter image page : ", imagePageIndex)
                         time.sleep(1)
+
                         with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                             # identify image to be captured
                             time.sleep(1)
+                            print("Get image xpath")
                             img = self.driver.find_element(
                                 By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
                             time.sleep(1)
                             # write file
-                            with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                time.sleep(1)
 
+                            with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+                                time.sleep(2)
+                                print("Get Image src and download")
                                 response = requests.get(
                                     img.get_attribute('src'), stream=True)
-                                time.sleep(1)
-
+                                time.sleep(2)
                                 if not response.ok:
                                     print(response)
 
@@ -437,6 +440,7 @@ class GetAuctionInfo():
                                     print("Go to " + str(imagePageIndex) + "page")
                                     time.sleep(2)
                                     page.click()
+                                    print("Click success")
                                     break
                             else:
                                 if int(page.text) == imagePageIndex+1:
@@ -446,6 +450,7 @@ class GetAuctionInfo():
                                     print("Go to " + str(imagePageIndex) + "page")
                                     time.sleep(2)
                                     page.click()
+                                    print("Click success")
                                     break
 
                     await self.insertImage(imageObjects)
