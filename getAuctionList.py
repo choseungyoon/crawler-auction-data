@@ -380,14 +380,16 @@ class GetAuctionInfo():
                             img = self.driver.find_element(
                                 By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
                             time.sleep(1)
-                            # write file
 
+                            # write file
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                                 time.sleep(1)
                                 print("Get Image src and download")
                                 print("img : ", img)
                                 response = requests.get(
                                     img.get_attribute('src'), stream=True)
+                                time.sleep(1)
+                                print("response ", response)
                                 if not response.ok:
                                     print(response)
 
@@ -399,6 +401,7 @@ class GetAuctionInfo():
                             time.sleep(1)
 
                             while True:
+                                print("Get CF id")
                                 res = self.req('/client/v4/accounts/{}/images/v1/direct_upload'.format(
                                     os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
                                 print(res)
