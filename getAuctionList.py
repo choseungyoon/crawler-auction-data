@@ -36,14 +36,6 @@ class GetAuctionInfo():
         options = webdriver.ChromeOptions()
         #options = webdriver.FirefoxOptions()
 
-        # 창 숨기는 옵션 추가
-        options.add_argument("start-maximized")
-        options.add_argument("lang=ko_KR")
-        options.add_argument('headless')
-        options.add_argument('window-size=1920x1080')
-        options.add_argument("disable-gpu")
-        options.add_argument("--no-sandbox")
-
         options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
@@ -72,7 +64,6 @@ class GetAuctionInfo():
             return set(wh_now).difference(set(wh_then)).pop()
 
     def req(self, path, query, method, data={}, field_data={}):
-        print("Request upload image")
         url = self.API_HOST + path
         header = {
             'Authorization': os.environ.get('APP_KEY'),
@@ -86,7 +77,6 @@ class GetAuctionInfo():
                     url, headers=header, data=data)
                 if response.status_code == 200:
                     print("Success get cloudflare id")
-                    print(response)
                     return response.json()['result']
 
         except Exception as ex:
@@ -414,6 +404,8 @@ class GetAuctionInfo():
                             while True:
                                 responseUpload = requests.post(
                                     res['uploadURL'], files=files, data={}).json()
+                                time.sleep(1)
+
                                 if responseUpload['success'] == True:
                                     print("Add id : ",
                                           responseUpload['result']['id'])
@@ -423,11 +415,12 @@ class GetAuctionInfo():
                                 else:
                                     time.sleep(2)
 
+                        time.sleep(1)
                         # nextpage
                         pagination = self.driver.find_element(
                             By.CLASS_NAME, "page2")
                         pages = pagination.find_elements(By.TAG_NAME, 'a')
-
+                        time.sleep(1)
                         for page in pages:
                             if not page.text:
                                 if page.find_element(By.TAG_NAME,
