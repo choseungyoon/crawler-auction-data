@@ -33,22 +33,29 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        #options = webdriver.ChromeOptions()
-        options = webdriver.FirefoxOptions()
+        options = webdriver.ChromeOptions()
+        #options = webdriver.FirefoxOptions()
 
         # 창 숨기는 옵션 추가
-        # options.add_argument("start-maximized")
-        # options.add_argument("lang=ko_KR")
-        # options.add_argument('headless')
-        # options.add_argument('window-size=1920x1080')
-        # options.add_argument("disable-gpu")
-        # options.add_argument("--no-sandbox")
+        options.add_argument("start-maximized")
+        options.add_argument("lang=ko_KR")
+        options.add_argument('headless')
+        options.add_argument('window-size=1920x1080')
+        options.add_argument("disable-gpu")
+        options.add_argument("--no-sandbox")
 
         options.add_argument("--headless")
-        #self.driver = webdriver.Chrome('chromedriver', options=options)
-        self.driver = webdriver.Firefox(
-            executable_path='linux/geckodriver', options=options)
-        #self.driver = webdriver.Firefox(executable_path='geckodriver', options=options)
+        # open Browser in maximized mode
+        options.add_argument("start-maximized")
+        options.add_argument("disable-infobars")  # disabling infobars
+        options.add_argument("--disable-extensions")  # disabling extensions
+        options.add_argument("--no-sandbox")
+        # overcome limited resource problems
+        options.add_argument("--disable-dev-shm-usage")
+
+        self.driver = webdriver.Chrome('chromedriver', options=options)
+        # self.driver = webdriver.Firefox(
+        #     executable_path='mac/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -64,7 +71,7 @@ class GetAuctionInfo():
         if len(wh_now) > len(wh_then):
             return set(wh_now).difference(set(wh_then)).pop()
 
-    def req(self, path, query, method, data={}, files={}):
+    def req(self, path, query, method, data={}, field_data={}):
         print("Request upload image")
         url = self.API_HOST + path
         header = {
@@ -76,7 +83,7 @@ class GetAuctionInfo():
                 response = requests.get(url, headers=header)
             elif method == 'POST':
                 response = requests.post(
-                    url, headers=header, data=data, files=files)
+                    url, headers=header, data=data)
                 if response.status_code == 200:
                     print("Success get cloudflare id")
                     print(response)
@@ -394,7 +401,7 @@ class GetAuctionInfo():
 
                             while True:
                                 res = self.req('/client/v4/accounts/{}/images/v1/direct_upload'.format(
-                                    os.environ.get('CF_ACCOUNT_ID')), '', 'POST', any, any)
+                                    os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
                                 print(res)
                                 if res != -1:
                                     break
@@ -403,13 +410,11 @@ class GetAuctionInfo():
                                 'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
 
                             while True:
-                                res = self.req(
-                                    res['uploadURL'], '', 'POST', any, files)
-                                print(res)
-                                if res != -1:
+                                print("STEP 2")
+                                response = requests.post(
+                                    res['uploadURL'], files=files, data={}).json()['result']
+                                if response.status_code == 200:
                                     break
-
-                            #r = requests.post(res['uploadURL'], files=files, data={}).json()['result']
 
                             imageObjects.append(
                                 {"itemId": itemId, "cloudflareImgId": r['id']})
