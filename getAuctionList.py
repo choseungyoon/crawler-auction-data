@@ -383,33 +383,38 @@ class GetAuctionInfo():
                             # write file
 
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                time.sleep(2)
+                                time.sleep(5)
                                 print("Get Image src and download")
                                 response = requests.get(
                                     img.get_attribute('src'), stream=True)
-                                time.sleep(2)
+                                time.sleep(5)
                                 if not response.ok:
                                     print(response)
 
                                 for block in response.iter_content(1024):
                                     if not block:
                                         break
+                                    time.sleep(5)
                                     handle.write(block)
-                            time.sleep(2)
+                                    time.sleep(5)
+
+                            time.sleep(5)
 
                             while True:
                                 res = self.req('/client/v4/accounts/{}/images/v1/direct_upload'.format(
                                     os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
                                 print(res)
+                                time.sleep(5)
                                 if res != -1:
                                     break
                                 else:
                                     time.sleep(2)
-
+                            print("Get files")
                             files = {'file': open(
                                 'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-
+                            time.sleep(5)
                             while True:
+                                print("Upload image to cloudFlare")
                                 responseUpload = requests.post(
                                     res['uploadURL'], files=files, data={}).json()
                                 time.sleep(1)
