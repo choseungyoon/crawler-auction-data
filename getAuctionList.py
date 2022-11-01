@@ -385,6 +385,7 @@ class GetAuctionInfo():
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                                 time.sleep(1)
                                 print("Get Image src and download")
+                                print("img : ", img)
                                 response = requests.get(
                                     img.get_attribute('src'), stream=True)
                                 if not response.ok:
