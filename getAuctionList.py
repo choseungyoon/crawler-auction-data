@@ -47,7 +47,7 @@ class GetAuctionInfo():
 
         #self.driver = webdriver.Chrome('chromedriver', options=options)
         self.driver = webdriver.Firefox(
-            executable_path='mac/geckodriver', options=options)
+            executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
