@@ -405,18 +405,23 @@ class GetAuctionInfo():
                                 print(res)
                                 if res != -1:
                                     break
+                                else:
+                                    time.sleep(2)
 
                             files = {'file': open(
                                 'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
 
                             while True:
                                 responseUpload = requests.post(
-                                    res['uploadURL'], files=files, data={}).json()['result']
+                                    res['uploadURL'], files=files, data={}).json()
                                 if responseUpload['success'] == True:
-                                    print("Add id : ", responseUpload['id'])
+                                    print("Add id : ",
+                                          responseUpload['result']['id'])
                                     imageObjects.append(
-                                        {"itemId": itemId, "cloudflareImgId": responseUpload['id']})
+                                        {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
                                     break
+                                else:
+                                    time.sleep(2)
 
                         # nextpage
                         pagination = self.driver.find_element(
