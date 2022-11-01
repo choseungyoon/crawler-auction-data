@@ -375,7 +375,7 @@ class GetAuctionInfo():
 
                         with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                             # identify image to be captured
-                            time.sleep(5)
+                            time.sleep(1)
                             print("Get image xpath")
                             img = self.driver.find_element(
                                 By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
@@ -383,36 +383,34 @@ class GetAuctionInfo():
                             # write file
 
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                time.sleep(5)
+                                time.sleep(1)
                                 print("Get Image src and download")
                                 response = requests.get(
                                     img.get_attribute('src'), stream=True)
-                                time.sleep(5)
                                 if not response.ok:
                                     print(response)
 
                                 for block in response.iter_content(1024):
                                     if not block:
                                         break
-                                    time.sleep(5)
                                     handle.write(block)
-                                    time.sleep(5)
 
-                            time.sleep(5)
+                            time.sleep(1)
 
                             while True:
                                 res = self.req('/client/v4/accounts/{}/images/v1/direct_upload'.format(
                                     os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
                                 print(res)
-                                time.sleep(5)
+                                time.sleep(1)
                                 if res != -1:
                                     break
                                 else:
-                                    time.sleep(2)
+                                    time.sleep(1)
+
                             print("Get files")
                             files = {'file': open(
                                 'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-                            time.sleep(5)
+                            time.sleep(1)
                             while True:
                                 print("Upload image to cloudFlare")
                                 responseUpload = requests.post(
@@ -426,7 +424,7 @@ class GetAuctionInfo():
                                         {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
                                     break
                                 else:
-                                    time.sleep(2)
+                                    time.sleep(1)
 
                         time.sleep(1)
                         # nextpage
@@ -443,7 +441,7 @@ class GetAuctionInfo():
                                                      ("img")).get_attribute("alt") == "다음":
                                     imagePageIndex = imagePageIndex + 1
                                     print("Go to " + str(imagePageIndex) + "page")
-                                    time.sleep(2)
+                                    time.sleep(1)
                                     page.click()
                                     print("Click success")
                                     break
@@ -453,14 +451,14 @@ class GetAuctionInfo():
                                     imagePageIndex = imagePageIndex + 1
                                     time.sleep(1)
                                     print("Go to " + str(imagePageIndex) + "page")
-                                    time.sleep(2)
+                                    time.sleep(1)
                                     page.click()
                                     print("Click success")
                                     break
 
                     await self.insertImage(imageObjects)
 
-                    time.sleep(3)
+                    time.sleep(1)
                     folder = 'images/'
                     for filename in os.listdir(folder):
                         file_path = os.path.join(folder, filename)
