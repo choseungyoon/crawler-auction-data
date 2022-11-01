@@ -437,6 +437,7 @@ class GetAuctionInfo():
                                     imagePageIndex = imagePageIndex + 1
                                     print("Go to " + str(imagePageIndex) + "page")
                                     finished = True
+                                    time.sleep(5)
                                     page.click()
                                     break
                             else:
@@ -444,12 +445,13 @@ class GetAuctionInfo():
                                     imagePageIndex = imagePageIndex + 1
                                     print("Go to " + str(imagePageIndex) + "page")
                                     finished = True
+                                    time.sleep(5)
                                     page.click()
                                     break
 
                     await self.insertImage(imageObjects)
 
-                    time.sleep(1)
+                    time.sleep(3)
                     folder = 'images/'
                     for filename in os.listdir(folder):
                         file_path = os.path.join(folder, filename)
