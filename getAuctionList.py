@@ -78,7 +78,6 @@ class GetAuctionInfo():
                 response = requests.post(
                     url, headers=header, data=data)
                 if response.status_code == 200:
-                    print("Success get cloudflare id")
                     return response.json()['result']
 
         except Exception as ex:
@@ -101,7 +100,27 @@ class GetAuctionInfo():
         await db.resultauction.create_many(
             data=resultAuctionObjects
         )
-        print("Completed insert result of auctiom")
+        print("Completed insert result of auction")
+        await db.disconnect()
+
+    async def insertLeaseDetail(self, leaseDetails):
+        db = Prisma()
+        await db.connect()
+
+        await db.leasedetail.create_many(
+            data=leaseDetails
+        )
+        print("Completed insert leaseDetails")
+        await db.disconnect()
+
+    async def insertLeasePeople(self, leasePeoples):
+        db = Prisma()
+        await db.connect()
+
+        await db.leasepeople.create_many(
+            data=leasePeoples
+        )
+        print("Completed insert lease peoples")
         await db.disconnect()
 
     async def selectItem(self, caseNumber):
@@ -197,18 +216,9 @@ class GetAuctionInfo():
 
                     # 데이터 크롤링
 
-                    # 현황조사서
-                    # try:
-                    #    self.vars["window_handles"] = self.driver.window_handles
-                    #    self.driver.find_element(
-                    #        By.XPATH, "//*[@id='contents']/div[4]/div[3]/a[1]/img").click()
-                    #    self.vars["root"] = self.driver.current_window_handle
-                    #    self.driver.switch_to.window(self.vars["win9632"])
+                    leaseDetails = []
+                    leasePeoples = []
 
-                    # except:
-                    #    print("현황조사서 없음")
-
-                    # 기본정보
                     caseNumber = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
 
@@ -219,6 +229,73 @@ class GetAuctionInfo():
                             By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
                         continue
 
+                    # 현황조사서
+                    try:
+                        self.vars["window_handles"] = self.driver.window_handles
+                        self.driver.find_element(
+                            By.XPATH, "//img[@alt='현황조사서 팝업']").click()
+
+                        self.vars["win7232"] = self.wait_for_window(2000)
+                        self.vars["root"] = self.driver.current_window_handle
+
+                        self.driver.switch_to.window(self.vars["win7232"])
+
+                        # 부동산 임대차 정보 확인
+                        # 부동산 점유관계 갯수와 임대차 인원 확인한다
+                        numOflease = 0
+                        numOfPeople = 0
+                        leaseInfoTable = self.driver.find_element(
+                            By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[1]")
+
+                        leaseInfoTbody = leaseInfoTable.find_element(
+                            By.TAG_NAME, "tbody")
+
+                        for tr in leaseInfoTbody.find_elements(By.TAG_NAME, "tr"):
+                            numOflease += 1
+
+                            tds = tr.find_elements(By.TAG_NAME, "td")
+                            numOfPeople += int(tds[2].get_attribute("innerText")[:-1])
+                            print("numOflease :", numOflease)
+                            print("numofPeople :", numOfPeople)
+
+                        for i in range(numOflease):
+                            leaseDetail = self.driver.find_element(
+                                By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[" + str(2+i) + "]").find_element(
+                                By.TAG_NAME, "tbody").find_elements(By.TAG_NAME, "tr")[2].find_elements(By.TAG_NAME, "td")[0].get_attribute("innerText")
+                            leaseDetails.append({"content": leaseDetail})
+
+                        if numOfPeople > 0:
+                            for i in range(numOfPeople):
+                                leasePeopleTrs = self.driver.find_element(
+                                    By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[" + str(2 + numOflease + i) + "]").find_element(
+                                    By.TAG_NAME, "tbody").find_elements(By.TAG_NAME, "tr")
+
+                                trIndx = 1
+                                if i != 0:
+                                    trIndx = 0
+
+                                # 점유인
+                                leaseName = leasePeopleTrs[trIndx].find_elements(
+                                    By.TAG_NAME, "td")[1].get_attribute("innerText")
+                                leaseType = leasePeopleTrs[trIndx].find_elements(
+                                    By.TAG_NAME, "td")[2].get_attribute("innerText")
+                                deposit = leasePeopleTrs[trIndx+3].find_elements(
+                                    By.TAG_NAME, "td")[0].get_attribute("innerText")
+                                transferDate = leasePeopleTrs[trIndx+4].find_elements(
+                                    By.TAG_NAME, "td")[0].get_attribute("innerText")
+                                confirmDate = leasePeopleTrs[trIndx+4].find_elements(By.TAG_NAME, "td")[
+                                    1].get_attribute("innerText")
+                                leasePeoples.append({"leaseName": leaseName, "leaseType": leaseType,
+                                                    'deposit': deposit, 'transferDate': transferDate, 'confirmDate': confirmDate})
+
+                    except Exception as ex:
+                        print(ex)
+                    finally:
+                        self.driver.close()
+                        self.driver.switch_to.window(self.vars["root"])
+                        self.driver.switch_to.frame(0)
+
+                    # 기본정보
                     itemNumber = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]")
 
@@ -312,6 +389,7 @@ class GetAuctionInfo():
                     numOfPass = 0
                     DetailOfSaleDate = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[5]/table")
+
                     tbody = DetailOfSaleDate.find_element(By.TAG_NAME, "tbody")
                     for tr in tbody.find_elements(By.TAG_NAME, "tr"):
                         tds = tr.find_elements(By.TAG_NAME, "td")
@@ -354,6 +432,7 @@ class GetAuctionInfo():
                         result['itemId'] = itemId
 
                     await self.insertResultAuction(arrayResultAuction)
+
                     # 사진
                     self.vars["window_handles"] = self.driver.window_handles
                     self.driver.find_element(
@@ -372,36 +451,23 @@ class GetAuctionInfo():
                     for i in range(numOfImg-1):
                         # something
                         # Download image file
-                        print("Enter image page : ", imagePageIndex)
-                        time.sleep(1)
-
                         with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                             # identify image to be captured
-                            time.sleep(1)
-                            print("Get image xpath")
                             img = self.driver.find_element(
                                 By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-                            time.sleep(1)
 
                             # write file
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                time.sleep(1)
-                                print("Get Image src and download")
-                                print("img : ", img)
-
                                 while True:
                                     try:
                                         response = requests.get(
                                             img.get_attribute('src'), stream=True)
                                         if response.status_code == 200:
                                             break
-
                                     except Exception as e:
                                         print("Error Write file ", e)
-                                        time.sleep(2)
+                                        time.sleep(1)
 
-                                time.sleep(1)
-                                print("response ", response)
                                 if not response.ok:
                                     print(response)
 
@@ -413,36 +479,30 @@ class GetAuctionInfo():
                             time.sleep(1)
 
                             while True:
-                                print("Get CF id")
                                 res = self.req('/client/v4/accounts/{}/images/v1/direct_upload'.format(
                                     os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
-                                print(res)
-                                time.sleep(1)
                                 if res != -1:
                                     break
                                 else:
                                     time.sleep(1)
 
-                            print("Get files")
                             files = {'file': open(
                                 'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-                            time.sleep(1)
                             while True:
-                                print("Upload image to cloudFlare")
                                 responseUpload = requests.post(
-                                    res['uploadURL'], files=files, data={}).json()
-                                time.sleep(1)
+                                    res['uploadURL'], files=files, data={})
 
-                                if responseUpload['success'] == True:
-                                    print("Add id : ",
-                                          responseUpload['result']['id'])
-                                    imageObjects.append(
-                                        {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
-                                    break
+                                if responseUpload is not None:
+                                    responseUpload = responseUpload.json()
+                                    if responseUpload['success'] == True:
+                                        imageObjects.append(
+                                            {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
+                                        break
+                                    else:
+                                        time.sleep(1)
                                 else:
-                                    time.sleep(1)
+                                    continue
 
-                        time.sleep(1)
                         # nextpage
                         pagination = self.driver.find_element(
                             By.CLASS_NAME, "page2")
@@ -450,29 +510,30 @@ class GetAuctionInfo():
                         time.sleep(1)
 
                         pages = pagination.find_elements(By.TAG_NAME, 'a')
-                        time.sleep(1)
                         for page in pages:
                             if not page.text:
                                 if page.find_element(By.TAG_NAME,
                                                      ("img")).get_attribute("alt") == "다음":
                                     imagePageIndex = imagePageIndex + 1
-                                    print("Go to " + str(imagePageIndex) + "page")
-                                    time.sleep(1)
                                     page.click()
-                                    print("Click success")
                                     break
                             else:
                                 if int(page.text) == imagePageIndex+1:
-                                    time.sleep(1)
                                     imagePageIndex = imagePageIndex + 1
-                                    time.sleep(1)
-                                    print("Go to " + str(imagePageIndex) + "page")
-                                    time.sleep(1)
                                     page.click()
-                                    print("Click success")
                                     break
 
                     await self.insertImage(imageObjects)
+
+                    if len(leaseDetails) > 0:
+                        for leaseDetailItem in leaseDetails:
+                            leaseDetailItem['itemId'] = itemId
+                        await self.insertLeaseDetail(leaseDetails)
+
+                    if len(leasePeoples) > 0:
+                        for leasePeopleItem in leasePeoples:
+                            leasePeopleItem['itemId'] = itemId
+                        await self.insertLeasePeople(leasePeoples)
 
                     time.sleep(1)
                     folder = 'images/'
@@ -508,17 +569,13 @@ class GetAuctionInfo():
                 if not page.text:
                     if page.find_element(By.TAG_NAME,
                                          ("img")).get_attribute("alt") == "다음":
-                        print(page.find_element(By.TAG_NAME,
-                                                ("img")).get_attribute("alt"))
                         currentPageIndex = currentPageIndex + 1
-                        print("Go to " + str(currentPageIndex) + "page")
                         finished = True
                         page.click()
                         break
                 else:
                     if int(page.text) == currentPageIndex+1:
                         currentPageIndex = currentPageIndex + 1
-                        print("Go to " + str(currentPageIndex) + "page")
                         finished = True
                         page.click()
                         break

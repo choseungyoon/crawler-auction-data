@@ -1,65 +1,129 @@
-datasource db {
-    provider             = "mysql"
-    url                  = "mysql://e9j32c9r4gylbz0mb95c:pscale_pw_kZkU8yyLVbNkYwJH9ROEpDxpjJhO7pw7u6bWor65P3e@us-east.connect.psdb.cloud/auction-market?sslaccept=strict"
-    referentialIntegrity = "prisma"
+generator client {
+  provider             = "prisma-client-py"
+  previewFeatures      = ["referentialIntegrity"]
+  interface            = "asyncio"
+  recursive_type_depth = "5"
 }
 
-// generator
-generator client {
-    provider             = "prisma-client-py"
-    interface            = "asyncio"
-    recursive_type_depth = 5
-    previewFeatures      = ["referentialIntegrity"]
+datasource db {
+  provider = "mysql"
+  url      = "mysql://e9j32c9r4gylbz0mb95c:pscale_pw_kZkU8yyLVbNkYwJH9ROEpDxpjJhO7pw7u6bWor65P3e@us-east.connect.psdb.cloud/auction-market?sslaccept=strict"
 }
 
 model Item {
-    id                  Int             @id @default(autoincrement())
-    createdAt           DateTime        @default(now())
-    updatedAt           DateTime        @updatedAt
-    caseNumber          String
-    caseIndex           String
-    itemNumber          String
-    itemType            String
-    initialPrice        String
-    minPrice            String
-    bidType             String
-    saleDate            DateTime
-    description         String          @db.MediumText
-    itemLocation        String
-    court               String
-    caseApplyDate       DateTime
-    auctionApplyDate    DateTime
-    allocationApplyDate DateTime
-    requestPrice        String
-    detailOfList        String          @db.MediumText
-    areaOfBuilding      Float
-    areaOfGround        Float
-    appraisal           String          @db.MediumText
-    status              Int             @default(0)
-    numOfPass           Int             @default(0)
-    share               Boolean         @default(false)
-    Image               Image[]
-    resultAuction       resultAuction[]
+  id                  Int      @id @default(autoincrement())
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  caseNumber          String
+  itemNumber          String
+  itemType            String
+  initialPrice        String
+  minPrice            String
+  bidType             String
+  saleDate            DateTime
+  description         String   @db.MediumText
+  itemLocation        String
+  court               String
+  caseApplyDate       DateTime
+  auctionApplyDate    DateTime
+  allocationApplyDate DateTime
+  requestPrice        String
+  detailOfList        String   @db.MediumText
+  areaOfBuilding      Float
+  areaOfGround        Float
+  appraisal           String   @db.MediumText
+  caseIndex           String
+  numOfPass           Int      @default(0)
+  share               Boolean  @default(false)
+  status              Int      @default(0)
 }
 
 model Image {
-    id              Int      @id @default(autoincrement())
-    createdAt       DateTime @default(now())
-    updatedAt       DateTime @updatedAt
-    item            Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
-    itemId          Int
-    cloudflareImgId String
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  itemId          Int
+  cloudflareImgId String
+
+  @@index([itemId])
 }
 
 model resultAuction {
-    id           Int       @id @default(autoincrement())
-    createdAt    DateTime  @default(now())
-    updatedAt    DateTime  @updatedAt
-    date         DateTime?
-    type         String?
-    location     String?
-    minSalePrice String?
-    result       String?
-    item         Item      @relation(fields: [itemId], references: [id], onDelete: Cascade)
-    itemId       Int
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  date         DateTime?
+  type         String?
+  location     String?
+  minSalePrice String?
+  result       String?
+  itemId       Int
+
+  @@index([itemId])
+}
+
+model leaseDetail {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  content   String?
+  itemId    Int
+
+  @@index([itemId])
+}
+
+model leasePeople {
+  id           Int      @id @default(autoincrement())
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  leaseName    String?
+  leaseType    String?
+  deposit      String?
+  transferDate String?
+  confirmDate  String?
+  itemId       Int
+
+  @@index([itemId])
+}
+
+model Token {
+  id        Int      @id @default(autoincrement())
+  payload   String   @unique
+  userId    Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  phone     String?  @unique
+  email     String?  @unique
+  name      String
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
+
+model b3e36e2_31aa_5fec_967a_07f95f4fef9d_20221102152235_vrepl {
+  id           Int       @id @default(autoincrement())
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime
+  date         DateTime?
+  type         String?
+  location     String?
+  minSalePrice String?
+  result       String?
+  itemId       Int
+
+  @@map("_2b3e36e2_31aa_5fec_967a_07f95f4fef9d_20221102152235_vrepl")
+}
+
+model d80ec4ba_128a_585f_9e3e_40995248498a_20221102152226_vrepl {
+  id              Int      @id @default(autoincrement())
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime
+  itemId          Int
+  cloudflareImgId String
+
+  @@map("_d80ec4ba_128a_585f_9e3e_40995248498a_20221102152226_vrepl")
 }
