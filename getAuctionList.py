@@ -466,7 +466,7 @@ class GetAuctionInfo():
                                             break
                                     except Exception as e:
                                         print("Error Write file ", e)
-                                        time.sleep(1)
+                                        time.sleep(3)
 
                                 if not response.ok:
                                     print(response)
@@ -478,30 +478,47 @@ class GetAuctionInfo():
 
                             time.sleep(1)
 
+                            uploadURL = None
+
                             while True:
-                                res = self.req('/client/v4/accounts/{}/images/v1/direct_upload'.format(
-                                    os.environ.get('CF_ACCOUNT_ID')), '', 'POST')
-                                if res != -1:
-                                    break
+                                header = {
+                                    'Authorization': os.environ.get('APP_KEY'),
+                                    'Content-Type':  'application/json'
+                                }
+                                responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
+                                    os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
+
+                                if responseGetUploadUrl is not None:
+                                    responseGetUploadUrl = responseGetUploadUrl.json()
+                                    if responseGetUploadUrl['success'] == True:
+                                        uploadURL = responseGetUploadUrl['result']['uploadURL']
+                                        print("Get uploadUrl : ", uploadURL)
+                                        break
+                                    else:
+                                        time.sleep(1)
                                 else:
                                     time.sleep(1)
 
                             files = {'file': open(
                                 'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-                            while True:
-                                responseUpload = requests.post(
-                                    res['uploadURL'], files=files, data={})
 
-                                if responseUpload is not None:
-                                    responseUpload = responseUpload.json()
-                                    if responseUpload['success'] == True:
-                                        imageObjects.append(
-                                            {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
-                                        break
+                            while True:
+                                if uploadURL is not None:
+                                    responseUpload = requests.post(
+                                        uploadURL, files=files, data={})
+
+                                    if responseUpload is not None:
+                                        responseUpload = responseUpload.json()
+                                        if responseUpload['success'] == True:
+                                            imageObjects.append(
+                                                {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
+                                            print("Done uploadUrl : ",
+                                                  responseUpload['result']['id'])
+                                            break
+                                        else:
+                                            time.sleep(1)
                                     else:
-                                        time.sleep(1)
-                                else:
-                                    continue
+                                        continue
 
                         # nextpage
                         pagination = self.driver.find_element(
