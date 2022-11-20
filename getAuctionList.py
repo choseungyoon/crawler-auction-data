@@ -35,10 +35,10 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        #options = webdriver.ChromeOptions()
+        # options = webdriver.ChromeOptions()
         options = webdriver.FirefoxOptions()
 
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
         options.add_argument("disable-infobars")  # disabling infobars
@@ -47,9 +47,9 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        #self.driver = webdriver.Chrome('chromedriver', options=options)
+        # self.driver = webdriver.Chrome('chromedriver', options=options)
         self.driver = webdriver.Firefox(
-            executable_path='linux/geckodriver', options=options)
+            executable_path='mac/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -136,6 +136,38 @@ class GetAuctionInfo():
 
         return len(items)
 
+    async def selectItemByCaseIndex(self, caseIndex):
+        db = Prisma()
+        await db.connect()
+        items = await db.item.find_first(
+            where={
+                'caseIndex': caseIndex,
+            }
+        )
+        await db.disconnect()
+
+        if items is None:
+            print(caseIndex, " not existed")
+            return True
+        else:
+            print(caseIndex, " existed")
+            return False
+
+    async def insertItemInfo(self, caseIndex, court, status):
+        db = Prisma()
+        await db.connect()
+        print(caseIndex, " ", court, " ", status)
+        item = await db.item.create(
+            data={
+                'caseIndex': caseIndex,
+                'court': court,
+                'status': status
+            }
+        )
+        await db.disconnect()
+
+        return item.id
+
     async def insertItem(self, caseNumber, caseIndex, itemNumber, itemType, initialPrice, minPrice, bidType, saleDate,
                          description, itemLocation, court, caseApplyDate, auctionApplyDate, allocationApplyDate,
                          requestPrice, detailOfList, appraisal, areaOfBuilding, areaOfGround, numOfPass, share):
@@ -171,9 +203,6 @@ class GetAuctionInfo():
 
         return item.id
 
-    def updateItem():
-        print("Update Item")
-
     async def crawler_data(self):
         formatYYYMMDDHHMM = '%Y.%m.%d %H:%M'
         formatYYYMMDD = '%Y.%m.%d'
@@ -199,385 +228,397 @@ class GetAuctionInfo():
                 chks = line.find_elements(By.NAME, "chk")
                 for chk in chks:
                     inputValue = chk.get_attribute("value").split(',')
-                    itemList.append(inputValue[1]+inputValue[2])
-
-            for item in itemList:
-                try:
-
-                    # 매물 클릭
-                    if (item == itemList[0]):
-                        # 첫번째 매물
-                        self.driver.find_element(
-                            By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
-
-                    else:
-                        # 그외 매물
-                        self.driver.find_element(By.NAME, item).click()
-
-                    # 데이터 크롤링
-
-                    leaseDetails = []
-                    leasePeoples = []
-
-                    caseNumber = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
-
-                    existed = await self.selectItem(caseNumber.text)
-                    if existed > 0:
-                        print("Pass ", caseNumber.text)
-                        self.driver.find_element(
-                            By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
-                        continue
-
-                    # 현황조사서
-                    try:
-                        self.vars["window_handles"] = self.driver.window_handles
-                        self.driver.find_element(
-                            By.XPATH, "//img[@alt='현황조사서 팝업']").click()
-
-                        self.vars["win7232"] = self.wait_for_window(2000)
-                        self.vars["root"] = self.driver.current_window_handle
-
-                        self.driver.switch_to.window(self.vars["win7232"])
-
-                        # 부동산 임대차 정보 확인
-                        # 부동산 점유관계 갯수와 임대차 인원 확인한다
-                        numOflease = 0
-                        numOfPeople = 0
-                        leaseInfoTable = self.driver.find_element(
-                            By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[1]")
-
-                        leaseInfoTbody = leaseInfoTable.find_element(
-                            By.TAG_NAME, "tbody")
-
-                        for tr in leaseInfoTbody.find_elements(By.TAG_NAME, "tr"):
-                            numOflease += 1
-
-                            tds = tr.find_elements(By.TAG_NAME, "td")
-                            numOfPeople += int(tds[2].get_attribute("innerText")[:-1])
-                            print("numOflease :", numOflease)
-                            print("numofPeople :", numOfPeople)
-
-                        for i in range(numOflease):
-                            leaseDetail = self.driver.find_element(
-                                By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[" + str(2+i) + "]").find_element(
-                                By.TAG_NAME, "tbody").find_elements(By.TAG_NAME, "tr")[2].find_elements(By.TAG_NAME, "td")[0].get_attribute("innerText")
-                            leaseDetails.append({"content": leaseDetail})
-
-                        if numOfPeople > 0:
-                            for i in range(numOfPeople):
-                                leasePeopleTrs = self.driver.find_element(
-                                    By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[" + str(2 + numOflease + i) + "]").find_element(
-                                    By.TAG_NAME, "tbody").find_elements(By.TAG_NAME, "tr")
-
-                                trIndx = 1
-                                if i != 0:
-                                    trIndx = 0
-
-                                # 점유인
-                                leaseName = leasePeopleTrs[trIndx].find_elements(
-                                    By.TAG_NAME, "td")[1].get_attribute("innerText")
-                                leaseType = leasePeopleTrs[trIndx].find_elements(
-                                    By.TAG_NAME, "td")[2].get_attribute("innerText")
-                                deposit = leasePeopleTrs[trIndx+3].find_elements(
-                                    By.TAG_NAME, "td")[0].get_attribute("innerText")
-                                transferDate = leasePeopleTrs[trIndx+4].find_elements(
-                                    By.TAG_NAME, "td")[0].get_attribute("innerText")
-                                confirmDate = leasePeopleTrs[trIndx+4].find_elements(By.TAG_NAME, "td")[
-                                    1].get_attribute("innerText")
-                                leasePeoples.append({"leaseName": leaseName, "leaseType": leaseType,
-                                                    'deposit': deposit, 'transferDate': transferDate, 'confirmDate': confirmDate})
-
-                    except Exception as ex:
-                        print(ex)
-                    finally:
-                        self.driver.close()
-                        self.driver.switch_to.window(self.vars["root"])
-                        self.driver.switch_to.frame(0)
-
-                    # 기본정보
-                    itemNumber = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]")
-
-                    itemType = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[3]")
-
-                    initialPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[1]").text))
-
-                    minPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[2]").text))
-
-                    bidType = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[3]")
-
-                    saleDate = datetime.strptime(
-                        self.driver.find_element(
-                            By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[3]/td").text
-                        [0:16], formatYYYMMDDHHMM)
-
-                    description = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[4]/td")
-
-                    itemLocation = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[5]/td")
-
-                    court = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[6]/td")
-
-                    caseApplyDate = datetime.strptime(self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[1]")
-                        .text, formatYYYMMDD)
-
-                    auctionApplyDate = datetime.strptime(self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[2]")
-                        .text, formatYYYMMDD)
-
-                    allocationApplyDate = datetime.strptime(self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[1]")
-                        .text, formatYYYMMDD)
-
-                    requestPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[2]").text))
-
-                    # 목록내역
-                    detailOfList = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[6]/table/tbody/tr/td[3]")
-
-                    areaOfBuilding = 0
-                    areaOfGround = 0
-                    share = False
-                    for line in detailOfList.text.split("\n"):
-                        # 건물 면적
-                        if areaOfBuilding == 0 and "면          적" in line and "㎡" in line:
-                            areaOfBuilding = float(line.rsplit(
-                                ' ', 1)[-1].strip().replace("㎡", ""))
-                            print('areaOfBuilding : ', areaOfBuilding)
-                        elif areaOfBuilding == 0 and "구          조" in line and "㎡" in line:
-                            areaOfBuilding = float(line.rsplit(
-                                ' ', 1)[-1].strip().replace("㎡", ""))
-                            print('areaOfBuilding : ', areaOfBuilding)
-
-                        # 토지 면적
-                        if "대지권의 비율" in line:
-                            print(line)
-                        if "지분" in line:
-                            share = True
-                            total = float(
-                                line.rsplit()[-3].strip().replace("분의", ""))
-                            portion = float(line.rsplit()[-2].strip())
-                            areaOfBuilding = areaOfBuilding * portion / total
-
-                    # 감정평가요약
-                    appraisal = ""
-
-                    try:
-                        ulOfAppraisal = self.driver.find_element(
-                            By.XPATH, "//*[@id='contents']/div[7]/table/tbody/tr/td/ul")
-
-                        all_li = ulOfAppraisal.find_elements(By.TAG_NAME, "li")
-
-                        for li in all_li:
-                            if li.text not in appraisal:
-                                appraisal += li.text + "\n"
-
-                    except:
-                        appraisal = "2008년 8월 18일 이전에 감정평가 완료된 물건에 대해서는 본 정보를 제공하지 않습니다.\n감정평가서를 참조하시기 바랍니다."
-
-                    # 기일내역
-                    arrayResultAuction = []
-                    numOfPass = 0
-                    DetailOfSaleDate = self.driver.find_element(
-                        By.XPATH, "//*[@id='contents']/div[5]/table")
-
-                    tbody = DetailOfSaleDate.find_element(By.TAG_NAME, "tbody")
-                    for tr in tbody.find_elements(By.TAG_NAME, "tr"):
-                        tds = tr.find_elements(By.TAG_NAME, "td")
-
-                        saleDate = datetime.strptime(
-                            tds[0].get_attribute("innerText").strip(), formatYYYMMDD_HHMM)
-
-                        saleType = tds[1].get_attribute("innerText")
-                        saleLocation = tds[2].get_attribute("innerText")
-                        salePrice = tds[3].get_attribute("innerText")
-                        saleResult = tds[4].get_attribute("innerText")
-                        if "유찰 " in saleResult:
-                            numOfPass += 1
-                        arrayResultAuction.append(
-                            {"date": saleDate, "type": saleType, 'location': saleLocation, 'minSalePrice': salePrice, 'result': saleResult})
-
-                    itemId = await self.insertItem(caseNumber.text,
-                                                   item[:-1],
-                                                   itemNumber.text,
-                                                   itemType.text,
-                                                   initialPrice,
-                                                   minPrice,
-                                                   bidType.text,
-                                                   saleDate,
-                                                   description.text,
-                                                   itemLocation.text,
-                                                   court.text,
-                                                   caseApplyDate,
-                                                   auctionApplyDate,
-                                                   allocationApplyDate,
-                                                   requestPrice,
-                                                   detailOfList.text,
-                                                   appraisal,
-                                                   areaOfBuilding,
-                                                   areaOfGround,
-                                                   numOfPass,
-                                                   share)
-
-                    for result in arrayResultAuction:
-                        result['itemId'] = itemId
-
-                    await self.insertResultAuction(arrayResultAuction)
-
-                    # 사진
-                    self.vars["window_handles"] = self.driver.window_handles
-                    self.driver.find_element(
-                        By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
-                    self.vars["win1583"] = self.wait_for_window(2000)
-                    self.vars["root"] = self.driver.current_window_handle
-                    self.driver.switch_to.window(self.vars["win1583"])
-
-                    nameOfImage = self.driver.find_element(
-                        By.XPATH, "//*[@id = 'pop_contents_1']/form/div[1]/table/tbody/tr[1]/td[2]").text
-                    numOfImg = int(self.driver.find_element(
-                        By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
-
-                    imageObjects = []
-                    imagePageIndex = 1
-                    for i in range(numOfImg-1):
-                        # something
-                        # Download image file
-                        with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
-                            # identify image to be captured
-                            img = self.driver.find_element(
-                                By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-
-                            # write file
-                            with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                while True:
-                                    try:
-                                        response = requests.get(
-                                            img.get_attribute('src'), stream=True)
-                                        if response.status_code == 200:
-                                            break
-                                    except Exception as e:
-                                        print("Error Write file ", e)
-                                        time.sleep(3)
-
-                                if not response.ok:
-                                    print(response)
-
-                                for block in response.iter_content(1024):
-                                    if not block:
-                                        break
-                                    handle.write(block)
-
-                            time.sleep(1)
-
-                            uploadURL = None
-
-                            while True:
-                                header = {
-                                    'Authorization': os.environ.get('APP_KEY'),
-                                    'Content-Type':  'application/json'
-                                }
-                                responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
-                                    os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
-
-                                if responseGetUploadUrl is not None:
-                                    responseGetUploadUrl = responseGetUploadUrl.json()
-                                    if responseGetUploadUrl['success'] == True:
-                                        uploadURL = responseGetUploadUrl['result']['uploadURL']
-                                        print("Get uploadUrl : ", uploadURL)
-                                        break
-                                    else:
-                                        time.sleep(1)
-                                else:
-                                    time.sleep(1)
-
-                            files = {'file': open(
-                                'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-
-                            while True:
-                                if uploadURL is not None:
-                                    responseUpload = requests.post(
-                                        uploadURL, files=files, data={})
-
-                                    if responseUpload is not None:
-                                        responseUpload = responseUpload.json()
-                                        if responseUpload['success'] == True:
-                                            imageObjects.append(
-                                                {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
-                                            print("Done uploadUrl : ",
-                                                  responseUpload['result']['id'])
-                                            break
-                                        else:
-                                            time.sleep(1)
-                                    else:
-                                        continue
-
-                        # nextpage
-                        pagination = self.driver.find_element(
-                            By.CLASS_NAME, "page2")
-
-                        time.sleep(1)
-
-                        pages = pagination.find_elements(By.TAG_NAME, 'a')
-                        for page in pages:
-                            if not page.text:
-                                if page.find_element(By.TAG_NAME,
-                                                     ("img")).get_attribute("alt") == "다음":
-                                    imagePageIndex = imagePageIndex + 1
-                                    page.click()
-                                    break
-                            else:
-                                if int(page.text) == imagePageIndex+1:
-                                    imagePageIndex = imagePageIndex + 1
-                                    page.click()
-                                    break
-
-                    await self.insertImage(imageObjects)
-
-                    if len(leaseDetails) > 0:
-                        for leaseDetailItem in leaseDetails:
-                            leaseDetailItem['itemId'] = itemId
-                        await self.insertLeaseDetail(leaseDetails)
-
-                    if len(leasePeoples) > 0:
-                        for leasePeopleItem in leasePeoples:
-                            leasePeopleItem['itemId'] = itemId
-                        await self.insertLeasePeople(leasePeoples)
-
-                    time.sleep(1)
-                    folder = 'images/'
-                    for filename in os.listdir(folder):
-                        file_path = os.path.join(folder, filename)
-                        try:
-                            if os.path.isfile(file_path) or os.path.islink(file_path):
-                                os.unlink(file_path)
-                            elif os.path.isdir(file_path):
-                                shutil.rmtree(file_path)
-                        except Exception as e:
-                            print('Failed to delete %s. Reason: %s' %
-                                  (file_path, e))
-
-                    self.driver.close()
-                    self.driver.switch_to.window(self.vars["root"])
-                    self.driver.switch_to.frame(0)
-
-                    # 이전으로 돌아가기
-                    self.driver.find_element(
-                        By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
-
-                except Exception as ex:
-                    print("Error item ", item)
-                    print("Error message : ", ex)
-                    self.driver.find_element(
-                        By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
+                    # itemList.append(inputValue[1]+inputValue[2])
+
+                    # Duplicated check
+                    print(inputValue[1])
+                    duplicated = await self.selectItemByCaseIndex(inputValue[1])
+                    if duplicated == False:
+                        print("PASS")
+
+                    # Insert
+                    await self.insertItemInfo(inputValue[1], inputValue[0], 0)
+                    print("value 0 : ", inputValue[0])
+                    print("value 1 : ", inputValue[1])
+                    print("value 2 : ", inputValue[2])
+
+            # for item in itemList:
+            #     try:
+
+            #         # 매물 클릭
+            #         if (item == itemList[0]):
+            #             # 첫번째 매물
+            #             self.driver.find_element(
+            #                 By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+
+            #         else:
+            #             # 그외 매물
+            #             self.driver.find_element(By.NAME, item).click()
+
+            #         # 데이터 크롤링
+
+            #         leaseDetails = []
+            #         leasePeoples = []
+
+            #         caseNumber = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
+
+            #         existed = await self.selectItem(caseNumber.text)
+            #         if existed > 0:
+            #             print("Pass ", caseNumber.text)
+            #             self.driver.find_element(
+            #                 By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
+            #             continue
+
+            #         # 현황조사서
+            #         try:
+            #             self.vars["window_handles"] = self.driver.window_handles
+            #             self.driver.find_element(
+            #                 By.XPATH, "//img[@alt='현황조사서 팝업']").click()
+
+            #             self.vars["win7232"] = self.wait_for_window(2000)
+            #             self.vars["root"] = self.driver.current_window_handle
+
+            #             self.driver.switch_to.window(self.vars["win7232"])
+
+            #             # 부동산 임대차 정보 확인
+            #             # 부동산 점유관계 갯수와 임대차 인원 확인한다
+            #             numOflease = 0
+            #             numOfPeople = 0
+            #             leaseInfoTable = self.driver.find_element(
+            #                 By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[1]")
+
+            #             leaseInfoTbody = leaseInfoTable.find_element(
+            #                 By.TAG_NAME, "tbody")
+
+            #             for tr in leaseInfoTbody.find_elements(By.TAG_NAME, "tr"):
+            #                 numOflease += 1
+
+            #                 tds = tr.find_elements(By.TAG_NAME, "td")
+            #                 numOfPeople += int(tds[2].get_attribute("innerText")[:-1])
+            #                 print("numOflease :", numOflease)
+            #                 print("numofPeople :", numOfPeople)
+
+            #             for i in range(numOflease):
+            #                 leaseDetail = self.driver.find_element(
+            #                     By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[" + str(2+i) + "]").find_element(
+            #                     By.TAG_NAME, "tbody").find_elements(By.TAG_NAME, "tr")[2].find_elements(By.TAG_NAME, "td")[0].get_attribute("innerText")
+            #                 leaseDetails.append({"content": leaseDetail})
+
+            #             if numOfPeople > 0:
+            #                 for i in range(numOfPeople):
+            #                     leasePeopleTrs = self.driver.find_element(
+            #                         By.XPATH, "//*[@id='pop_contents_1']/div[3]/div[2]/table[" + str(2 + numOflease + i) + "]").find_element(
+            #                         By.TAG_NAME, "tbody").find_elements(By.TAG_NAME, "tr")
+
+            #                     trIndx = 1
+            #                     if i != 0:
+            #                         trIndx = 0
+
+            #                     # 점유인
+            #                     leaseName = leasePeopleTrs[trIndx].find_elements(
+            #                         By.TAG_NAME, "td")[1].get_attribute("innerText")
+            #                     leaseType = leasePeopleTrs[trIndx].find_elements(
+            #                         By.TAG_NAME, "td")[2].get_attribute("innerText")
+            #                     deposit = leasePeopleTrs[trIndx+3].find_elements(
+            #                         By.TAG_NAME, "td")[0].get_attribute("innerText")
+            #                     transferDate = leasePeopleTrs[trIndx+4].find_elements(
+            #                         By.TAG_NAME, "td")[0].get_attribute("innerText")
+            #                     confirmDate = leasePeopleTrs[trIndx+4].find_elements(By.TAG_NAME, "td")[
+            #                         1].get_attribute("innerText")
+            #                     leasePeoples.append({"leaseName": leaseName, "leaseType": leaseType,
+            #                                         'deposit': deposit, 'transferDate': transferDate, 'confirmDate': confirmDate})
+
+            #         except Exception as ex:
+            #             print(ex)
+            #         finally:
+            #             self.driver.close()
+            #             self.driver.switch_to.window(self.vars["root"])
+            #             self.driver.switch_to.frame(0)
+
+            #         # 기본정보
+            #         itemNumber = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]")
+
+            #         itemType = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[3]")
+
+            #         initialPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[1]").text))
+
+            #         minPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[2]").text))
+
+            #         bidType = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[2]/td[3]")
+
+            #         saleDate = datetime.strptime(
+            #             self.driver.find_element(
+            #                 By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[3]/td").text
+            #             [0:16], formatYYYMMDDHHMM)
+
+            #         description = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[4]/td")
+
+            #         itemLocation = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[5]/td")
+
+            #         court = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[6]/td")
+
+            #         caseApplyDate = datetime.strptime(self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[1]")
+            #             .text, formatYYYMMDD)
+
+            #         auctionApplyDate = datetime.strptime(self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[2]")
+            #             .text, formatYYYMMDD)
+
+            #         allocationApplyDate = datetime.strptime(self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[1]")
+            #             .text, formatYYYMMDD)
+
+            #         requestPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[2]").text))
+
+            #         # 목록내역
+            #         detailOfList = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[6]/table/tbody/tr/td[3]")
+
+            #         areaOfBuilding = 0
+            #         areaOfGround = 0
+            #         share = False
+            #         for line in detailOfList.text.split("\n"):
+            #             # 건물 면적
+            #             if areaOfBuilding == 0 and "면          적" in line and "㎡" in line:
+            #                 areaOfBuilding = float(line.rsplit(
+            #                     ' ', 1)[-1].strip().replace("㎡", ""))
+            #                 print('areaOfBuilding : ', areaOfBuilding)
+            #             elif areaOfBuilding == 0 and "구          조" in line and "㎡" in line:
+            #                 areaOfBuilding = float(line.rsplit(
+            #                     ' ', 1)[-1].strip().replace("㎡", ""))
+            #                 print('areaOfBuilding : ', areaOfBuilding)
+
+            #             # 토지 면적
+            #             if "대지권의 비율" in line:
+            #                 print(line)
+            #             if "지분" in line:
+            #                 share = True
+            #                 total = float(
+            #                     line.rsplit()[-3].strip().replace("분의", ""))
+            #                 portion = float(line.rsplit()[-2].strip())
+            #                 areaOfBuilding = areaOfBuilding * portion / total
+
+            #         # 감정평가요약
+            #         appraisal = ""
+
+            #         try:
+            #             ulOfAppraisal = self.driver.find_element(
+            #                 By.XPATH, "//*[@id='contents']/div[7]/table/tbody/tr/td/ul")
+
+            #             all_li = ulOfAppraisal.find_elements(By.TAG_NAME, "li")
+
+            #             for li in all_li:
+            #                 if li.text not in appraisal:
+            #                     appraisal += li.text + "\n"
+
+            #         except:
+            #             appraisal = "2008년 8월 18일 이전에 감정평가 완료된 물건에 대해서는 본 정보를 제공하지 않습니다.\n감정평가서를 참조하시기 바랍니다."
+
+            #         # 기일내역
+            #         arrayResultAuction = []
+            #         numOfPass = 0
+            #         DetailOfSaleDate = self.driver.find_element(
+            #             By.XPATH, "//*[@id='contents']/div[5]/table")
+
+            #         tbody = DetailOfSaleDate.find_element(By.TAG_NAME, "tbody")
+            #         for tr in tbody.find_elements(By.TAG_NAME, "tr"):
+            #             tds = tr.find_elements(By.TAG_NAME, "td")
+
+            #             saleDate = datetime.strptime(
+            #                 tds[0].get_attribute("innerText").strip(), formatYYYMMDD_HHMM)
+
+            #             saleType = tds[1].get_attribute("innerText")
+            #             saleLocation = tds[2].get_attribute("innerText")
+            #             salePrice = tds[3].get_attribute("innerText")
+            #             saleResult = tds[4].get_attribute("innerText")
+            #             if "유찰 " in saleResult:
+            #                 numOfPass += 1
+            #             arrayResultAuction.append(
+            #                 {"date": saleDate, "type": saleType, 'location': saleLocation, 'minSalePrice': salePrice, 'result': saleResult})
+
+            #         itemId = await self.insertItem(caseNumber.text,
+            #                                        item[:-1],
+            #                                        itemNumber.text,
+            #                                        itemType.text,
+            #                                        initialPrice,
+            #                                        minPrice,
+            #                                        bidType.text,
+            #                                        saleDate,
+            #                                        description.text,
+            #                                        itemLocation.text,
+            #                                        court.text,
+            #                                        caseApplyDate,
+            #                                        auctionApplyDate,
+            #                                        allocationApplyDate,
+            #                                        requestPrice,
+            #                                        detailOfList.text,
+            #                                        appraisal,
+            #                                        areaOfBuilding,
+            #                                        areaOfGround,
+            #                                        numOfPass,
+            #                                        share)
+
+            #         for result in arrayResultAuction:
+            #             result['itemId'] = itemId
+
+            #         await self.insertResultAuction(arrayResultAuction)
+
+            #         # 사진
+            #         self.vars["window_handles"] = self.driver.window_handles
+            #         self.driver.find_element(
+            #             By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
+            #         self.vars["win1583"] = self.wait_for_window(2000)
+            #         self.vars["root"] = self.driver.current_window_handle
+            #         self.driver.switch_to.window(self.vars["win1583"])
+
+            #         nameOfImage = self.driver.find_element(
+            #             By.XPATH, "//*[@id = 'pop_contents_1']/form/div[1]/table/tbody/tr[1]/td[2]").text
+            #         numOfImg = int(self.driver.find_element(
+            #             By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
+
+            #         imageObjects = []
+            #         imagePageIndex = 1
+            #         for i in range(numOfImg-1):
+            #             # something
+            #             # Download image file
+            #             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
+            #                 # identify image to be captured
+            #                 img = self.driver.find_element(
+            #                     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+
+            #                 # write file
+            #                 with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+            #                     while True:
+            #                         try:
+            #                             response = requests.get(
+            #                                 img.get_attribute('src'), stream=True)
+            #                             if response.status_code == 200:
+            #                                 break
+            #                         except Exception as e:
+            #                             print("Error Write file ", e)
+            #                             time.sleep(3)
+
+            #                     if not response.ok:
+            #                         print(response)
+
+            #                     for block in response.iter_content(1024):
+            #                         if not block:
+            #                             break
+            #                         handle.write(block)
+
+            #                 time.sleep(1)
+
+            #                 uploadURL = None
+
+            #                 while True:
+            #                     header = {
+            #                         'Authorization': os.environ.get('APP_KEY'),
+            #                         'Content-Type':  'application/json'
+            #                     }
+            #                     responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
+            #                         os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
+
+            #                     if responseGetUploadUrl is not None:
+            #                         responseGetUploadUrl = responseGetUploadUrl.json()
+            #                         if responseGetUploadUrl['success'] == True:
+            #                             uploadURL = responseGetUploadUrl['result']['uploadURL']
+            #                             print("Get uploadUrl : ", uploadURL)
+            #                             break
+            #                         else:
+            #                             time.sleep(1)
+            #                     else:
+            #                         time.sleep(1)
+
+            #                 files = {'file': open(
+            #                     'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
+
+            #                 while True:
+            #                     if uploadURL is not None:
+            #                         responseUpload = requests.post(
+            #                             uploadURL, files=files, data={})
+
+            #                         if responseUpload is not None:
+            #                             responseUpload = responseUpload.json()
+            #                             if responseUpload['success'] == True:
+            #                                 imageObjects.append(
+            #                                     {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
+            #                                 print("Done uploadUrl : ",
+            #                                       responseUpload['result']['id'])
+            #                                 break
+            #                             else:
+            #                                 time.sleep(1)
+            #                         else:
+            #                             continue
+
+            #             # nextpage
+            #             pagination = self.driver.find_element(
+            #                 By.CLASS_NAME, "page2")
+
+            #             time.sleep(1)
+
+            #             pages = pagination.find_elements(By.TAG_NAME, 'a')
+            #             for page in pages:
+            #                 if not page.text:
+            #                     if page.find_element(By.TAG_NAME,
+            #                                          ("img")).get_attribute("alt") == "다음":
+            #                         imagePageIndex = imagePageIndex + 1
+            #                         page.click()
+            #                         break
+            #                 else:
+            #                     if int(page.text) == imagePageIndex+1:
+            #                         imagePageIndex = imagePageIndex + 1
+            #                         page.click()
+            #                         break
+
+            #         await self.insertImage(imageObjects)
+
+            #         if len(leaseDetails) > 0:
+            #             for leaseDetailItem in leaseDetails:
+            #                 leaseDetailItem['itemId'] = itemId
+            #             await self.insertLeaseDetail(leaseDetails)
+
+            #         if len(leasePeoples) > 0:
+            #             for leasePeopleItem in leasePeoples:
+            #                 leasePeopleItem['itemId'] = itemId
+            #             await self.insertLeasePeople(leasePeoples)
+
+            #         time.sleep(1)
+            #         folder = 'images/'
+            #         for filename in os.listdir(folder):
+            #             file_path = os.path.join(folder, filename)
+            #             try:
+            #                 if os.path.isfile(file_path) or os.path.islink(file_path):
+            #                     os.unlink(file_path)
+            #                 elif os.path.isdir(file_path):
+            #                     shutil.rmtree(file_path)
+            #             except Exception as e:
+            #                 print('Failed to delete %s. Reason: %s' %
+            #                       (file_path, e))
+
+            #         self.driver.close()
+            #         self.driver.switch_to.window(self.vars["root"])
+            #         self.driver.switch_to.frame(0)
+
+            #         # 이전으로 돌아가기
+            #         self.driver.find_element(
+            #             By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
+
+            #     except Exception as ex:
+            #         print("Error item ", item)
+            #         print("Error message : ", ex)
+            #         self.driver.find_element(
+            #             By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
 
             # Page 리스트 가져오기
             pagination = self.driver.find_element(By.CLASS_NAME, "page2")
