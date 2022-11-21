@@ -495,6 +495,7 @@ class GetAuctionInfo():
 
                     imageObjects = []
                     imagePageIndex = 1
+
                     for i in range(numOfImg-1):
                         # something
                         # Download image file
@@ -507,8 +508,11 @@ class GetAuctionInfo():
                             with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                                 while True:
                                     try:
+                                        headers = {
+                                            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+
                                         response = requests.get(
-                                            img.get_attribute('src'), stream=True)
+                                            img.get_attribute('src'), stream=True, headers=headers)
                                         if response.status_code == 200:
                                             break
                                     except Exception as e:
