@@ -38,7 +38,7 @@ class GetAuctionInfo():
         # options = webdriver.ChromeOptions()
         options = webdriver.FirefoxOptions()
 
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
         options.add_argument("disable-infobars")  # disabling infobars
@@ -231,16 +231,17 @@ class GetAuctionInfo():
                     # itemList.append(inputValue[1]+inputValue[2])
 
                     # Duplicated check
-                    print(inputValue[1])
                     duplicated = await self.selectItemByCaseIndex(inputValue[1])
                     if duplicated == False:
                         print("PASS")
+                        break
 
                     # Insert
                     await self.insertItemInfo(inputValue[1], inputValue[0], 0)
                     print("value 0 : ", inputValue[0])
                     print("value 1 : ", inputValue[1])
                     print("value 2 : ", inputValue[2])
+                    time.sleep(1)
 
             # for item in itemList:
             #     try:
