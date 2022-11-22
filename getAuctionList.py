@@ -586,22 +586,29 @@ class GetAuctionInfo():
                                     'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
 
                                 while True:
-                                    if uploadURL is not None:
-                                        responseUpload = requests.post(
-                                            uploadURL, files=files, data={})
+                                    try:
+                                        print(uploadURL)
+                                        if uploadURL is not None:
+                                            responseUpload = requests.post(
+                                                uploadURL, files=files, data={})
 
-                                        if responseUpload is not None:
-                                            responseUpload = responseUpload.json()
-                                            if responseUpload['success'] == True:
-                                                imageObjects.append(
-                                                    {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
-                                                print("Done uploadUrl : ",
-                                                      responseUpload['result']['id'])
-                                                break
+                                            if responseUpload is not None:
+                                                responseUpload = responseUpload.json()
+                                                if responseUpload['success'] == True:
+                                                    imageObjects.append(
+                                                        {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
+                                                    print("Done uploadUrl : ",
+                                                          responseUpload['result']['id'])
+                                                    break
+                                                else:
+                                                    time.sleep(1)
                                             else:
-                                                time.sleep(1)
-                                        else:
-                                            continue
+                                                break
+                                    except Exception as uploadUrlError:
+                                        print("Error uploadUrl : ",
+                                              uploadUrlError)
+                                        time.sleep(1)
+                                        continue
 
                             # nextpage
                             pagination = self.driver.find_element(
