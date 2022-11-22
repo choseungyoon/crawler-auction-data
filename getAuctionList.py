@@ -36,7 +36,7 @@ class GetAuctionInfo():
     def setup_method(self, method):
         # 옵션 생성
         options = webdriver.ChromeOptions()
-        #options = webdriver.FirefoxOptions()
+        # options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -209,6 +209,14 @@ class GetAuctionInfo():
 
         return item.id
 
+    async def duplicatedCheck(self, caseNumber):
+        existed = await self.selectItem(caseNumber.text)
+        if existed > 0:
+            print("Pass ", caseNumber.text)
+            return False
+        else:
+            return True
+
     async def crawler_data(self):
         formatYYYMMDDHHMM = '%Y.%m.%d %H:%M'
         formatYYYMMDD = '%Y.%m.%d'
@@ -216,7 +224,7 @@ class GetAuctionInfo():
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "아파트").click()
+        self.driver.find_element(By.LINK_TEXT, "오피스텔").click()
 
         itemList = []
 
@@ -269,14 +277,15 @@ class GetAuctionInfo():
                     caseNumber = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
 
-                    existed = await self.selectItem(caseNumber.text)
-                    if existed > 0:
-                        print("Pass ", caseNumber.text)
+                    # Duplicated check
+                    duplicated = await self.duplicatedCheck(caseNumber)
+                    if duplicated == False:
                         self.driver.find_element(
                             By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
                         continue
-
+                    print("START ", caseNumber.text)
                     # 현황조사서
+                    print("현황조사서 시작")
                     try:
                         self.vars["window_handles"] = self.driver.window_handles
                         self.driver.find_element(
@@ -342,6 +351,9 @@ class GetAuctionInfo():
                         self.driver.switch_to.window(self.vars["root"])
                         self.driver.switch_to.frame(0)
 
+                    print("현황조사서 완료")
+
+                    print("기본조사 시작")
                     # 기본정보
                     itemNumber = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]")
@@ -372,21 +384,29 @@ class GetAuctionInfo():
                     court = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[6]/td")
 
+                    # 사건접수
                     caseApplyDate = datetime.strptime(self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[1]")
                         .text, formatYYYMMDD)
-
+                    # 경매개시
                     auctionApplyDate = datetime.strptime(self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[1]/td[2]")
                         .text, formatYYYMMDD)
 
-                    allocationApplyDate = datetime.strptime(self.driver.find_element(
+                    # 배당요구종기
+                    field = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[1]")
-                        .text, formatYYYMMDD)
-
+                    if not field.text:
+                        allocationApplyDate = None
+                    else:
+                        allocationApplyDate = datetime.strptime(self.driver.find_element(
+                            By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[1]")
+                            .text, formatYYYMMDD)
                     requestPrice = Decimal(sub(r'[^\d.]', '', self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[2]/tbody/tr[2]/td[2]").text))
+                    print("기본조사 완료")
 
+                    print("목록내역 시작")
                     # 목록내역
                     detailOfList = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[6]/table/tbody/tr/td[3]")
@@ -399,22 +419,24 @@ class GetAuctionInfo():
                         if areaOfBuilding == 0 and "면          적" in line and "㎡" in line:
                             areaOfBuilding = float(line.rsplit(
                                 ' ', 1)[-1].strip().replace("㎡", ""))
-                            print('areaOfBuilding : ', areaOfBuilding)
+                            #print('areaOfBuilding : ', areaOfBuilding)
                         elif areaOfBuilding == 0 and "구          조" in line and "㎡" in line:
                             areaOfBuilding = float(line.rsplit(
                                 ' ', 1)[-1].strip().replace("㎡", ""))
-                            print('areaOfBuilding : ', areaOfBuilding)
+                            #print('areaOfBuilding : ', areaOfBuilding)
 
                         # 토지 면적
                         if "대지권의 비율" in line:
-                            print(line)
+                            print("대지권 :", line)
                         if "지분" in line:
                             share = True
                             total = float(
                                 line.rsplit()[-3].strip().replace("분의", ""))
                             portion = float(line.rsplit()[-2].strip())
                             areaOfBuilding = areaOfBuilding * portion / total
+                    print("목록내역 완료")
 
+                    print("감정평가 시작")
                     # 감정평가요약
                     appraisal = ""
 
@@ -430,7 +452,8 @@ class GetAuctionInfo():
 
                     except:
                         appraisal = "2008년 8월 18일 이전에 감정평가 완료된 물건에 대해서는 본 정보를 제공하지 않습니다.\n감정평가서를 참조하시기 바랍니다."
-
+                    print("감정평가 완료")
+                    print("기일내역 시작")
                     # 기일내역
                     arrayResultAuction = []
                     numOfPass = 0
@@ -452,6 +475,7 @@ class GetAuctionInfo():
                             numOfPass += 1
                         arrayResultAuction.append(
                             {"date": saleDate, "type": saleType, 'location': saleLocation, 'minSalePrice': salePrice, 'result': saleResult})
+                    print("기일내역 완료")
 
                     itemId = await self.insertItem(caseNumber.text,
                                                    item[:-1],
@@ -474,135 +498,148 @@ class GetAuctionInfo():
                                                    areaOfGround,
                                                    numOfPass,
                                                    share)
-
+                    print("Complated insert: ", caseNumber.text)
                     for result in arrayResultAuction:
                         result['itemId'] = itemId
 
                     await self.insertResultAuction(arrayResultAuction)
+                    print("Complated insert 기일내역")
 
                     # 사진
-                    self.vars["window_handles"] = self.driver.window_handles
-                    self.driver.find_element(
-                        By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
-                    self.vars["win1583"] = self.wait_for_window(2000)
-                    self.vars["root"] = self.driver.current_window_handle
-                    self.driver.switch_to.window(self.vars["win1583"])
 
-                    nameOfImage = self.driver.find_element(
-                        By.XPATH, "//*[@id = 'pop_contents_1']/form/div[1]/table/tbody/tr[1]/td[2]").text
-                    numOfImg = int(self.driver.find_element(
-                        By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
+                    # 사진 존재하는지 확인
+                    checkImage = self.driver.find_element(
+                        By.XPATH, "//*[@id='contents']/div[4]/div[2]/table/tbody/tr/td")
+                    if checkImage.text == "감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.":
+                        print("감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.")
+                    else:
+                        self.vars["window_handles"] = self.driver.window_handles
+                        self.driver.find_element(
+                            By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
+                        self.vars["win1583"] = self.wait_for_window(2000)
+                        self.vars["root"] = self.driver.current_window_handle
+                        self.driver.switch_to.window(self.vars["win1583"])
 
-                    imageObjects = []
-                    imagePageIndex = 1
+                        nameOfImage = self.driver.find_element(
+                            By.XPATH, "//*[@id = 'pop_contents_1']/form/div[1]/table/tbody/tr[1]/td[2]").text
+                        numOfImg = int(self.driver.find_element(
+                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
 
-                    for i in range(numOfImg-1):
-                        # something
-                        # Download image file
-                        with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
-                            # identify image to be captured
-                            img = self.driver.find_element(
-                                By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                        imageObjects = []
+                        imagePageIndex = 1
 
-                            # write file
-                            with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                while True:
-                                    try:
-                                        headers = {
-                                            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+                        for i in range(numOfImg-1):
+                            # something
+                            # Download image file
+                            with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
+                                # identify image to be captured
+                                img = self.driver.find_element(
+                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
 
-                                        response = requests.get(
-                                            img.get_attribute('src'), stream=True, headers=headers)
-                                        if response.status_code == 200:
+                                # write file
+                                with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+                                    while True:
+                                        try:
+                                            headers = {
+                                                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+
+                                            response = requests.get(
+                                                img.get_attribute('src'), stream=True, headers=headers)
+                                            if response.status_code == 200:
+                                                break
+                                        except Exception as e:
+                                            print("Error Write file ", e)
+                                            time.sleep(3)
+
+                                    if not response.ok:
+                                        print(response)
+
+                                    for block in response.iter_content(1024):
+                                        if not block:
                                             break
-                                    except Exception as e:
-                                        print("Error Write file ", e)
-                                        time.sleep(3)
+                                        handle.write(block)
 
-                                if not response.ok:
-                                    print(response)
+                                time.sleep(1)
 
-                                for block in response.iter_content(1024):
-                                    if not block:
-                                        break
-                                    handle.write(block)
+                                uploadURL = None
 
-                            time.sleep(1)
+                                while True:
+                                    header = {
+                                        'Authorization': os.environ.get('APP_KEY'),
+                                        'Content-Type':  'application/json'
+                                    }
+                                    responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
+                                        os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
 
-                            uploadURL = None
-
-                            while True:
-                                header = {
-                                    'Authorization': os.environ.get('APP_KEY'),
-                                    'Content-Type':  'application/json'
-                                }
-                                responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
-                                    os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
-
-                                if responseGetUploadUrl is not None:
-                                    responseGetUploadUrl = responseGetUploadUrl.json()
-                                    if responseGetUploadUrl['success'] == True:
-                                        uploadURL = responseGetUploadUrl['result']['uploadURL']
-                                        print("Get uploadUrl : ", uploadURL)
-                                        break
-                                    else:
-                                        time.sleep(1)
-                                else:
-                                    time.sleep(1)
-
-                            files = {'file': open(
-                                'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-
-                            while True:
-                                if uploadURL is not None:
-                                    responseUpload = requests.post(
-                                        uploadURL, files=files, data={})
-
-                                    if responseUpload is not None:
-                                        responseUpload = responseUpload.json()
-                                        if responseUpload['success'] == True:
-                                            imageObjects.append(
-                                                {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
-                                            print("Done uploadUrl : ",
-                                                  responseUpload['result']['id'])
+                                    if responseGetUploadUrl is not None:
+                                        responseGetUploadUrl = responseGetUploadUrl.json()
+                                        if responseGetUploadUrl['success'] == True:
+                                            uploadURL = responseGetUploadUrl['result']['uploadURL']
+                                            print("Get uploadUrl : ", uploadURL)
                                             break
                                         else:
                                             time.sleep(1)
                                     else:
-                                        continue
+                                        time.sleep(1)
 
-                        # nextpage
-                        pagination = self.driver.find_element(
-                            By.CLASS_NAME, "page2")
+                                files = {'file': open(
+                                    'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
 
-                        time.sleep(1)
+                                while True:
+                                    if uploadURL is not None:
+                                        responseUpload = requests.post(
+                                            uploadURL, files=files, data={})
 
-                        pages = pagination.find_elements(By.TAG_NAME, 'a')
-                        for page in pages:
-                            if not page.text:
-                                if page.find_element(By.TAG_NAME,
-                                                     ("img")).get_attribute("alt") == "다음":
-                                    imagePageIndex = imagePageIndex + 1
-                                    page.click()
-                                    break
-                            else:
-                                if int(page.text) == imagePageIndex+1:
-                                    imagePageIndex = imagePageIndex + 1
-                                    page.click()
-                                    break
+                                        if responseUpload is not None:
+                                            responseUpload = responseUpload.json()
+                                            if responseUpload['success'] == True:
+                                                imageObjects.append(
+                                                    {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
+                                                print("Done uploadUrl : ",
+                                                      responseUpload['result']['id'])
+                                                break
+                                            else:
+                                                time.sleep(1)
+                                        else:
+                                            continue
 
-                    await self.insertImage(imageObjects)
+                            # nextpage
+                            pagination = self.driver.find_element(
+                                By.CLASS_NAME, "page2")
+
+                            time.sleep(1)
+
+                            pages = pagination.find_elements(By.TAG_NAME, 'a')
+                            for page in pages:
+                                if not page.text:
+                                    if page.find_element(By.TAG_NAME,
+                                                         ("img")).get_attribute("alt") == "다음":
+                                        imagePageIndex = imagePageIndex + 1
+                                        page.click()
+                                        break
+                                else:
+                                    if int(page.text) == imagePageIndex+1:
+                                        imagePageIndex = imagePageIndex + 1
+                                        page.click()
+                                        break
+
+                        await self.insertImage(imageObjects)
+                        print("사진 업로드 완료")
+
+                        self.driver.close()
+                        self.driver.switch_to.window(self.vars["root"])
+                        self.driver.switch_to.frame(0)
 
                     if len(leaseDetails) > 0:
                         for leaseDetailItem in leaseDetails:
                             leaseDetailItem['itemId'] = itemId
                         await self.insertLeaseDetail(leaseDetails)
-
+                    print("임차내용 완료")
                     if len(leasePeoples) > 0:
                         for leasePeopleItem in leasePeoples:
                             leasePeopleItem['itemId'] = itemId
                         await self.insertLeasePeople(leasePeoples)
-
+                    print("임차인 완료")
                     time.sleep(1)
                     folder = 'images/'
                     for filename in os.listdir(folder):
@@ -615,10 +652,6 @@ class GetAuctionInfo():
                         except Exception as e:
                             print('Failed to delete %s. Reason: %s' %
                                   (file_path, e))
-
-                    self.driver.close()
-                    self.driver.switch_to.window(self.vars["root"])
-                    self.driver.switch_to.frame(0)
 
                     # 이전으로 돌아가기
                     self.driver.find_element(
