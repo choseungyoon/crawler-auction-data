@@ -35,8 +35,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        options = webdriver.ChromeOptions()
-        # options = webdriver.FirefoxOptions()
+        # options = webdriver.ChromeOptions()
+        options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -47,9 +47,8 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver', options=options)
-        # self.driver = webdriver.Firefox(
-        #    executable_path='linux/geckodriver', options=options)
+        #self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -541,7 +540,7 @@ class GetAuctionInfo():
                                     while True:
                                         try:
                                             headers = {
-                                                "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"}
+                                                "user-agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0"}
 
                                             response = requests.get(
                                                 img.get_attribute('src'), stream=True, headers=headers)
