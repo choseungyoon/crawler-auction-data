@@ -47,7 +47,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
         #self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
@@ -223,7 +223,7 @@ class GetAuctionInfo():
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "오피스텔").click()
+        self.driver.find_element(By.LINK_TEXT, "아파트").click()
 
         itemList = []
 
@@ -532,6 +532,7 @@ class GetAuctionInfo():
                             # Download image file
                             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                                 # identify image to be captured
+                                time.sleep(3)
                                 img = self.driver.find_element(
                                     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
 
@@ -558,14 +559,13 @@ class GetAuctionInfo():
                                             break
                                         handle.write(block)
 
-                                time.sleep(1)
-
                                 uploadURL = None
 
                                 while True:
                                     header = {
                                         'Authorization': os.environ.get('APP_KEY'),
-                                        'Content-Type':  'application/json'
+                                        'Content-Type':  'application/json',
+                                        "user-agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0"
                                     }
                                     responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
                                         os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
