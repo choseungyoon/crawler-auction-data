@@ -538,7 +538,7 @@ class GetAuctionInfo():
                                         img = self.driver.find_element(
                                             By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
                                         break
-                                     except Exception as imageClickException:
+                                    except Exception as imageClickException:
                                         print("imageClickException : " , imageClickException)
                                         time.sleep(3)
                                         
