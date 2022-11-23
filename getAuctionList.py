@@ -586,13 +586,12 @@ class GetAuctionInfo():
 
                                 while True:
                                     try:
-                                        print(uploadURL)
                                         if uploadURL is not None:
                                             responseUpload = requests.post(
                                                 uploadURL, files=files, data={})
-
                                             if responseUpload is not None:
                                                 responseUpload = responseUpload.json()
+                                                print(responseUpload)
                                                 if responseUpload['success'] == True:
                                                     imageObjects.append(
                                                         {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
