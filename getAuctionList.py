@@ -47,7 +47,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
+        self.driver = webdriver.Chrome('chromedriver', options=options)
         #self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
@@ -223,7 +223,7 @@ class GetAuctionInfo():
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "아파트").click()
+        self.driver.find_element(By.LINK_TEXT, "오피스텔").click()
 
         itemList = []
 
