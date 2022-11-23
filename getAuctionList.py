@@ -223,7 +223,7 @@ class GetAuctionInfo():
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "오피스텔").click()
+        self.driver.find_element(By.LINK_TEXT, "아파트").click()
 
         itemList = []
 
@@ -540,8 +540,12 @@ class GetAuctionInfo():
                                 with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                                     while True:
                                         try:
+
                                             headers = {
-                                                "user-agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0"}
+                                                # Github runner
+                                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.5288.0 Safari/537.36"
+                                                # Local
+                                            }
 
                                             response = requests.get(
                                                 img.get_attribute('src'), stream=True, headers=headers)
@@ -565,7 +569,10 @@ class GetAuctionInfo():
                                     header = {
                                         'Authorization': os.environ.get('APP_KEY'),
                                         'Content-Type':  'application/json',
-                                        "user-agent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:107.0) Gecko/20100101 Firefox/107.0"
+                                        # Github runner
+                                        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.5288.0 Safari/537.36"
+                                        # Local
+                                        #
                                     }
                                     responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
                                         os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
