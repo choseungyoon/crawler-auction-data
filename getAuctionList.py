@@ -36,7 +36,7 @@ class GetAuctionInfo():
     def setup_method(self, method):
         # 옵션 생성
         options = webdriver.ChromeOptions()
-        #options = webdriver.FirefoxOptions()
+        # options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -48,7 +48,7 @@ class GetAuctionInfo():
         options.add_argument("--disable-dev-shm-usage")
 
         self.driver = webdriver.Chrome('chromedriver', options=options)
-        #self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
+        # self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -80,7 +80,7 @@ class GetAuctionInfo():
                     return response.json()['result']
 
         except Exception as ex:
-            print(ex)
+            print("Req exception : ", ex)
             return -1
 
     async def insertImage(self, imageObjects):
@@ -135,21 +135,20 @@ class GetAuctionInfo():
 
         return len(items)
 
-    async def selectItemByCaseIndex(self, caseIndex):
+    async def selectItemByCaseIndex(self, caseIndex, itemNumber):
         db = Prisma()
         await db.connect()
         items = await db.item.find_first(
             where={
                 'caseIndex': caseIndex,
+                'itemNumber': itemNumber
             }
         )
         await db.disconnect()
 
         if items is None:
-            print(caseIndex, " not existed")
             return True
         else:
-            print(caseIndex, " existed")
             return False
 
     async def insertItemInfo(self, caseIndex, court, status):
@@ -208,13 +207,76 @@ class GetAuctionInfo():
 
         return item.id
 
-    async def duplicatedCheck(self, caseNumber):
-        existed = await self.selectItem(caseNumber.text)
-        if existed > 0:
-            print("Pass ", caseNumber.text)
-            return False
-        else:
-            return True
+    # 이미지 업로드
+    def cloudFlareUpload(self, imgFileName, imageObjects, itemId):
+
+        while True:
+            print("cloudFlareUpload : ", imgFileName)
+            try:
+                uploadURL = None
+                done = False
+                while True:
+                    try:
+                        header = {
+                            'Authorization': os.environ.get('APP_KEY'),
+                            'Content-Type':  'application/json',
+                            # Github runner
+                            # "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.5288.0 Safari/537.36"
+                            # Local
+                            "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+
+                        }
+                        responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
+                            os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
+
+                        if responseGetUploadUrl is not None:
+                            responseGetUploadUrl = responseGetUploadUrl.json()
+                            if responseGetUploadUrl['success'] == True:
+                                uploadURL = responseGetUploadUrl['result']['uploadURL']
+                                print(
+                                    "Get uploadUrl : ", uploadURL)
+                                break
+                            else:
+                                time.sleep(1)
+                        else:
+                            time.sleep(1)
+                    except Exception as uploadUrlException:
+                        print("uploadUrlException : ",
+                              uploadUrlException)
+
+                while True:
+                    try:
+                        files = {'file': open(imgFileName, 'rb')}
+                        if uploadURL is not None:
+                            responseUpload = requests.post(
+                                uploadURL, files=files, data={})
+                            if responseUpload is not None:
+                                responseUpload = responseUpload.json()
+                                if responseUpload['success'] == True:
+                                    imageObjects.append(
+                                        {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
+                                    done = True
+                                    print("Completed upload : ",
+                                          imgFileName)
+                                    break
+                                else:
+                                    print(responseUpload)
+                                    break
+                            else:
+                                break
+                        else:
+                            break
+                    except Exception as uploadUrlError:
+                        print("Error uploadUrl : ",
+                              uploadUrlError)
+                        time.sleep(1)
+                        continue
+                if done == True:
+                    break
+
+            except Exception as CloudFlareError:
+                print("CloudFlareError : ", CloudFlareError)
+                continue
 
     async def crawler_data(self):
         formatYYYMMDDHHMM = '%Y.%m.%d %H:%M'
@@ -237,24 +299,20 @@ class GetAuctionInfo():
             table = self.driver.find_elements(
                 By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
 
+            print(len(table))
             for line in table:
                 chks = line.find_elements(By.NAME, "chk")
+
                 for chk in chks:
                     inputValue = chk.get_attribute("value").split(',')
-                    itemList.append(inputValue[1]+inputValue[2])
 
                     # Duplicated check
-                    # duplicated = await self.selectItemByCaseIndex(inputValue[1])
-                    # if duplicated == False:
-                    #     print("PASS")
-                    #     break
-
-                    # # Insert
-                    # await self.insertItemInfo(inputValue[1], inputValue[0], 0)
-                    # print("value 0 : ", inputValue[0])
-                    # print("value 1 : ", inputValue[1])
-                    # print("value 2 : ", inputValue[2])
-                    # time.sleep(1)
+                    duplicated = await self.selectItemByCaseIndex(inputValue[1], inputValue[2])
+                    if duplicated == False:
+                        print("PASS : ", inputValue[1], " ", inputValue[2])
+                    else:
+                        print("ADD : ", inputValue[1], " ", inputValue[2])
+                        itemList.append(inputValue[1]+inputValue[2])
 
             for item in itemList:
                 try:
@@ -263,26 +321,18 @@ class GetAuctionInfo():
                         # 첫번째 매물
                         self.driver.find_element(
                             By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
-
                     else:
                         # 그외 매물
                         self.driver.find_element(By.NAME, item).click()
 
                     # 데이터 크롤링
-
-                    leaseDetails = []
-                    leasePeoples = []
-
                     caseNumber = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
 
-                    # Duplicated check
-                    duplicated = await self.duplicatedCheck(caseNumber)
-                    if duplicated == False:
-                        self.driver.find_element(
-                            By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
-                        continue
                     print("START ", caseNumber.text)
+
+                    leaseDetails = []
+                    leasePeoples = []
                     # 현황조사서
                     print("현황조사서 시작")
                     try:
@@ -418,11 +468,11 @@ class GetAuctionInfo():
                         if areaOfBuilding == 0 and "면          적" in line and "㎡" in line:
                             areaOfBuilding = float(line.rsplit(
                                 ' ', 1)[-1].strip().replace("㎡", ""))
-                            #print('areaOfBuilding : ', areaOfBuilding)
+                            # print('areaOfBuilding : ', areaOfBuilding)
                         elif areaOfBuilding == 0 and "구          조" in line and "㎡" in line:
                             areaOfBuilding = float(line.rsplit(
                                 ' ', 1)[-1].strip().replace("㎡", ""))
-                            #print('areaOfBuilding : ', areaOfBuilding)
+                            # print('areaOfBuilding : ', areaOfBuilding)
 
                         # 토지 면적
                         if "대지권의 비율" in line:
@@ -532,10 +582,15 @@ class GetAuctionInfo():
                             # Download image file
                             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                                 # identify image to be captured
-                                time.sleep(3)
-                                img = self.driver.find_element(
-                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-
+                                while True:
+                                    try:
+                                        img = self.driver.find_element(
+                                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                                        break
+                                    except Exception as imageClickException:
+                                        print("imageClickException : ",
+                                              imageClickException)
+                                        time.sleep(3)
                                 # write file
                                 with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                                     while True:
@@ -543,8 +598,9 @@ class GetAuctionInfo():
 
                                             headers = {
                                                 # Github runner
-                                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.5288.0 Safari/537.36"
+                                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
                                                 # Local
+                                                # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
                                             }
 
                                             response = requests.get(
@@ -565,55 +621,9 @@ class GetAuctionInfo():
 
                                 uploadURL = None
 
-                                while True:
-                                    header = {
-                                        'Authorization': os.environ.get('APP_KEY'),
-                                        'Content-Type':  'application/json',
-                                        # Github runner
-                                        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.5288.0 Safari/537.36"
-                                        # Local
-                                        #
-                                    }
-                                    responseGetUploadUrl = requests.post(self.API_HOST + '/client/v4/accounts/{}/images/v1/direct_upload'.format(
-                                        os.environ.get('CF_ACCOUNT_ID')), headers=header, data={})
-
-                                    if responseGetUploadUrl is not None:
-                                        responseGetUploadUrl = responseGetUploadUrl.json()
-                                        if responseGetUploadUrl['success'] == True:
-                                            uploadURL = responseGetUploadUrl['result']['uploadURL']
-                                            print("Get uploadUrl : ", uploadURL)
-                                            break
-                                        else:
-                                            time.sleep(1)
-                                    else:
-                                        time.sleep(1)
-
-                                files = {'file': open(
-                                    'images/' + nameOfImage + "_" + str(i) + ".png", 'rb')}
-
-                                while True:
-                                    try:
-                                        if uploadURL is not None:
-                                            responseUpload = requests.post(
-                                                uploadURL, files=files, data={})
-                                            if responseUpload is not None:
-                                                responseUpload = responseUpload.json()
-                                                print(responseUpload)
-                                                if responseUpload['success'] == True:
-                                                    imageObjects.append(
-                                                        {"itemId": itemId, "cloudflareImgId": responseUpload['result']['id']})
-                                                    print("Done uploadUrl : ",
-                                                          responseUpload['result']['id'])
-                                                    break
-                                                else:
-                                                    time.sleep(1)
-                                            else:
-                                                break
-                                    except Exception as uploadUrlError:
-                                        print("Error uploadUrl : ",
-                                              uploadUrlError)
-                                        time.sleep(1)
-                                        continue
+                                # Upload image to cloudFlare and get guid
+                                self.cloudFlareUpload(
+                                    'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, itemId)
 
                             # nextpage
                             pagination = self.driver.find_element(
@@ -676,6 +686,7 @@ class GetAuctionInfo():
                         By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
 
             # Page 리스트 가져오기
+            print("GO TO NEXT PAGE")
             pagination = self.driver.find_element(By.CLASS_NAME, "page2")
             pages = pagination.find_elements(By.TAG_NAME, 'a')
             for page in pages:
