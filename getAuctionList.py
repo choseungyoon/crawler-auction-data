@@ -580,17 +580,13 @@ class GetAuctionInfo():
                         for i in range(numOfImg-1):
                             # something
                             # Download image file
+
                             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                                 # identify image to be captured
-                                while True:
-                                    try:
-                                        img = self.driver.find_element(
-                                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-                                        break
-                                    except Exception as imageClickException:
-                                        print("imageClickException : ",
-                                              imageClickException)
-                                        time.sleep(3)
+                                time.sleep(3)
+                                img = self.driver.find_element(
+                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+
                                 # write file
                                 with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                                     while True:
