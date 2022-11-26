@@ -285,7 +285,7 @@ class GetAuctionInfo():
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "아파트").click()
+        self.driver.find_element(By.LINK_TEXT, "근린생활시설").click()
 
         itemList = []
 
