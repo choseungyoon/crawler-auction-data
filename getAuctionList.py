@@ -47,7 +47,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
         # self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
@@ -138,7 +138,7 @@ class GetAuctionInfo():
     async def selectItemByCaseIndex(self, caseIndex, itemNumber):
         db = Prisma()
         await db.connect()
-        items = await db.item.find_first(
+        items = await db.item.count(
             where={
                 'caseIndex': caseIndex,
                 'itemNumber': itemNumber
@@ -146,7 +146,7 @@ class GetAuctionInfo():
         )
         await db.disconnect()
 
-        if items is None:
+        if items == 0:
             return True
         else:
             return False
@@ -285,7 +285,7 @@ class GetAuctionInfo():
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "아파트").click()
+        self.driver.find_element(By.LINK_TEXT, "근린생활시설").click()
 
         itemList = []
 
@@ -299,7 +299,6 @@ class GetAuctionInfo():
             table = self.driver.find_elements(
                 By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
 
-            print(len(table))
             for line in table:
                 chks = line.find_elements(By.NAME, "chk")
 
@@ -312,25 +311,30 @@ class GetAuctionInfo():
                         print("PASS : ", inputValue[1], " ", inputValue[2])
                     else:
                         print("ADD : ", inputValue[1], " ", inputValue[2])
-                        itemList.append(inputValue[1]+inputValue[2])
+                        itemList.append((inputValue[1], inputValue[2]))
 
             for item in itemList:
+                print(item)
                 try:
                     # 매물 클릭
-                    if (item == itemList[0]):
-                        # 첫번째 매물
-                        self.driver.find_element(
-                            By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
-                    else:
-                        # 그외 매물
-                        self.driver.find_element(By.NAME, item).click()
+                    self.driver.find_element(
+                        By.NAME, item[0] + item[1]).click()
+
+                    # if (item == itemList[0]):
+                    #     # 첫번째 매물
+                    #     self.driver.find_element(
+                    #         By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+                    # else:
+                    #     # 그외 매물
+                    #     self.driver.find_element(
+                    #         By.NAME, item[0] + item[1]).click()
 
                     # 데이터 크롤링
                     caseNumber = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]")
 
                     print("START ", caseNumber.text)
-
+                    print("Item : ", item[0], " number :", item[1])
                     leaseDetails = []
                     leasePeoples = []
                     # 현황조사서
@@ -360,8 +364,6 @@ class GetAuctionInfo():
 
                             tds = tr.find_elements(By.TAG_NAME, "td")
                             numOfPeople += int(tds[2].get_attribute("innerText")[:-1])
-                            print("numOflease :", numOflease)
-                            print("numofPeople :", numOfPeople)
 
                         for i in range(numOflease):
                             leaseDetail = self.driver.find_element(
@@ -527,7 +529,7 @@ class GetAuctionInfo():
                     print("기일내역 완료")
 
                     itemId = await self.insertItem(caseNumber.text,
-                                                   item[:-1],
+                                                   item[0],
                                                    itemNumber.text,
                                                    itemType.text,
                                                    initialPrice,
