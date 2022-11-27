@@ -47,7 +47,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
+        self.driver = webdriver.Chrome('chromedriver', options=options)
         # self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
@@ -294,7 +294,8 @@ class GetAuctionInfo():
         while True:
             itemList.clear()
             finished = False
-
+            isFirst = True
+            firstItem = None
             # Table에서 Name 리스트 가져오기
             table = self.driver.find_elements(
                 By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
@@ -304,6 +305,9 @@ class GetAuctionInfo():
 
                 for chk in chks:
                     inputValue = chk.get_attribute("value").split(',')
+                    if isFirst == True:
+                        firstItem = (inputValue[1], inputValue[2])
+                        isFirst = False
 
                     # Duplicated check
                     duplicated = await self.selectItemByCaseIndex(inputValue[1], inputValue[2])
@@ -317,17 +321,14 @@ class GetAuctionInfo():
                 print(item)
                 try:
                     # 매물 클릭
-                    self.driver.find_element(
-                        By.NAME, item[0] + item[1]).click()
-
-                    # if (item == itemList[0]):
-                    #     # 첫번째 매물
-                    #     self.driver.find_element(
-                    #         By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
-                    # else:
-                    #     # 그외 매물
-                    #     self.driver.find_element(
-                    #         By.NAME, item[0] + item[1]).click()
+                    if (item == firstItem):
+                        # 첫번째 매물
+                        self.driver.find_element(
+                            By.CSS_SELECTOR, ".Ltbl_list_lvl0:nth-child(1) > .txtleft a:nth-child(1)").click()
+                    else:
+                        # 그외 매물
+                        self.driver.find_element(
+                            By.NAME, item[0] + item[1]).click()
 
                     # 데이터 크롤링
                     caseNumber = self.driver.find_element(
