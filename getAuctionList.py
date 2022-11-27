@@ -329,6 +329,7 @@ class GetAuctionInfo():
                         # 그외 매물
                         self.driver.find_element(
                             By.NAME, item[0] + item[1]).click()
+                    time.sleep(2)
 
                     # 데이터 크롤링
                     caseNumber = self.driver.find_element(
@@ -364,7 +365,8 @@ class GetAuctionInfo():
                             numOflease += 1
 
                             tds = tr.find_elements(By.TAG_NAME, "td")
-                            numOfPeople += int(tds[2].get_attribute("innerText")[:-1])
+                            numOfPeople += int(
+                                tds[2].get_attribute("innerText")[:-1])
 
                         for i in range(numOflease):
                             leaseDetail = self.driver.find_element(
@@ -469,23 +471,46 @@ class GetAuctionInfo():
                     for line in detailOfList.text.split("\n"):
                         # 건물 면적
                         if areaOfBuilding == 0 and "면          적" in line and "㎡" in line:
+                            print("면적 : ", line.rsplit(
+                                ' ', 1)[-1].strip().replace("㎡", ""))
                             areaOfBuilding = float(line.rsplit(
                                 ' ', 1)[-1].strip().replace("㎡", ""))
-                            # print('areaOfBuilding : ', areaOfBuilding)
+
                         elif areaOfBuilding == 0 and "구          조" in line and "㎡" in line:
+                            print("구조 : ", line.rsplit(
+                                ' ', 1)[-1].strip().replace("㎡", ""))
                             areaOfBuilding = float(line.rsplit(
                                 ' ', 1)[-1].strip().replace("㎡", ""))
-                            # print('areaOfBuilding : ', areaOfBuilding)
 
                         # 토지 면적
-                        if "대지권의 비율" in line:
-                            print("대지권 :", line)
+                        if line.startswith("대") and line.endswith("㎡"):
+                            areaOfGround = float(line.replace(
+                                "대", "").replace("㎡", "").strip())
+
                         if "지분" in line:
-                            share = True
-                            total = float(
-                                line.rsplit()[-3].strip().replace("분의", ""))
-                            portion = float(line.rsplit()[-2].strip())
-                            areaOfBuilding = areaOfBuilding * portion / total
+                            if "분의" in line:
+                                share = True
+                                modifyLine = line.replace(
+                                    "매각지분", "").replace(":", "").strip()
+
+                                print(modifyLine)
+                                sumAreaOfBuilding = 0
+                                sumAreaOfGround = 0
+                                for everyShare in modifyLine.split(","):
+                                    numerator = int(
+                                        everyShare.split("분의")[0].strip()[-1])
+                                    denominator = int(
+                                        everyShare.split("분의")[1].strip()[0])
+                                    print("지분 ", denominator,
+                                          "분의 ",  numerator)
+
+                                    sumAreaOfBuilding += areaOfBuilding * numerator / denominator
+                                    sumAreaOfGround += areaOfGround * numerator / denominator
+                                areaOfBuilding = sumAreaOfBuilding
+                                areaOfGround = sumAreaOfGround
+                            else:
+                                print("지분 : ", line)
+
                     print("목록내역 완료")
 
                     print("감정평가 시작")
@@ -496,7 +521,8 @@ class GetAuctionInfo():
                         ulOfAppraisal = self.driver.find_element(
                             By.XPATH, "//*[@id='contents']/div[7]/table/tbody/tr/td/ul")
 
-                        all_li = ulOfAppraisal.find_elements(By.TAG_NAME, "li")
+                        all_li = ulOfAppraisal.find_elements(
+                            By.TAG_NAME, "li")
 
                         for li in all_li:
                             if li.text not in appraisal:
@@ -512,7 +538,8 @@ class GetAuctionInfo():
                     DetailOfSaleDate = self.driver.find_element(
                         By.XPATH, "//*[@id='contents']/div[5]/table")
 
-                    tbody = DetailOfSaleDate.find_element(By.TAG_NAME, "tbody")
+                    tbody = DetailOfSaleDate.find_element(
+                        By.TAG_NAME, "tbody")
                     for tr in tbody.find_elements(By.TAG_NAME, "tr"):
                         tds = tr.find_elements(By.TAG_NAME, "td")
 
@@ -630,7 +657,8 @@ class GetAuctionInfo():
 
                             time.sleep(1)
 
-                            pages = pagination.find_elements(By.TAG_NAME, 'a')
+                            pages = pagination.find_elements(
+                                By.TAG_NAME, 'a')
                             for page in pages:
                                 if not page.text:
                                     if page.find_element(By.TAG_NAME,
@@ -686,23 +714,34 @@ class GetAuctionInfo():
 
             # Page 리스트 가져오기
             print("GO TO NEXT PAGE")
-            pagination = self.driver.find_element(By.CLASS_NAME, "page2")
-            pages = pagination.find_elements(By.TAG_NAME, 'a')
-            for page in pages:
-                if not page.text:
-                    if page.find_element(By.TAG_NAME,
-                                         ("img")).get_attribute("alt") == "다음":
-                        currentPageIndex = currentPageIndex + 1
-                        finished = True
-                        page.click()
-                        break
-                else:
-                    if int(page.text) == currentPageIndex+1:
-                        currentPageIndex = currentPageIndex + 1
-                        finished = True
-                        page.click()
-                        break
+            checkNextPage = False
+            while True:
+                try:
+                    pagination = self.driver.find_element(
+                        By.CLASS_NAME, "page2")
+                    pages = pagination.find_elements(By.TAG_NAME, 'a')
+                    for page in pages:
+                        if not page.text:
+                            if page.find_element(By.TAG_NAME,
+                                                 ("img")).get_attribute("alt") == "다음":
+                                currentPageIndex = currentPageIndex + 1
+                                finished = True
+                                checkNextPage = True
+                                page.click()
 
+                                break
+                        else:
+                            if int(page.text) == currentPageIndex+1:
+                                currentPageIndex = currentPageIndex + 1
+                                finished = True
+                                checkNextPage = True
+                                page.click()
+                                break
+                    if checkNextPage:
+                        break
+                except Exception as NextPageException:
+                    print("NextPageException :", NextPageException)
+            # END
             if finished == False:
                 break
 
