@@ -613,7 +613,7 @@ class GetAuctionInfo():
 
                             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                                 # identify image to be captured
-                                time.sleep(3)
+                                time.sleep(10)
                                 img = self.driver.find_element(
                                     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
 
