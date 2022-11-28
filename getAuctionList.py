@@ -38,7 +38,7 @@ class GetAuctionInfo():
         options = webdriver.ChromeOptions()
         # options = webdriver.FirefoxOptions()
 
-        #options.add_argument("--headless")
+        options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
         options.add_argument("disable-infobars")  # disabling infobars
@@ -47,7 +47,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Chrome('chromedriver')
         # self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
