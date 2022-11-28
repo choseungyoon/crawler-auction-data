@@ -35,8 +35,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        options = webdriver.ChromeOptions()
-        # options = webdriver.FirefoxOptions()
+        #options = webdriver.ChromeOptions()
+        options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -47,8 +47,9 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver')
-        # self.driver = webdriver.Firefox(executable_path='linux/geckodriver', options=options)
+        #self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Firefox(
+            executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -610,12 +611,23 @@ class GetAuctionInfo():
                         for i in range(numOfImg-1):
                             # something
                             # Download image file
-
+                            print('images/' + nameOfImage +
+                                  "_" + str(i) + ".png")
                             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                                 # identify image to be captured
-                                time.sleep(10)
-                                img = self.driver.find_element(
-                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                                time.sleep(5)
+                                img = None
+                                while True:
+                                    try:
+
+                                        isPresent = self.driver.find_element(
+                                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img").size() > 0
+                                        img = self.driver.find_element(
+                                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                                        break
+                                    except Exception as ImgNotFoundError:
+                                        print("ImgNotFoundError : ",
+                                              ImgNotFoundError)
 
                                 # write file
                                 with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
@@ -664,11 +676,13 @@ class GetAuctionInfo():
                                     if page.find_element(By.TAG_NAME,
                                                          ("img")).get_attribute("alt") == "다음":
                                         imagePageIndex = imagePageIndex + 1
+                                        print("GO TO PAGE : ", imagePageIndex)
                                         page.click()
                                         break
                                 else:
                                     if int(page.text) == imagePageIndex+1:
                                         imagePageIndex = imagePageIndex + 1
+                                        print("GO TO PAGE : ", imagePageIndex)
                                         page.click()
                                         break
 
