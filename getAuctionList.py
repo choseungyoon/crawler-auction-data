@@ -35,8 +35,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        #options = webdriver.ChromeOptions()
-        options = webdriver.FirefoxOptions()
+        options = webdriver.ChromeOptions()
+        #options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -47,9 +47,9 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        #self.driver = webdriver.Chrome('chromedriver', options=options)
-        self.driver = webdriver.Firefox(
-            executable_path='linux/geckodriver', options=options)
+        self.driver = webdriver.Chrome('chromedriver', options=options)
+        # self.driver = webdriver.Firefox(
+        #     executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -279,14 +279,14 @@ class GetAuctionInfo():
                 print("CloudFlareError : ", CloudFlareError)
                 continue
 
-    async def crawler_data(self):
+    async def crawler_data(self, itemInfo):
         formatYYYMMDDHHMM = '%Y.%m.%d %H:%M'
         formatYYYMMDD = '%Y.%m.%d'
         formatYYYMMDD_HHMM = '%Y.%m.%d (%H:%M)'
         self.driver.get("https://www.courtauction.go.kr/")
         self.driver.set_window_size(1391, 876)
         self.driver.switch_to.frame(0)
-        self.driver.find_element(By.LINK_TEXT, "근린생활시설").click()
+        self.driver.find_element(By.LINK_TEXT, itemInfo).click()
 
         itemList = []
 
@@ -615,19 +615,17 @@ class GetAuctionInfo():
                                   "_" + str(i) + ".png")
                             with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
                                 # identify image to be captured
-                                time.sleep(5)
+
                                 img = None
                                 while True:
                                     try:
-
-                                        isPresent = self.driver.find_element(
-                                            By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img").size() > 0
                                         img = self.driver.find_element(
                                             By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
                                         break
                                     except Exception as ImgNotFoundError:
                                         print("ImgNotFoundError : ",
                                               ImgNotFoundError)
+                                        time.sleep(2)
 
                                 # write file
                                 with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
@@ -763,8 +761,12 @@ class GetAuctionInfo():
 # load .env
 load_dotenv()
 
-crawler = GetAuctionInfo()
-crawler.setup_method("")
-loop = asyncio.get_event_loop()
-loop.run_until_complete(crawler.crawler_data())
-crawler.teardown_method("")
+itemType = ["아파트", "오피스텔", "근린생활시설", "대지",
+            "임야", "전", "다세대주택", "답", "단독주택", "공장", "도로"]
+
+for item in itemType:
+    crawler = GetAuctionInfo()
+    crawler.setup_method("")
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(crawler.crawler_data(item))
+    crawler.teardown_method("")
