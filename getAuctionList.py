@@ -38,7 +38,7 @@ class GetAuctionInfo():
         options = webdriver.ChromeOptions()
         #options = webdriver.FirefoxOptions()
 
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
         options.add_argument("disable-infobars")  # disabling infobars
@@ -47,7 +47,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('chromedriver', options=options)
+        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
         # self.driver = webdriver.Firefox(
         #     executable_path='linux/geckodriver', options=options)
 
@@ -330,7 +330,6 @@ class GetAuctionInfo():
                         # 그외 매물
                         self.driver.find_element(
                             By.NAME, item[0] + item[1]).click()
-                    time.sleep(2)
 
                     # 데이터 크롤링
                     caseNumber = self.driver.find_element(
@@ -665,8 +664,6 @@ class GetAuctionInfo():
                             pagination = self.driver.find_element(
                                 By.CLASS_NAME, "page2")
 
-                            time.sleep(1)
-
                             pages = pagination.find_elements(
                                 By.TAG_NAME, 'a')
                             for page in pages:
@@ -701,7 +698,7 @@ class GetAuctionInfo():
                             leasePeopleItem['itemId'] = itemId
                         await self.insertLeasePeople(leasePeoples)
                     print("임차인 완료")
-                    time.sleep(1)
+
                     folder = 'images/'
                     for filename in os.listdir(folder):
                         file_path = os.path.join(folder, filename)
@@ -761,8 +758,8 @@ class GetAuctionInfo():
 # load .env
 load_dotenv()
 
-itemType = ["아파트", "오피스텔", "근린생활시설", "대지",
-            "임야", "전", "다세대주택", "답", "단독주택", "공장", "도로"]
+itemType = ["아파트", "근린생활시설", "다세대주택", "오피스텔", "대지",
+            "임야", "전", "답", "단독주택", "공장", "도로"]
 
 for item in itemType:
     crawler = GetAuctionInfo()
