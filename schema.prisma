@@ -33,9 +33,9 @@ model Token {
 }
 
 model Item {
-  id                  Int             @id @default(autoincrement())
-  createdAt           DateTime        @default(now())
-  updatedAt           DateTime        @updatedAt
+  id                  Int              @id @default(autoincrement())
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
   caseNumber          String? //사건번호
   caseIndex           String? //사건고유번호
   itemNumber          String? //물건번호
@@ -44,36 +44,32 @@ model Item {
   minPrice            String?
   bidType             String?
   saleDate            DateTime?
-  description         String?         @db.MediumText
+  description         String?          @db.MediumText
   itemLocation        String?
   court               String?
   caseApplyDate       DateTime?
   auctionApplyDate    DateTime?
   allocationApplyDate DateTime?
   requestPrice        String?
-  detailOfList        String?         @db.MediumText
   areaOfBuilding      Float?
   areaOfGround        Float?
-  appraisal           String?         @db.MediumText
-  status              Int?            @default(0)
-  numOfPass           Int?            @default(0)
-  share               Boolean?        @default(false)
-  Image               Image[]
+  appraisal           String?          @db.MediumText
+  status              Int?             @default(0)
+  numOfPass           Int?             @default(0)
+  share               Boolean?         @default(false)
   resultAuction       resultAuction[]
   leaseDetail         leaseDetail[]
   leasePeople         leasePeople[]
   Fav                 Fav[]
+  realestateList      realestateList[]
 }
 
 model Image {
   id              Int      @id @default(autoincrement())
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
-  item            Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
-  itemId          Int
+  caseNumber      String
   cloudflareImgId String
-
-  @@index([itemId])
 }
 
 model resultAuction {
@@ -89,6 +85,17 @@ model resultAuction {
   itemId       Int
 
   @@index([itemId])
+}
+
+model realestateList {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  num       Int
+  type      String
+  detail    String?  @db.MediumText
+  item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
+  itemId    Int
 }
 
 model leaseDetail {
