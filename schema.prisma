@@ -36,32 +36,34 @@ model Item {
   id                  Int              @id @default(autoincrement())
   createdAt           DateTime         @default(now())
   updatedAt           DateTime         @updatedAt
-  caseNumber          String? //사건번호
-  caseIndex           String? //사건고유번호
-  itemNumber          String? //물건번호
-  itemType            String? //물건종류
-  initialPrice        String?
-  minPrice            String?
-  bidType             String?
-  saleDate            DateTime?
-  description         String?          @db.MediumText
-  itemLocation        String?
-  court               String?
-  caseApplyDate       DateTime?
-  auctionApplyDate    DateTime?
+  caseNumber          String
+  caseIndex           String
+  itemNumber          String
+  itemType            String
+  initialPrice        String
+  minPrice            String
+  bidType             String
+  saleDate            DateTime
+  description         String           @db.MediumText
+  itemLocation        String
+  court               String
+  caseApplyDate       DateTime
+  auctionApplyDate    DateTime
   allocationApplyDate DateTime?
-  requestPrice        String?
-  areaOfBuilding      Float?
-  areaOfGround        Float?
-  appraisal           String?          @db.MediumText
-  status              Int?             @default(0)
-  numOfPass           Int?             @default(0)
-  share               Boolean?         @default(false)
+  requestPrice        String
+  detailOfList        String           @default("") @db.MediumText
+  areaOfBuilding      Float
+  areaOfGround        Float
+  appraisal           String           @db.MediumText
+  status              Int              @default(0)
+  numOfPass           Int              @default(0)
+  share               Boolean          @default(false)
   resultAuction       resultAuction[]
   leaseDetail         leaseDetail[]
   leasePeople         leasePeople[]
   Fav                 Fav[]
   realestateList      realestateList[]
+  images              String           @default("")
 }
 
 model Image {
@@ -93,6 +95,8 @@ model realestateList {
   updatedAt DateTime @updatedAt
   num       Int
   type      String
+  usage     String   @default("")
+  location  String   @default("")
   detail    String?  @db.MediumText
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
