@@ -1,0 +1,2296 @@
+[DEBUG] (getAuctionList.py:640) > Start creating new item
+[DEBUG] (getAuctionList.py:640) > Start creating new item
+[DEBUG] (getAuctionList.py:674) > START 2020타경3256
+[DEBUG] (getAuctionList.py:678) > 기본조사 시작
+[DEBUG] (getAuctionList.py:725) > 목록내역 시작
+[DEBUG] (getAuctionList.py:866) > 감정평가 시작
+[DEBUG] (getAuctionList.py:900) > Complated insert: 2020타경3256
+[ERROR] (getAuctionList.py:1051) > Error_일반
+[ERROR] (getAuctionList.py:1052) > 'Logger' object is not callable
+[DEBUG] (getAuctionList.py:641) > Start creating new item
+[DEBUG] (getAuctionList.py:675) > START 2020타경3256
+[DEBUG] (getAuctionList.py:679) > 기본조사 시작
+[DEBUG] (getAuctionList.py:726) > 목록내역 시작
+[DEBUG] (getAuctionList.py:867) > 감정평가 시작
+[DEBUG] (getAuctionList.py:901) > Complated insert: 2020타경3256
+[DEBUG] (getAuctionList.py:393) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:641) > Start creating new item
+[DEBUG] (getAuctionList.py:1191) > START
+[DEBUG] (getAuctionList.py:1192) > 매각기일 Update 시작
+[DEBUG] (getAuctionList.py:1189) > START
+[DEBUG] (getAuctionList.py:1190) > 매각기일 Update 시작
+[DEBUG] (getAuctionList.py:1206) > START
+[DEBUG] (getAuctionList.py:1207) > 매각기일 Update 시작
+[DEBUG] (getAuctionList.py:658) > Start creating new item
+[DEBUG] (getAuctionList.py:658) > Start creating new item
+[DEBUG] (getAuctionList.py:692) > START 2021타경4710
+[DEBUG] (getAuctionList.py:696) > 기본조사 시작
+[DEBUG] (getAuctionList.py:743) > 목록내역 시작
+[DEBUG] (getAuctionList.py:884) > 감정평가 시작
+[DEBUG] (getAuctionList.py:918) > Complated insert: 2021타경4710
+[ERROR] (getAuctionList.py:1069) > Error_일반
+[ERROR] (getAuctionList.py:1070) > 현황조사서_데이터() missing 1 required positional argument: 'itemNumber'
+[DEBUG] (getAuctionList.py:658) > Start creating new item
+[DEBUG] (getAuctionList.py:658) > Start creating new item
+[DEBUG] (getAuctionList.py:692) > START 2022타경934
+[DEBUG] (getAuctionList.py:696) > 기본조사 시작
+[DEBUG] (getAuctionList.py:743) > 목록내역 시작
+[DEBUG] (getAuctionList.py:884) > 감정평가 시작
+[DEBUG] (getAuctionList.py:918) > Complated insert: 2022타경934
+[DEBUG] (getAuctionList.py:393) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:726) > Start creating new item
+[DEBUG] (getAuctionList.py:760) > START 2022타경934
+[DEBUG] (getAuctionList.py:764) > 기본조사 시작
+[DEBUG] (getAuctionList.py:811) > 목록내역 시작
+[DEBUG] (getAuctionList.py:952) > 감정평가 시작
+[ERROR] (getAuctionList.py:1137) > Error_일반
+[ERROR] (getAuctionList.py:1138) > Failed to validate the query: `Unable to match input value to any allowed input type for the field. Parse errors: [Query parsing/validation error at `Mutation.createOneItem.data.ItemCreateInput.visited`: A value is required but not set., Query parsing/validation error at `Mutation.createOneItem.data.ItemUncheckedCreateInput.visited`: A value is required but not set.]` at `Mutation.createOneItem.data`
+[DEBUG] (getAuctionList.py:760) > START 2022타경105167
+[DEBUG] (getAuctionList.py:764) > 기본조사 시작
+[DEBUG] (getAuctionList.py:811) > 목록내역 시작
+[DEBUG] (getAuctionList.py:952) > 감정평가 시작
+[ERROR] (getAuctionList.py:1137) > Error_일반
+[ERROR] (getAuctionList.py:1138) > Failed to validate the query: `Unable to match input value to any allowed input type for the field. Parse errors: [Query parsing/validation error at `Mutation.createOneItem.data.ItemCreateInput.visited`: A value is required but not set., Query parsing/validation error at `Mutation.createOneItem.data.ItemUncheckedCreateInput.visited`: A value is required but not set.]` at `Mutation.createOneItem.data`
+[DEBUG] (getAuctionList.py:760) > START 2022타경105167
+[DEBUG] (getAuctionList.py:764) > 기본조사 시작
+[DEBUG] (getAuctionList.py:811) > 목록내역 시작
+[DEBUG] (getAuctionList.py:952) > 감정평가 시작
+[ERROR] (getAuctionList.py:1137) > Error_일반
+[ERROR] (getAuctionList.py:1138) > Failed to validate the query: `Unable to match input value to any allowed input type for the field. Parse errors: [Query parsing/validation error at `Mutation.createOneItem.data.ItemCreateInput.visited`: A value is required but not set., Query parsing/validation error at `Mutation.createOneItem.data.ItemUncheckedCreateInput.visited`: A value is required but not set.]` at `Mutation.createOneItem.data`
+[DEBUG] (getAuctionList.py:726) > Start creating new item
+[DEBUG] (getAuctionList.py:760) > START 2022타경934
+[DEBUG] (getAuctionList.py:764) > 기본조사 시작
+[DEBUG] (getAuctionList.py:811) > 목록내역 시작
+[DEBUG] (getAuctionList.py:952) > 감정평가 시작
+[DEBUG] (getAuctionList.py:986) > Complated insert: 2022타경934
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:491) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:760) > START 2022타경105167
+[DEBUG] (getAuctionList.py:764) > 기본조사 시작
+[DEBUG] (getAuctionList.py:811) > 목록내역 시작
+[DEBUG] (getAuctionList.py:952) > 감정평가 시작
+[DEBUG] (getAuctionList.py:986) > Complated insert: 2022타경105167
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:727) > Start creating new item
+[DEBUG] (getAuctionList.py:761) > START 2022타경105167
+[DEBUG] (getAuctionList.py:765) > 기본조사 시작
+[DEBUG] (getAuctionList.py:812) > 목록내역 시작
+[DEBUG] (getAuctionList.py:953) > 감정평가 시작
+[DEBUG] (getAuctionList.py:987) > Complated insert: 2022타경105167
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:491) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:761) > START 2022타경105167
+[DEBUG] (getAuctionList.py:765) > 기본조사 시작
+[DEBUG] (getAuctionList.py:812) > 목록내역 시작
+[DEBUG] (getAuctionList.py:953) > 감정평가 시작
+[DEBUG] (getAuctionList.py:987) > Complated insert: 2022타경105167
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:491) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:761) > START 2021타경7484
+[DEBUG] (getAuctionList.py:765) > 기본조사 시작
+[DEBUG] (getAuctionList.py:812) > 목록내역 시작
+[DEBUG] (getAuctionList.py:953) > 감정평가 시작
+[DEBUG] (getAuctionList.py:987) > Complated insert: 2021타경7484
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:747) > Start creating new item
+[DEBUG] (getAuctionList.py:781) > START 2021타경7484
+[DEBUG] (getAuctionList.py:785) > 기본조사 시작
+[DEBUG] (getAuctionList.py:832) > 목록내역 시작
+[DEBUG] (getAuctionList.py:973) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1007) > Complated insert: 2021타경7484
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:747) > Start creating new item
+[DEBUG] (getAuctionList.py:781) > START 2021타경7484
+[DEBUG] (getAuctionList.py:785) > 기본조사 시작
+[DEBUG] (getAuctionList.py:832) > 목록내역 시작
+[DEBUG] (getAuctionList.py:973) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1007) > Complated insert: 2021타경7484
+[DEBUG] (getAuctionList.py:398) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:511) > 임차내용 DB Insert 완료
+[ERROR] (getAuctionList.py:573) > Error_현황조사서
+[ERROR] (getAuctionList.py:574) > name '점유인' is not defined
+[DEBUG] (getAuctionList.py:743) > Start creating new item
+[DEBUG] (getAuctionList.py:777) > START 2021타경7484
+[DEBUG] (getAuctionList.py:781) > 기본조사 시작
+[DEBUG] (getAuctionList.py:828) > 목록내역 시작
+[DEBUG] (getAuctionList.py:969) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1003) > Complated insert: 2021타경7484
+[DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:507) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:513) > 임차인 DB Insert 완료
+[DEBUG] (getAuctionList.py:777) > START 2021타경11155
+[DEBUG] (getAuctionList.py:781) > 기본조사 시작
+[DEBUG] (getAuctionList.py:828) > 목록내역 시작
+[DEBUG] (getAuctionList.py:969) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1003) > Complated insert: 2021타경11155
+[DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:507) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:777) > START 2021타경89660
+[DEBUG] (getAuctionList.py:781) > 기본조사 시작
+[DEBUG] (getAuctionList.py:828) > 목록내역 시작
+[DEBUG] (getAuctionList.py:969) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1003) > Complated insert: 2021타경89660
+[DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:507) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:513) > 임차인 DB Insert 완료
+[DEBUG] (getAuctionList.py:777) > START 2022타경1438
+[DEBUG] (getAuctionList.py:781) > 기본조사 시작
+[DEBUG] (getAuctionList.py:828) > 목록내역 시작
+[DEBUG] (getAuctionList.py:969) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1003) > Complated insert: 2022타경1438
+[DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:507) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:777) > START 2022타경74153
+[DEBUG] (getAuctionList.py:781) > 기본조사 시작
+[DEBUG] (getAuctionList.py:828) > 목록내역 시작
+[DEBUG] (getAuctionList.py:969) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1003) > Complated insert: 2022타경74153
+[DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:507) > 임차내용 DB Insert 완료
+[DEBUG] (getAuctionList.py:513) > 임차인 DB Insert 완료
+[DEBUG] (getAuctionList.py:777) > START 2021타경5104
+[DEBUG] (getAuctionList.py:781) > 기본조사 시작
+[DEBUG] (getAuctionList.py:828) > 목록내역 시작
+[DEBUG] (getAuctionList.py:969) > 감정평가 시작
+[DEBUG] (getAuctionList.py:1003) > Complated insert: 2021타경5104
+[DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[DEBUG] (getAuctionList.py:507) > 임차내용 DB Insert 완료
+[2023-01-14 12:38:26,233] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:38:26,234] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:39:31,709] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:39:31,710] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:40:14,471] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:40:14,471] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:40:47,144] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:40:47,144] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:42:42,411] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:42:42,411] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:43:17,262] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:43:17,262] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:46:32,080] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:46:32,080] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:47:03,661] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:47:03,661] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:47:33,572] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:47:33,573] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:48:43,451] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:48:43,451] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:50:02,818] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:50:02,819] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:50:57,984] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:50:57,985] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:51:57,328] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:51:57,328] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:53:21,324] [DEBUG] (getAuctionList.py:1291) > START
+[2023-01-14 12:53:21,324] [DEBUG] (getAuctionList.py:1292) > 매각기일 Update 시작
+[2023-01-14 12:54:37,842] [DEBUG] (getAuctionList.py:1290) > START
+[2023-01-14 12:54:37,843] [DEBUG] (getAuctionList.py:1291) > 매각기일 Update 시작
+[2023-01-14 12:58:18,127] [DEBUG] (getAuctionList.py:1294) > START
+[2023-01-14 12:58:18,128] [DEBUG] (getAuctionList.py:1295) > 매각기일 Update 시작
+[2023-01-14 13:00:19,370] [DEBUG] (getAuctionList.py:1295) > START
+[2023-01-14 13:00:19,371] [DEBUG] (getAuctionList.py:1296) > 매각기일 Update 시작
+[2023-01-14 13:01:34,258] [DEBUG] (getAuctionList.py:1298) > START
+[2023-01-14 13:01:34,258] [DEBUG] (getAuctionList.py:1299) > 매각기일 Update 시작
+[2023-01-14 13:01:45,002] [DEBUG] (getAuctionList.py:1298) > START
+[2023-01-14 13:01:45,002] [DEBUG] (getAuctionList.py:1299) > 매각기일 Update 시작
+[2023-01-14 13:02:28,933] [DEBUG] (getAuctionList.py:1295) > START
+[2023-01-14 13:02:28,933] [DEBUG] (getAuctionList.py:1296) > 매각기일 Update 시작
+[2023-01-17 22:25:39,510] [DEBUG] (getAuctionList.py:1295) > START
+[2023-01-17 22:25:39,511] [DEBUG] (getAuctionList.py:1296) > 매각기일 Update 시작
+[2023-01-17 22:25:51,918] [DEBUG] (getAuctionList.py:1302) > 오늘의 매각결과 업데이트 물건 수 : 559
+[2023-01-17 22:25:51,918] [DEBUG] (getAuctionList.py:1306) > 2021타경490
+[2023-01-17 22:25:55,679] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:28:40,433] [DEBUG] (getAuctionList.py:1295) > START
+[2023-01-17 22:28:40,433] [DEBUG] (getAuctionList.py:1296) > 매각기일 Update 시작
+[2023-01-17 22:28:45,437] [DEBUG] (getAuctionList.py:1302) > 오늘의 매각결과 업데이트 물건 수 : 559
+[2023-01-17 22:28:45,437] [DEBUG] (getAuctionList.py:1306) > 2021타경490
+[2023-01-17 22:28:48,006] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:28:58,447] [DEBUG] (getAuctionList.py:1306) > 2021타경103108
+[2023-01-17 22:29:00,823] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:29:11,992] [DEBUG] (getAuctionList.py:1306) > 2022타경204
+[2023-01-17 22:29:14,270] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:29:24,790] [DEBUG] (getAuctionList.py:1306) > 2022타경792
+[2023-01-17 22:29:26,962] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:29:37,453] [DEBUG] (getAuctionList.py:1306) > 2022타경792
+[2023-01-17 22:29:40,052] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:29:51,367] [DEBUG] (getAuctionList.py:1306) > 2022타경33240
+[2023-01-17 22:29:53,604] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:30:05,338] [DEBUG] (getAuctionList.py:1306) > 2019타경104590
+[2023-01-17 22:30:08,801] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:36:17,568] [DEBUG] (getAuctionList.py:1295) > START
+[2023-01-17 22:36:17,568] [DEBUG] (getAuctionList.py:1296) > 매각기일 Update 시작
+[2023-01-17 22:36:22,635] [DEBUG] (getAuctionList.py:1302) > 오늘의 매각결과 업데이트 물건 수 : 554
+[2023-01-17 22:36:22,635] [DEBUG] (getAuctionList.py:1306) > 2021타경490
+[2023-01-17 22:36:25,275] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:36:25,276] [DEBUG] (getAuctionList.py:1367) > 경매결과 : 매각
+[2023-01-17 22:36:39,884] [DEBUG] (getAuctionList.py:1306) > 2022타경204
+[2023-01-17 22:36:42,071] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:36:42,072] [DEBUG] (getAuctionList.py:1367) > 경매결과 : 매각
+[2023-01-17 22:36:56,405] [DEBUG] (getAuctionList.py:1306) > 2021타경105893
+[2023-01-17 22:36:58,601] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:36:58,672] [DEBUG] (getAuctionList.py:1306) > 2022타경72607
+[2023-01-17 22:37:00,799] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:00,870] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:03,258] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:03,332] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:05,734] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:05,808] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:07,886] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:07,959] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:10,053] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:10,125] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:13,022] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:13,099] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:15,278] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:15,352] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:17,486] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:17,559] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:19,784] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:19,857] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:21,988] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:22,059] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:24,341] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:24,413] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:26,772] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:26,851] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:29,094] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:29,166] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:31,706] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:31,779] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:34,018] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:34,092] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:36,335] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:36,409] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:38,476] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:38,548] [DEBUG] (getAuctionList.py:1306) > 2015타경43007
+[2023-01-17 22:37:40,877] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:40,950] [DEBUG] (getAuctionList.py:1306) > 2021타경87558
+[2023-01-17 22:37:43,231] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:43,304] [DEBUG] (getAuctionList.py:1306) > 2021타경1393
+[2023-01-17 22:37:46,052] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:46,053] [DEBUG] (getAuctionList.py:1367) > 경매결과 : 유찰
+[2023-01-17 22:37:56,729] [DEBUG] (getAuctionList.py:1306) > 2021타경4117
+[2023-01-17 22:37:59,093] [DEBUG] (getAuctionList.py:1334) > 물건상태 : 미종국
+[2023-01-17 22:37:59,094] [DEBUG] (getAuctionList.py:1367) > 경매결과 : 유찰
+[2023-01-17 22:38:10,603] [DEBUG] (getAuctionList.py:1306) > 2021타경109715
+[2023-01-24 16:35:12,828] [DEBUG] (getAuctionList.py:1203) > START
+[2023-01-24 16:35:12,829] [DEBUG] (getAuctionList.py:1204) > 매각기일 Update 시작
+[2023-01-24 16:40:40,710] [DEBUG] (getAuctionList.py:1203) > START
+[2023-01-24 16:40:40,711] [DEBUG] (getAuctionList.py:1204) > 매각기일 Update 시작
+[2023-01-24 16:40:45,024] [DEBUG] (getAuctionList.py:1210) > 오늘의 매각결과 업데이트 물건 수 : 65
+[2023-01-24 16:40:45,024] [DEBUG] (getAuctionList.py:1214) > 2021타경4601
+[2023-01-24 16:40:46,660] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:40:46,661] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:40:56,764] [DEBUG] (getAuctionList.py:1214) > 2021타경107555
+[2023-01-24 16:40:58,712] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:40:58,713] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:41:09,415] [DEBUG] (getAuctionList.py:1214) > 2021타경113345
+[2023-01-24 16:41:10,984] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:41:10,985] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:41:21,925] [DEBUG] (getAuctionList.py:1214) > 2021타경116115
+[2023-01-24 16:41:24,678] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:41:24,678] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:41:35,566] [DEBUG] (getAuctionList.py:1214) > 2022타경104539
+[2023-01-24 16:41:37,269] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:41:37,270] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:41:46,969] [DEBUG] (getAuctionList.py:1214) > 2021타경7484
+[2023-01-24 16:41:49,148] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:41:49,149] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:41:58,666] [DEBUG] (getAuctionList.py:1214) > 2022타경73679
+[2023-01-24 16:42:00,455] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:42:00,456] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:42:10,035] [DEBUG] (getAuctionList.py:1214) > 2022타경882
+[2023-01-24 16:42:11,569] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:42:11,570] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:42:21,168] [DEBUG] (getAuctionList.py:1214) > 2020타경2199
+[2023-01-24 16:42:22,948] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:42:22,949] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:42:36,299] [DEBUG] (getAuctionList.py:1214) > 2022타경1657
+[2023-01-24 16:42:38,020] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:42:38,020] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:42:51,326] [DEBUG] (getAuctionList.py:1214) > 2022타경2025
+[2023-01-24 16:42:53,147] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:42:53,148] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:43:03,395] [DEBUG] (getAuctionList.py:1214) > 2022타경2445
+[2023-01-24 16:43:05,502] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:43:05,502] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:43:15,915] [DEBUG] (getAuctionList.py:1214) > 2022타경2735
+[2023-01-24 16:43:17,535] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:43:17,536] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:43:28,824] [DEBUG] (getAuctionList.py:1214) > 2022타경108268
+[2023-01-24 16:43:30,729] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:43:30,730] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:43:45,072] [DEBUG] (getAuctionList.py:1214) > 2022타경108664
+[2023-01-24 16:43:46,735] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:43:46,736] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:43:56,797] [DEBUG] (getAuctionList.py:1214) > 2022타경108763
+[2023-01-24 16:43:59,237] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:43:59,238] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:44:08,561] [DEBUG] (getAuctionList.py:1214) > 2022타경111295
+[2023-01-24 16:44:10,404] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:44:10,405] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각공고
+[2023-01-24 16:44:20,053] [DEBUG] (getAuctionList.py:1214) > 2022타경2192
+[2023-01-24 16:44:21,687] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:44:21,687] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:44:35,838] [DEBUG] (getAuctionList.py:1214) > 2022타경51873
+[2023-01-24 16:44:37,535] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:44:37,536] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:44:47,973] [DEBUG] (getAuctionList.py:1214) > 2022타경53633
+[2023-01-24 16:44:49,966] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:44:49,967] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:45:00,438] [DEBUG] (getAuctionList.py:1214) > 2022타경53701
+[2023-01-24 16:45:02,118] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 기각
+[2023-01-24 16:45:05,893] [DEBUG] (getAuctionList.py:1214) > 2022타경54896
+[2023-01-24 16:45:07,573] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:45:07,574] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:45:16,769] [DEBUG] (getAuctionList.py:1214) > 2021타경32196
+[2023-01-24 16:45:19,299] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:45:19,300] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:45:28,842] [DEBUG] (getAuctionList.py:1214) > 2022타경53008
+[2023-01-24 16:45:30,670] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:45:30,671] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:45:40,041] [DEBUG] (getAuctionList.py:1214) > 2022타경53008
+[2023-01-24 16:45:41,653] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:45:41,654] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:45:51,994] [DEBUG] (getAuctionList.py:1214) > 2020타경12240
+[2023-01-24 16:45:54,179] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:45:54,180] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:46:08,321] [DEBUG] (getAuctionList.py:1214) > 2021타경4352
+[2023-01-24 16:46:10,436] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:46:10,437] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:46:25,937] [DEBUG] (getAuctionList.py:1214) > 2022타경975
+[2023-01-24 16:46:27,639] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:46:27,640] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:46:43,137] [DEBUG] (getAuctionList.py:1214) > 2022타경1732
+[2023-01-24 16:46:45,323] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 취하
+[2023-01-24 16:46:49,927] [DEBUG] (getAuctionList.py:1214) > 2022타경3530
+[2023-01-24 16:46:51,613] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:46:51,681] [DEBUG] (getAuctionList.py:1214) > 2022타경109063
+[2023-01-24 16:46:53,802] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 취하
+[2023-01-24 16:46:57,631] [DEBUG] (getAuctionList.py:1214) > 2022타경2345
+[2023-01-24 16:47:00,232] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:47:00,299] [DEBUG] (getAuctionList.py:1214) > 2022타경50191
+[2023-01-24 16:47:02,219] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:47:02,220] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:47:12,658] [DEBUG] (getAuctionList.py:1214) > 2022타경50856
+[2023-01-24 16:47:15,037] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:47:15,039] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:47:25,314] [DEBUG] (getAuctionList.py:1214) > 2022타경52265
+[2023-01-24 16:47:27,007] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 취하
+[2023-01-24 16:47:31,346] [DEBUG] (getAuctionList.py:1214) > 2022타경52531
+[2023-01-24 16:47:32,964] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:47:32,965] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:47:43,390] [DEBUG] (getAuctionList.py:1214) > 2022타경53282
+[2023-01-24 16:47:45,462] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:47:45,463] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:47:59,981] [DEBUG] (getAuctionList.py:1214) > 2022타경54575
+[2023-01-24 16:48:01,707] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 취하
+[2023-01-24 16:48:06,001] [DEBUG] (getAuctionList.py:1214) > 2022타경997
+[2023-01-24 16:48:07,747] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:48:07,748] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:48:17,311] [DEBUG] (getAuctionList.py:1214) > 2022타경35198
+[2023-01-24 16:48:20,249] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:48:20,250] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:48:29,582] [DEBUG] (getAuctionList.py:1214) > 2022타경35716
+[2023-01-24 16:48:31,103] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:48:31,103] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:48:40,607] [DEBUG] (getAuctionList.py:1214) > 2021타경103952
+[2023-01-24 16:48:41,701] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:48:41,766] [DEBUG] (getAuctionList.py:1214) > 2021타경56871
+[2023-01-24 16:48:43,927] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:48:43,927] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:48:53,377] [DEBUG] (getAuctionList.py:1214) > 2022타경325
+[2023-01-24 16:48:55,376] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:48:55,378] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:49:04,858] [DEBUG] (getAuctionList.py:1214) > 2022타경325
+[2023-01-24 16:49:06,553] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:49:06,555] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:49:16,047] [DEBUG] (getAuctionList.py:1214) > 2022타경325
+[2023-01-24 16:49:17,789] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:49:17,791] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:49:27,153] [DEBUG] (getAuctionList.py:1214) > 2022타경325
+[2023-01-24 16:49:29,398] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:49:29,400] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:49:40,199] [DEBUG] (getAuctionList.py:1214) > 2021타경30916
+[2023-01-24 16:49:41,929] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:49:41,930] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:49:52,621] [DEBUG] (getAuctionList.py:1214) > 2022타경557
+[2023-01-24 16:49:55,141] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:49:55,208] [DEBUG] (getAuctionList.py:1214) > 2022타경106460
+[2023-01-24 16:49:56,802] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:49:56,803] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:50:07,088] [DEBUG] (getAuctionList.py:1214) > 2022타경769
+[2023-01-24 16:50:09,614] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:50:09,615] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:50:18,940] [DEBUG] (getAuctionList.py:1214) > 2022타경31817
+[2023-01-24 16:50:20,767] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:50:20,767] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:50:31,294] [DEBUG] (getAuctionList.py:1214) > 2022타경51415
+[2023-01-24 16:50:32,916] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:50:32,917] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:50:42,634] [DEBUG] (getAuctionList.py:1214) > 2021타경11711
+[2023-01-24 16:50:45,223] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:50:45,224] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:50:55,108] [DEBUG] (getAuctionList.py:1214) > 2021타경88971
+[2023-01-24 16:50:56,723] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:50:56,724] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:51:06,366] [DEBUG] (getAuctionList.py:1214) > 2022타경2413
+[2023-01-24 16:51:08,366] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:51:08,367] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:51:18,019] [DEBUG] (getAuctionList.py:1214) > 2021타경2325
+[2023-01-24 16:51:20,347] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:51:20,348] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 매각
+[2023-01-24 16:51:33,771] [DEBUG] (getAuctionList.py:1214) > 2022타경102154
+[2023-01-24 16:51:35,727] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:51:35,728] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:51:45,795] [DEBUG] (getAuctionList.py:1214) > 2022타경103607
+[2023-01-24 16:51:47,506] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:51:47,507] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:51:57,081] [DEBUG] (getAuctionList.py:1214) > 2022타경104341
+[2023-01-24 16:52:00,259] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:52:00,259] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:52:10,602] [DEBUG] (getAuctionList.py:1214) > 2022타경109261
+[2023-01-24 16:52:12,252] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:52:12,253] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:52:21,736] [DEBUG] (getAuctionList.py:1214) > 2022타경50092
+[2023-01-24 16:52:24,064] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:52:24,065] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:52:33,838] [DEBUG] (getAuctionList.py:1214) > 2022타경50955
+[2023-01-24 16:52:35,547] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:52:35,548] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:52:45,412] [DEBUG] (getAuctionList.py:1214) > 2022타경54704
+[2023-01-24 16:52:47,041] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:52:47,042] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:52:56,521] [DEBUG] (getAuctionList.py:1214) > 2022타경54704
+[2023-01-24 16:52:58,099] [DEBUG] (getAuctionList.py:1242) > 물건상태 : 미종국
+[2023-01-24 16:52:58,099] [DEBUG] (getAuctionList.py:1275) > 경매결과 : 유찰
+[2023-01-24 16:53:08,688] [DEBUG] (getAuctionList.py:651) > Start creating new item : 도로
+[2023-01-24 16:53:51,536] [DEBUG] (getAuctionList.py:685) > START 2021타경53563
+[2023-01-24 16:53:51,536] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 16:53:51,638] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 16:53:51,694] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 16:53:55,105] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경53563
+[2023-01-24 16:53:55,110] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 16:54:00,125] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 16:55:43,036] [DEBUG] (getAuctionList.py:685) > START 2021타경108961
+[2023-01-24 16:55:43,036] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 16:55:43,147] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 16:55:43,209] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 16:55:46,854] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경108961
+[2023-01-24 16:55:46,862] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 16:55:51,859] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 16:57:39,139] [DEBUG] (getAuctionList.py:685) > START 2021타경109193
+[2023-01-24 16:57:39,139] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 16:57:39,242] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 16:57:39,302] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 16:57:42,700] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경109193
+[2023-01-24 16:57:42,709] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 16:57:47,541] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 16:58:54,338] [DEBUG] (getAuctionList.py:685) > START 2021타경109193
+[2023-01-24 16:58:54,339] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 16:58:54,429] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 16:58:54,488] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 16:58:57,919] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경109193
+[2023-01-24 16:58:57,928] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 16:59:02,760] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 16:59:45,043] [DEBUG] (getAuctionList.py:685) > START 2022타경33260
+[2023-01-24 16:59:45,043] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 16:59:45,132] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 16:59:45,632] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 16:59:49,809] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경33260
+[2023-01-24 16:59:49,822] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 16:59:54,842] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:07:51,931] [DEBUG] (getAuctionList.py:685) > START 2021타경10691
+[2023-01-24 17:07:51,932] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:07:52,033] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:07:52,205] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:07:56,093] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경10691
+[2023-01-24 17:07:56,104] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:08:01,303] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:15:00,696] [DEBUG] (getAuctionList.py:685) > START 2022타경50051
+[2023-01-24 17:15:00,697] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:15:00,803] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:15:00,908] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:15:05,610] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경50051
+[2023-01-24 17:15:05,615] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:15:11,057] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:17:02,741] [DEBUG] (getAuctionList.py:685) > START 2021타경1069
+[2023-01-24 17:17:02,742] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:17:02,860] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:17:02,928] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:17:06,433] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경1069
+[2023-01-24 17:17:06,437] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:17:11,234] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:18:41,707] [DEBUG] (getAuctionList.py:685) > START 2021타경33394
+[2023-01-24 17:18:41,707] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:18:41,812] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:18:42,005] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:18:45,738] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경33394
+[2023-01-24 17:18:45,742] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:18:50,958] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:21:11,118] [DEBUG] (getAuctionList.py:685) > START 2020타경110457
+[2023-01-24 17:21:11,118] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:21:11,228] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:21:11,909] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:21:15,789] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경110457
+[2023-01-24 17:21:15,799] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:21:21,209] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:23:22,994] [DEBUG] (getAuctionList.py:685) > START 2021타경4784
+[2023-01-24 17:23:22,994] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:23:23,097] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:23:23,558] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:23:27,131] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경4784
+[2023-01-24 17:23:27,147] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:23:31,968] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:26:58,814] [DEBUG] (getAuctionList.py:685) > START 2021타경5824
+[2023-01-24 17:26:58,815] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:26:58,916] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:26:59,694] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:27:03,023] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경5824
+[2023-01-24 17:27:03,028] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:27:08,707] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:33:45,510] [DEBUG] (getAuctionList.py:685) > START 2021타경3736
+[2023-01-24 17:33:45,511] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:33:45,627] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:33:45,886] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:33:49,658] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경3736
+[2023-01-24 17:33:49,668] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:33:54,813] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:33:57,950] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 17:36:37,455] [DEBUG] (getAuctionList.py:685) > START 2022타경100788
+[2023-01-24 17:36:37,456] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:36:37,555] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:36:37,611] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:36:41,142] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경100788
+[2023-01-24 17:36:41,151] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:36:46,085] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:36:48,903] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 17:37:41,664] [DEBUG] (getAuctionList.py:685) > START 2021타경5326
+[2023-01-24 17:37:41,664] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:37:41,768] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:37:41,951] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:37:45,764] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경5326
+[2023-01-24 17:37:45,778] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:37:50,957] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:37:53,822] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 17:41:24,949] [DEBUG] (getAuctionList.py:685) > START 2021타경27210
+[2023-01-24 17:41:24,949] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:41:25,053] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:41:25,257] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:41:28,722] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경27210
+[2023-01-24 17:41:28,733] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:41:33,687] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:44:40,753] [DEBUG] (getAuctionList.py:685) > START 2021타경27319
+[2023-01-24 17:44:40,754] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:44:40,863] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:44:41,234] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:44:44,799] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경27319
+[2023-01-24 17:44:44,809] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:44:50,591] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:44:53,567] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 17:50:00,773] [DEBUG] (getAuctionList.py:685) > START 2020타경55231
+[2023-01-24 17:50:00,773] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:50:00,870] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:50:00,967] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:50:04,435] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경55231
+[2023-01-24 17:50:04,440] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:50:09,511] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:53:23,677] [DEBUG] (getAuctionList.py:685) > START 2021타경54785
+[2023-01-24 17:53:23,678] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:53:23,779] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:53:23,838] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:53:27,328] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경54785
+[2023-01-24 17:53:27,338] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:53:32,453] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:54:43,610] [DEBUG] (getAuctionList.py:685) > START 2022타경53550
+[2023-01-24 17:54:43,611] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:54:43,717] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:54:43,777] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:54:48,417] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경53550
+[2023-01-24 17:54:48,429] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:54:53,875] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:57:06,857] [DEBUG] (getAuctionList.py:685) > START 2022타경52270
+[2023-01-24 17:57:06,857] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:57:06,957] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:57:07,018] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:57:10,933] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52270
+[2023-01-24 17:57:10,943] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:57:16,198] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 17:58:07,536] [DEBUG] (getAuctionList.py:685) > START 2022타경52454
+[2023-01-24 17:58:07,536] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 17:58:07,639] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 17:58:07,741] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 17:58:11,696] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52454
+[2023-01-24 17:58:11,704] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 17:58:16,949] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:00:32,328] [DEBUG] (getAuctionList.py:685) > START 2022타경4859
+[2023-01-24 18:00:32,328] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:00:32,438] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:00:32,591] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:00:36,828] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4859
+[2023-01-24 18:00:36,841] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:00:42,058] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:04:30,823] [DEBUG] (getAuctionList.py:651) > Start creating new item : 임야
+[2023-01-24 18:05:05,661] [DEBUG] (getAuctionList.py:685) > START 2021타경70
+[2023-01-24 18:05:05,661] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:05:05,763] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:05:05,822] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:05:09,450] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경70
+[2023-01-24 18:05:09,465] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:05:14,472] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:07:18,655] [DEBUG] (getAuctionList.py:685) > START 2022타경74689
+[2023-01-24 18:07:18,655] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:07:18,755] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:07:18,850] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:07:22,323] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경74689
+[2023-01-24 18:07:22,338] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:07:27,355] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:11:53,827] [DEBUG] (getAuctionList.py:685) > START 2021타경6340
+[2023-01-24 18:11:53,828] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:11:53,931] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:11:53,989] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:11:57,443] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경6340
+[2023-01-24 18:11:57,460] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:12:02,526] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:15:11,419] [DEBUG] (getAuctionList.py:685) > START 2020타경2627
+[2023-01-24 18:15:11,419] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:15:11,517] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:15:11,920] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:15:15,466] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경2627
+[2023-01-24 18:15:15,483] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:15:20,780] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:18:17,977] [DEBUG] (getAuctionList.py:685) > START 2020타경60845
+[2023-01-24 18:18:17,977] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:18:18,070] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:18:18,132] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:18:22,059] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경60845
+[2023-01-24 18:18:22,072] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:18:27,070] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:20:22,200] [DEBUG] (getAuctionList.py:685) > START 2022타경55403
+[2023-01-24 18:20:22,200] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:20:22,302] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:20:22,360] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:20:26,260] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55403
+[2023-01-24 18:20:26,276] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:20:31,743] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:21:59,903] [DEBUG] (getAuctionList.py:685) > START 2022타경55403
+[2023-01-24 18:21:59,904] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:22:00,006] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:22:00,104] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:22:03,844] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55403
+[2023-01-24 18:22:03,848] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:22:09,005] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:24:37,124] [DEBUG] (getAuctionList.py:685) > START 2021타경47074
+[2023-01-24 18:24:37,125] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:24:37,235] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:24:37,302] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:24:41,316] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경47074
+[2023-01-24 18:24:41,323] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:24:46,526] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:24:49,625] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 18:28:41,964] [DEBUG] (getAuctionList.py:685) > START 2022타경46207
+[2023-01-24 18:28:41,964] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:28:42,067] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:28:42,124] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:28:45,749] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경46207
+[2023-01-24 18:28:45,756] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:28:50,738] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:33:36,029] [DEBUG] (getAuctionList.py:685) > START 2021타경2833
+[2023-01-24 18:33:36,029] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:33:36,123] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:33:36,179] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:33:39,758] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경2833
+[2023-01-24 18:33:39,763] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:33:44,787] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:33:55,475] [DEBUG] (getAuctionList.py:685) > START 2021타경54933
+[2023-01-24 18:33:55,475] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:33:55,567] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:33:55,621] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:33:59,300] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경54933
+[2023-01-24 18:33:59,309] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:34:04,255] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:35:39,941] [DEBUG] (getAuctionList.py:685) > START 2022타경223
+[2023-01-24 18:35:39,941] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:35:40,060] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:35:40,138] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:35:43,499] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경223
+[2023-01-24 18:35:43,508] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:35:48,337] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:36:26,655] [DEBUG] (getAuctionList.py:685) > START 2022타경1554
+[2023-01-24 18:36:26,655] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:36:26,757] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:36:27,639] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:36:31,631] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1554
+[2023-01-24 18:36:31,636] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:36:36,466] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:42:09,604] [DEBUG] (getAuctionList.py:685) > START 2022타경2106
+[2023-01-24 18:42:09,605] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:42:09,735] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:42:09,976] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:42:13,423] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2106
+[2023-01-24 18:42:13,434] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:42:18,418] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:43:28,675] [DEBUG] (getAuctionList.py:685) > START 2022타경51108
+[2023-01-24 18:43:28,676] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:43:28,785] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:43:29,187] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:43:32,661] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51108
+[2023-01-24 18:43:32,670] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:43:37,505] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:46:46,502] [DEBUG] (getAuctionList.py:685) > START 2022타경53227
+[2023-01-24 18:46:46,502] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:46:46,602] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:46:46,659] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:46:50,617] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경53227
+[2023-01-24 18:46:50,625] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:46:55,691] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:48:17,585] [DEBUG] (getAuctionList.py:685) > START 2022타경54060
+[2023-01-24 18:48:17,586] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:48:17,686] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:48:17,741] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:48:21,617] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경54060
+[2023-01-24 18:48:21,628] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:48:26,922] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:49:52,132] [DEBUG] (getAuctionList.py:685) > START 2021타경33731
+[2023-01-24 18:49:52,132] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:49:52,232] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:49:52,288] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:49:55,780] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경33731
+[2023-01-24 18:49:55,794] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:50:01,456] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:50:54,585] [DEBUG] (getAuctionList.py:685) > START 2022타경30128
+[2023-01-24 18:50:54,585] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:50:54,706] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:50:54,786] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:50:58,347] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경30128
+[2023-01-24 18:50:58,352] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:51:03,111] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:52:10,925] [DEBUG] (getAuctionList.py:685) > START 2022타경30470
+[2023-01-24 18:52:10,925] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:52:11,017] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:52:11,077] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:52:15,086] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경30470
+[2023-01-24 18:52:15,101] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:52:20,547] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:53:33,688] [DEBUG] (getAuctionList.py:685) > START 2022타경31367
+[2023-01-24 18:53:33,689] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:53:33,784] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:53:33,845] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:53:37,429] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경31367
+[2023-01-24 18:53:37,436] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:53:42,563] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:55:41,322] [DEBUG] (getAuctionList.py:685) > START 2021타경504885
+[2023-01-24 18:55:41,322] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:55:41,426] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:55:41,482] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:55:45,460] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경504885
+[2023-01-24 18:55:45,471] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:55:51,593] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:57:53,060] [DEBUG] (getAuctionList.py:685) > START 2022타경500811
+[2023-01-24 18:57:53,061] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:57:53,162] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:57:53,224] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:57:57,146] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경500811
+[2023-01-24 18:57:57,159] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:58:02,303] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 18:59:40,995] [DEBUG] (getAuctionList.py:685) > START 2022타경500866
+[2023-01-24 18:59:40,995] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 18:59:41,093] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 18:59:41,157] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 18:59:44,789] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경500866
+[2023-01-24 18:59:44,796] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 18:59:51,109] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:01:03,058] [DEBUG] (getAuctionList.py:685) > START 2022타경201
+[2023-01-24 19:01:03,058] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:01:03,152] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:01:03,208] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:01:07,110] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경201
+[2023-01-24 19:01:07,114] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:01:11,980] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:02:16,552] [DEBUG] (getAuctionList.py:685) > START 2022타경201
+[2023-01-24 19:02:16,553] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:02:16,644] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:02:16,723] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:02:20,649] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경201
+[2023-01-24 19:02:20,653] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:02:25,866] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:02:58,116] [DEBUG] (getAuctionList.py:685) > START 2022타경200216
+[2023-01-24 19:02:58,117] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:02:58,214] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:02:58,274] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:03:02,274] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경200216
+[2023-01-24 19:03:02,279] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:03:07,443] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:03:10,724] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 19:06:26,464] [DEBUG] (getAuctionList.py:685) > START 2022타경200728
+[2023-01-24 19:06:26,464] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:06:26,562] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:06:26,653] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:06:30,825] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경200728
+[2023-01-24 19:06:30,832] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:06:36,134] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:09:58,247] [DEBUG] (getAuctionList.py:685) > START 2020타경34314
+[2023-01-24 19:09:58,248] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:09:58,337] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:09:58,403] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:10:02,008] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경34314
+[2023-01-24 19:10:02,023] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:10:08,103] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:11:11,268] [DEBUG] (getAuctionList.py:685) > START 2021타경1441
+[2023-01-24 19:11:11,268] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:11:11,363] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:11:11,425] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:11:16,877] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경1441
+[2023-01-24 19:11:16,889] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:11:23,183] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:11:37,119] [DEBUG] (getAuctionList.py:685) > START 2021타경3591
+[2023-01-24 19:11:37,120] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:11:37,226] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:11:38,334] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:11:42,411] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경3591
+[2023-01-24 19:11:42,416] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:11:47,861] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:20:05,943] [DEBUG] (getAuctionList.py:685) > START 2021타경3676
+[2023-01-24 19:20:05,944] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:20:06,046] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:20:06,101] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:20:10,103] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경3676
+[2023-01-24 19:20:10,116] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:20:15,261] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:22:19,603] [DEBUG] (getAuctionList.py:685) > START 2021타경3676
+[2023-01-24 19:22:19,603] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:22:19,691] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:22:19,783] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:22:23,258] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경3676
+[2023-01-24 19:22:23,271] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:22:28,548] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:22:40,803] [DEBUG] (getAuctionList.py:685) > START 2021타경4051
+[2023-01-24 19:22:40,804] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:22:40,904] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:22:41,704] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:22:46,171] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경4051
+[2023-01-24 19:22:46,185] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:22:51,385] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:22:54,752] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 19:27:44,301] [DEBUG] (getAuctionList.py:685) > START 2021타경31220
+[2023-01-24 19:27:44,301] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:27:44,397] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:27:44,453] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:27:48,579] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경31220
+[2023-01-24 19:27:48,592] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:27:53,466] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:29:13,537] [DEBUG] (getAuctionList.py:685) > START 2021타경32766
+[2023-01-24 19:29:13,538] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:29:13,642] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:29:13,767] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:29:17,123] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경32766
+[2023-01-24 19:29:17,137] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:29:22,624] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:30:25,248] [DEBUG] (getAuctionList.py:685) > START 2021타경33110
+[2023-01-24 19:30:25,248] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:30:25,336] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:30:25,396] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:30:28,591] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경33110
+[2023-01-24 19:30:28,605] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:30:33,606] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:32:01,072] [DEBUG] (getAuctionList.py:685) > START 2021타경33264
+[2023-01-24 19:32:01,073] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:32:01,174] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:32:01,492] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:32:04,696] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경33264
+[2023-01-24 19:32:04,701] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:32:09,535] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:32:12,371] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 19:35:20,251] [DEBUG] (getAuctionList.py:685) > START 2022타경56
+[2023-01-24 19:35:20,251] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:35:20,348] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:35:20,409] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:35:23,746] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경56
+[2023-01-24 19:35:23,759] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:35:28,600] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:35:39,681] [DEBUG] (getAuctionList.py:685) > START 2022타경30668
+[2023-01-24 19:35:39,682] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:35:39,765] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:35:40,100] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:35:44,368] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경30668
+[2023-01-24 19:35:44,382] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:35:49,594] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:39:24,499] [DEBUG] (getAuctionList.py:685) > START 2022타경30668
+[2023-01-24 19:39:24,500] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:39:24,593] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:39:24,786] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:39:28,755] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경30668
+[2023-01-24 19:39:28,768] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:39:34,278] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:40:12,272] [DEBUG] (getAuctionList.py:685) > START 2022타경663
+[2023-01-24 19:40:12,273] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:40:12,365] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:40:12,492] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:40:16,388] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경663
+[2023-01-24 19:40:16,401] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:40:21,239] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:40:24,165] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 19:43:02,274] [DEBUG] (getAuctionList.py:685) > START 2022타경663
+[2023-01-24 19:43:02,275] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:43:02,405] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:43:02,471] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:43:06,163] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경663
+[2023-01-24 19:43:06,168] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:43:10,984] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:43:13,877] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 19:43:44,951] [DEBUG] (getAuctionList.py:685) > START 2022타경663
+[2023-01-24 19:43:44,951] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:43:45,052] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:43:45,112] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:43:48,423] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경663
+[2023-01-24 19:43:48,435] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:43:53,271] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:43:55,958] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 19:44:53,263] [DEBUG] (getAuctionList.py:685) > START 2022타경2103
+[2023-01-24 19:44:53,263] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:44:53,367] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:44:53,423] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:44:56,732] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2103
+[2023-01-24 19:44:56,743] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:45:01,622] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:48:01,369] [DEBUG] (getAuctionList.py:685) > START 2022타경17990
+[2023-01-24 19:48:01,370] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:48:01,475] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:48:01,542] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:48:04,863] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경17990
+[2023-01-24 19:48:04,877] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:48:09,714] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:49:20,223] [DEBUG] (getAuctionList.py:685) > START 2022타경18405
+[2023-01-24 19:49:20,224] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:49:20,316] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:49:20,408] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:49:24,398] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경18405
+[2023-01-24 19:49:24,407] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:49:29,333] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:51:49,457] [DEBUG] (getAuctionList.py:685) > START 2021타경4012
+[2023-01-24 19:51:49,457] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:51:49,561] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:51:49,618] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:51:52,906] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경4012
+[2023-01-24 19:51:52,915] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:51:57,724] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:55:38,239] [DEBUG] (getAuctionList.py:685) > START 2021타경54444
+[2023-01-24 19:55:38,240] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:55:38,338] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:55:38,469] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:55:41,912] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경54444
+[2023-01-24 19:55:41,921] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:55:46,632] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 19:59:13,249] [DEBUG] (getAuctionList.py:685) > START 2021타경56525
+[2023-01-24 19:59:13,249] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 19:59:13,349] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 19:59:13,437] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 19:59:16,623] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경56525
+[2023-01-24 19:59:16,631] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 19:59:21,600] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:06:37,797] [DEBUG] (getAuctionList.py:685) > START 2022타경50098
+[2023-01-24 20:06:37,798] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:06:37,893] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:06:38,682] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:06:42,239] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경50098
+[2023-01-24 20:06:42,249] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:06:47,923] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:06:51,327] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 20:14:04,728] [DEBUG] (getAuctionList.py:685) > START 2022타경51428
+[2023-01-24 20:14:04,728] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:14:04,822] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:14:05,319] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:14:08,983] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51428
+[2023-01-24 20:14:08,994] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:14:14,321] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:17:36,556] [DEBUG] (getAuctionList.py:685) > START 2022타경51541
+[2023-01-24 20:17:36,556] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:17:36,656] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:17:36,818] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:17:40,273] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51541
+[2023-01-24 20:17:40,282] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:17:45,872] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:17:49,398] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 20:23:54,048] [DEBUG] (getAuctionList.py:685) > START 2022타경51541
+[2023-01-24 20:23:54,049] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:23:54,137] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:23:54,194] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:23:58,080] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51541
+[2023-01-24 20:23:58,086] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:24:03,532] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:24:07,201] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 20:24:19,436] [DEBUG] (getAuctionList.py:685) > START 2022타경52773
+[2023-01-24 20:24:19,436] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:24:19,531] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:24:19,586] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:24:23,592] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52773
+[2023-01-24 20:24:23,601] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:24:29,111] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:25:31,678] [DEBUG] (getAuctionList.py:685) > START 2022타경52858
+[2023-01-24 20:25:31,679] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:25:31,775] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:25:31,934] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:25:35,877] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52858
+[2023-01-24 20:25:35,887] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:25:40,791] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:28:23,428] [DEBUG] (getAuctionList.py:685) > START 2021타경889
+[2023-01-24 20:28:23,428] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:28:23,523] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:28:23,578] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:28:27,608] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경889
+[2023-01-24 20:28:27,615] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:28:33,032] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:29:47,768] [DEBUG] (getAuctionList.py:685) > START 2021타경902
+[2023-01-24 20:29:47,768] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:29:47,866] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:29:48,096] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:29:51,785] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경902
+[2023-01-24 20:29:51,795] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:29:57,353] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:33:05,825] [DEBUG] (getAuctionList.py:685) > START 2021타경101836
+[2023-01-24 20:33:05,825] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:33:05,918] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:33:05,976] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:33:09,611] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경101836
+[2023-01-24 20:33:09,620] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:33:15,344] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:34:28,802] [DEBUG] (getAuctionList.py:685) > START 2021타경102747
+[2023-01-24 20:34:28,802] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:34:28,895] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:34:28,950] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:34:32,758] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경102747
+[2023-01-24 20:34:32,767] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:34:38,521] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:37:43,043] [DEBUG] (getAuctionList.py:685) > START 2022타경32638
+[2023-01-24 20:37:43,043] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:37:43,132] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:37:43,190] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:37:47,424] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경32638
+[2023-01-24 20:37:47,433] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:37:53,150] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:40:29,576] [DEBUG] (getAuctionList.py:685) > START 2021타경3446
+[2023-01-24 20:40:29,576] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:40:29,669] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:40:29,863] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:40:33,821] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경3446
+[2023-01-24 20:40:33,830] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:40:39,059] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:41:50,840] [DEBUG] (getAuctionList.py:685) > START 2021타경4289
+[2023-01-24 20:41:50,840] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:41:50,928] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:41:50,987] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:41:54,546] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경4289
+[2023-01-24 20:41:54,555] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:41:59,729] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:42:50,424] [DEBUG] (getAuctionList.py:685) > START 2022타경100535
+[2023-01-24 20:42:50,424] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:42:50,522] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:42:50,578] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:42:54,124] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경100535
+[2023-01-24 20:42:54,132] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:42:59,428] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:47:15,968] [DEBUG] (getAuctionList.py:685) > START 2020타경11386
+[2023-01-24 20:47:15,968] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:47:16,068] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:47:16,509] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:47:20,550] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경11386
+[2023-01-24 20:47:20,560] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:47:25,478] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:47:30,379] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 20:53:48,673] [DEBUG] (getAuctionList.py:685) > START 2020타경29226
+[2023-01-24 20:53:48,673] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:53:48,767] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:53:48,926] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:53:57,327] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경29226
+[2023-01-24 20:53:57,336] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:54:02,446] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:54:05,420] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 20:55:58,553] [DEBUG] (getAuctionList.py:685) > START 2021타경2426
+[2023-01-24 20:55:58,553] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:55:58,648] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:55:58,736] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:56:02,764] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경2426
+[2023-01-24 20:56:02,770] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:56:07,986] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:58:33,232] [DEBUG] (getAuctionList.py:685) > START 2021타경4101
+[2023-01-24 20:58:33,233] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:58:33,326] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:58:33,381] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:58:36,772] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경4101
+[2023-01-24 20:58:36,782] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:58:41,705] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 20:59:44,268] [DEBUG] (getAuctionList.py:685) > START 2021타경23331
+[2023-01-24 20:59:44,269] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 20:59:44,360] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 20:59:44,414] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 20:59:50,204] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경23331
+[2023-01-24 20:59:50,212] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 20:59:55,529] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:00:53,138] [DEBUG] (getAuctionList.py:685) > START 2021타경25283
+[2023-01-24 21:00:53,138] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:00:53,233] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:00:53,293] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:00:57,475] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경25283
+[2023-01-24 21:00:57,479] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:01:02,417] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:04:07,180] [DEBUG] (getAuctionList.py:685) > START 2021타경25283
+[2023-01-24 21:04:07,180] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:04:07,273] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:04:07,432] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:04:11,682] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경25283
+[2023-01-24 21:04:11,688] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:04:17,164] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:04:29,793] [DEBUG] (getAuctionList.py:685) > START 2021타경26118
+[2023-01-24 21:04:29,793] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:04:29,887] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:04:30,293] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:04:34,471] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경26118
+[2023-01-24 21:04:34,480] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:04:39,954] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:09:05,026] [DEBUG] (getAuctionList.py:685) > START 2021타경26897
+[2023-01-24 21:09:05,026] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:09:05,122] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:09:05,176] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:09:08,604] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경26897
+[2023-01-24 21:09:08,613] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:09:13,878] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:10:47,445] [DEBUG] (getAuctionList.py:685) > START 2021타경28817
+[2023-01-24 21:10:47,445] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:10:47,536] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:10:47,593] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:10:50,905] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경28817
+[2023-01-24 21:10:50,914] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:10:55,731] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:12:12,880] [DEBUG] (getAuctionList.py:685) > START 2022타경20322
+[2023-01-24 21:12:12,880] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:12:12,978] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:12:13,069] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:12:17,945] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경20322
+[2023-01-24 21:12:17,954] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:12:22,876] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:13:47,719] [DEBUG] (getAuctionList.py:685) > START 2022타경21417
+[2023-01-24 21:13:47,719] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:13:47,813] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:13:47,868] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:13:51,546] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경21417
+[2023-01-24 21:13:51,555] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:13:56,660] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:18:02,211] [DEBUG] (getAuctionList.py:685) > START 2020타경3049
+[2023-01-24 21:18:02,211] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:18:02,301] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:18:02,359] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:18:07,058] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경3049
+[2023-01-24 21:18:07,067] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:18:12,356] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:19:53,011] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:19:53,012] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:19:53,105] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:19:53,161] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:19:57,412] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:19:57,416] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:20:02,093] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:20:42,216] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:20:42,217] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:20:42,312] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:20:42,374] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:20:45,959] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:20:45,969] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:20:50,990] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:21:02,082] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:21:02,082] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:21:02,156] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:21:02,210] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:21:05,959] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:21:05,972] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:21:11,359] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:21:23,272] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:21:23,273] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:21:23,375] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:21:23,437] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:21:28,156] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:21:28,168] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:21:33,989] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:21:44,872] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:21:44,872] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:21:44,979] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:21:45,048] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:21:48,746] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:21:48,760] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:21:53,849] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:22:05,279] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:22:05,279] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:22:05,385] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:22:05,447] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:22:09,073] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:22:09,081] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:22:14,051] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:23:06,135] [DEBUG] (getAuctionList.py:685) > START 2020타경4035
+[2023-01-24 21:23:06,135] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:23:06,225] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:23:06,282] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:23:10,462] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경4035
+[2023-01-24 21:23:10,472] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:23:15,450] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:23:26,695] [DEBUG] (getAuctionList.py:685) > START 2020타경55231
+[2023-01-24 21:23:26,696] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:23:26,778] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:23:26,835] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:23:30,561] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경55231
+[2023-01-24 21:23:30,573] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:23:35,994] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:23:47,443] [DEBUG] (getAuctionList.py:685) > START 2021타경2197
+[2023-01-24 21:23:47,444] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:23:47,519] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:23:47,571] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:23:51,393] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경2197
+[2023-01-24 21:23:51,406] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:23:56,567] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:26:24,871] [DEBUG] (getAuctionList.py:685) > START 2021타경55641
+[2023-01-24 21:26:24,871] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:26:24,964] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:26:25,059] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:26:28,936] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경55641
+[2023-01-24 21:26:28,950] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:26:34,672] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:27:45,161] [DEBUG] (getAuctionList.py:685) > START 2022타경112
+[2023-01-24 21:27:45,162] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:27:45,252] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:27:45,310] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:27:49,218] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경112
+[2023-01-24 21:27:49,231] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:27:54,647] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:28:53,402] [DEBUG] (getAuctionList.py:685) > START 2022타경303
+[2023-01-24 21:28:53,402] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:28:53,511] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:28:53,572] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:28:57,349] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경303
+[2023-01-24 21:28:57,353] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:29:02,224] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:29:13,172] [DEBUG] (getAuctionList.py:685) > START 2022타경303
+[2023-01-24 21:29:13,172] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:29:13,243] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:29:13,294] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:29:16,787] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경303
+[2023-01-24 21:29:16,794] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:29:22,702] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:30:26,066] [DEBUG] (getAuctionList.py:685) > START 2022타경1542
+[2023-01-24 21:30:26,066] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:30:26,165] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:30:26,294] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:30:30,321] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1542
+[2023-01-24 21:30:30,330] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:30:35,306] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:30:47,855] [DEBUG] (getAuctionList.py:685) > START 2022타경1894
+[2023-01-24 21:30:47,855] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:30:47,947] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:30:48,003] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:30:52,500] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1894
+[2023-01-24 21:30:52,507] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:30:57,712] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:32:05,669] [DEBUG] (getAuctionList.py:685) > START 2022타경1894
+[2023-01-24 21:32:05,669] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:32:05,760] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:32:05,822] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:32:09,544] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1894
+[2023-01-24 21:32:09,552] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:32:14,937] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:32:26,963] [DEBUG] (getAuctionList.py:685) > START 2022타경1962
+[2023-01-24 21:32:26,963] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:32:27,049] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:32:27,106] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:32:30,812] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1962
+[2023-01-24 21:32:30,821] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:32:36,273] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:33:28,304] [DEBUG] (getAuctionList.py:685) > START 2022타경51592
+[2023-01-24 21:33:28,304] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:33:28,400] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:33:28,458] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:33:31,760] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51592
+[2023-01-24 21:33:31,769] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:33:37,413] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:34:23,279] [DEBUG] (getAuctionList.py:685) > START 2022타경51868
+[2023-01-24 21:34:23,280] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:34:23,379] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:34:23,441] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:34:27,038] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51868
+[2023-01-24 21:34:27,048] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:34:31,785] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:35:41,211] [DEBUG] (getAuctionList.py:685) > START 2022타경52205
+[2023-01-24 21:35:41,211] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:35:41,304] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:35:41,362] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:35:45,372] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52205
+[2023-01-24 21:35:45,382] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:35:50,366] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:36:50,376] [DEBUG] (getAuctionList.py:685) > START 2022타경53789
+[2023-01-24 21:36:50,377] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:36:50,476] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:36:50,568] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:36:54,354] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경53789
+[2023-01-24 21:36:54,362] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:36:59,703] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:37:03,296] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 21:38:50,844] [DEBUG] (getAuctionList.py:685) > START 2022타경54171
+[2023-01-24 21:38:50,845] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:38:50,945] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:38:51,034] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:38:54,823] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경54171
+[2023-01-24 21:38:54,836] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:39:00,548] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:41:26,516] [DEBUG] (getAuctionList.py:685) > START 2022타경54478
+[2023-01-24 21:41:26,516] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:41:26,604] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:41:26,659] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:41:30,974] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경54478
+[2023-01-24 21:41:30,987] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:41:36,296] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:42:32,775] [DEBUG] (getAuctionList.py:685) > START 2021타경54002
+[2023-01-24 21:42:32,775] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:42:32,875] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:42:33,177] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:42:37,124] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경54002
+[2023-01-24 21:42:37,137] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:42:42,466] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:42:45,342] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 21:49:30,094] [DEBUG] (getAuctionList.py:685) > START 2022타경2039
+[2023-01-24 21:49:30,095] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:49:30,194] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:49:30,255] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:49:34,212] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2039
+[2023-01-24 21:49:34,223] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:49:39,316] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:51:58,149] [DEBUG] (getAuctionList.py:685) > START 2022타경51215
+[2023-01-24 21:51:58,149] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:51:58,243] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:51:58,302] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:52:02,256] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경51215
+[2023-01-24 21:52:02,261] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:52:07,481] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:53:12,736] [DEBUG] (getAuctionList.py:685) > START 2022타경52959
+[2023-01-24 21:53:12,736] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:53:12,832] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:53:12,890] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:53:16,824] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52959
+[2023-01-24 21:53:16,833] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:53:22,028] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:54:24,586] [DEBUG] (getAuctionList.py:685) > START 2022타경53136
+[2023-01-24 21:54:24,586] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:54:24,679] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:54:24,740] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:54:29,296] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경53136
+[2023-01-24 21:54:29,301] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:54:34,140] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:55:30,904] [DEBUG] (getAuctionList.py:685) > START 2022타경53556
+[2023-01-24 21:55:30,904] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 21:55:30,998] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 21:55:31,059] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 21:55:35,180] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경53556
+[2023-01-24 21:55:35,190] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 21:55:40,267] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 21:55:43,544] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 22:01:28,687] [DEBUG] (getAuctionList.py:685) > START 2021타경8359
+[2023-01-24 22:01:28,687] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:01:28,778] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:01:28,874] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:01:32,718] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경8359
+[2023-01-24 22:01:32,727] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:01:38,041] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:04:40,898] [DEBUG] (getAuctionList.py:685) > START 2022타경2532
+[2023-01-24 22:04:40,899] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:04:40,990] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:04:41,115] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:04:45,150] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2532
+[2023-01-24 22:04:45,159] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:04:50,147] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:07:59,953] [DEBUG] (getAuctionList.py:685) > START 2022타경3733
+[2023-01-24 22:07:59,953] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:08:00,054] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:08:00,180] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:08:04,194] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경3733
+[2023-01-24 22:08:04,199] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:08:09,209] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:08:20,243] [DEBUG] (getAuctionList.py:685) > START 2022타경4286
+[2023-01-24 22:08:20,243] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:08:20,335] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:08:20,395] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:08:23,967] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4286
+[2023-01-24 22:08:23,975] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:08:29,301] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:10:21,664] [DEBUG] (getAuctionList.py:685) > START 2022타경4507
+[2023-01-24 22:10:21,665] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:10:21,756] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:10:21,814] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:10:25,053] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4507
+[2023-01-24 22:10:25,057] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:10:30,842] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:12:55,351] [DEBUG] (getAuctionList.py:685) > START 2022타경4552
+[2023-01-24 22:12:55,351] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:12:55,445] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:12:55,504] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:12:59,623] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4552
+[2023-01-24 22:12:59,627] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:13:05,752] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:13:09,051] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 22:15:48,474] [DEBUG] (getAuctionList.py:685) > START 2022타경33178
+[2023-01-24 22:15:48,475] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:15:48,567] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:15:48,656] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:15:52,284] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경33178
+[2023-01-24 22:15:52,292] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:15:57,402] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:17:23,872] [DEBUG] (getAuctionList.py:685) > START 2022타경36146
+[2023-01-24 22:17:23,873] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:17:23,961] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:17:24,018] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:17:28,029] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경36146
+[2023-01-24 22:17:28,038] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:17:33,457] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:18:48,983] [DEBUG] (getAuctionList.py:685) > START 2022타경38012
+[2023-01-24 22:18:48,983] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:18:49,083] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:18:49,139] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:18:52,613] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경38012
+[2023-01-24 22:18:52,622] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:18:57,322] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:21:55,568] [DEBUG] (getAuctionList.py:685) > START 2022타경23853
+[2023-01-24 22:21:55,569] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:21:55,662] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:21:55,718] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:22:00,009] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경23853
+[2023-01-24 22:22:00,018] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:22:05,260] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:23:51,714] [DEBUG] (getAuctionList.py:685) > START 2022타경24061
+[2023-01-24 22:23:51,714] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:23:51,810] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:23:51,970] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:23:55,957] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경24061
+[2023-01-24 22:23:55,966] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:24:01,871] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:25:44,932] [DEBUG] (getAuctionList.py:685) > START 2022타경24665
+[2023-01-24 22:25:44,932] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:25:45,031] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:25:45,092] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:25:48,510] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경24665
+[2023-01-24 22:25:48,522] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:25:53,351] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:29:30,568] [DEBUG] (getAuctionList.py:685) > START 2022타경2454
+[2023-01-24 22:29:30,568] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:29:30,664] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:29:30,721] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:29:34,990] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2454
+[2023-01-24 22:29:35,003] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:29:40,275] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:32:51,976] [DEBUG] (getAuctionList.py:685) > START 2022타경2454
+[2023-01-24 22:32:51,976] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:32:52,067] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:32:52,124] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:32:55,614] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2454
+[2023-01-24 22:32:55,624] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:33:00,475] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:33:40,877] [DEBUG] (getAuctionList.py:685) > START 2022타경22458
+[2023-01-24 22:33:40,877] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:33:40,969] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:33:41,024] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:33:44,619] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경22458
+[2023-01-24 22:33:44,630] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:33:50,280] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:34:47,499] [DEBUG] (getAuctionList.py:685) > START 2022타경3048
+[2023-01-24 22:34:47,499] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:34:47,609] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:34:48,008] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:34:52,130] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경3048
+[2023-01-24 22:34:52,143] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:34:57,027] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:37:05,473] [DEBUG] (getAuctionList.py:685) > START 2021타경53777
+[2023-01-24 22:37:05,474] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:37:05,571] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:37:05,699] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:37:09,234] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경53777
+[2023-01-24 22:37:09,245] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:37:14,182] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:39:20,618] [DEBUG] (getAuctionList.py:651) > Start creating new item : 아파트
+[2023-01-24 22:41:53,806] [DEBUG] (getAuctionList.py:685) > START 2021타경51840
+[2023-01-24 22:41:53,806] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:41:53,915] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:41:53,973] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:41:57,409] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경51840
+[2023-01-24 22:41:57,420] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:42:02,737] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:42:05,595] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 22:43:22,419] [DEBUG] (getAuctionList.py:685) > START 2021타경55569
+[2023-01-24 22:43:22,419] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:43:22,521] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:43:22,580] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:43:26,169] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경55569
+[2023-01-24 22:43:26,181] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:43:31,714] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:43:35,387] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 22:44:52,077] [DEBUG] (getAuctionList.py:685) > START 2021타경56432
+[2023-01-24 22:44:52,077] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:44:52,174] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:44:52,237] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:44:56,395] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경56432
+[2023-01-24 22:44:56,404] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:45:01,922] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:46:32,809] [DEBUG] (getAuctionList.py:685) > START 2021타경103126
+[2023-01-24 22:46:32,809] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:46:32,905] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:46:32,966] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:46:36,566] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경103126
+[2023-01-24 22:46:36,576] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:46:41,766] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:46:45,053] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 22:48:42,357] [DEBUG] (getAuctionList.py:685) > START 2022타경100639
+[2023-01-24 22:48:42,357] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:48:42,451] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:48:42,513] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:48:45,885] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경100639
+[2023-01-24 22:48:45,894] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:48:51,428] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:50:28,345] [DEBUG] (getAuctionList.py:685) > START 2022타경101632
+[2023-01-24 22:50:28,345] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:50:28,439] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:50:28,503] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:50:32,508] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경101632
+[2023-01-24 22:50:32,520] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:50:37,504] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:52:03,048] [DEBUG] (getAuctionList.py:685) > START 2020타경13017
+[2023-01-24 22:52:03,049] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:52:03,141] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:52:03,199] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:52:06,990] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경13017
+[2023-01-24 22:52:06,994] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:52:12,120] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:54:39,036] [DEBUG] (getAuctionList.py:685) > START 2022타경73525
+[2023-01-24 22:54:39,036] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:54:39,128] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:54:39,186] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:54:42,854] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경73525
+[2023-01-24 22:54:42,863] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:54:48,692] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:56:33,483] [DEBUG] (getAuctionList.py:685) > START 2021타경3164
+[2023-01-24 22:56:33,483] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:56:33,578] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:56:33,637] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:56:37,751] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경3164
+[2023-01-24 22:56:37,760] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:56:43,586] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:58:15,373] [DEBUG] (getAuctionList.py:685) > START 2022타경55025
+[2023-01-24 22:58:15,373] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:58:15,465] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:58:15,533] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:58:19,841] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55025
+[2023-01-24 22:58:19,849] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:58:24,753] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 22:58:27,750] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 22:58:38,313] [DEBUG] (getAuctionList.py:685) > START 2022타경55711
+[2023-01-24 22:58:38,313] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 22:58:38,396] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 22:58:38,455] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 22:58:42,269] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55711
+[2023-01-24 22:58:42,276] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 22:58:47,386] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:00:24,697] [DEBUG] (getAuctionList.py:685) > START 2022타경55766
+[2023-01-24 23:00:24,698] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:00:24,797] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:00:24,858] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:00:29,174] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55766
+[2023-01-24 23:00:29,182] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:00:34,907] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:05:03,981] [DEBUG] (getAuctionList.py:685) > START 2020타경5926
+[2023-01-24 23:05:03,981] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:05:04,075] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:05:04,140] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:05:07,973] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경5926
+[2023-01-24 23:05:07,983] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:05:13,122] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:06:16,284] [DEBUG] (getAuctionList.py:685) > START 2022타경1270
+[2023-01-24 23:06:16,285] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:06:16,381] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:06:16,443] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:06:20,239] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1270
+[2023-01-24 23:06:20,246] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:06:25,282] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:07:46,577] [DEBUG] (getAuctionList.py:685) > START 2022타경33543
+[2023-01-24 23:07:46,577] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:07:46,683] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:07:46,746] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:07:50,303] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경33543
+[2023-01-24 23:07:50,307] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:07:55,438] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:09:20,033] [DEBUG] (getAuctionList.py:685) > START 2022타경36504
+[2023-01-24 23:09:20,033] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:09:20,127] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:09:20,186] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:09:23,606] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경36504
+[2023-01-24 23:09:23,620] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:09:29,031] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:10:26,444] [DEBUG] (getAuctionList.py:685) > START 2022타경36955
+[2023-01-24 23:10:26,444] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:10:26,542] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:10:26,609] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:10:30,269] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경36955
+[2023-01-24 23:10:30,277] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:10:35,685] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:12:41,105] [DEBUG] (getAuctionList.py:685) > START 2022타경37064
+[2023-01-24 23:12:41,105] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:12:41,204] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:12:41,270] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:12:44,954] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경37064
+[2023-01-24 23:12:44,962] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:12:50,034] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:14:39,530] [DEBUG] (getAuctionList.py:685) > START 2022타경37439
+[2023-01-24 23:14:39,530] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:14:39,636] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:14:39,696] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:14:43,197] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경37439
+[2023-01-24 23:14:43,206] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:14:48,301] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:16:09,604] [DEBUG] (getAuctionList.py:685) > START 2022타경37965
+[2023-01-24 23:16:09,604] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:16:09,696] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:16:09,757] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:16:13,328] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경37965
+[2023-01-24 23:16:13,337] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:16:18,996] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:16:22,112] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:17:48,459] [DEBUG] (getAuctionList.py:685) > START 2022타경38104
+[2023-01-24 23:17:48,459] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:17:48,554] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:17:48,612] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:17:52,370] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경38104
+[2023-01-24 23:17:52,379] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:17:57,443] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:18:00,528] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:19:49,154] [DEBUG] (getAuctionList.py:685) > START 2022타경39039
+[2023-01-24 23:19:49,154] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:19:49,246] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:19:49,308] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:19:53,153] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경39039
+[2023-01-24 23:19:53,160] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:19:58,279] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:20:01,960] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:23:40,076] [DEBUG] (getAuctionList.py:685) > START 2022타경1403
+[2023-01-24 23:23:40,077] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:23:40,168] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:23:40,228] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:23:43,618] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1403
+[2023-01-24 23:23:43,626] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:23:49,212] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:25:02,228] [DEBUG] (getAuctionList.py:685) > START 2022타경52562
+[2023-01-24 23:25:02,228] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:25:02,325] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:25:02,386] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:25:06,529] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경52562
+[2023-01-24 23:25:06,533] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:25:11,455] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:27:07,216] [DEBUG] (getAuctionList.py:685) > START 2022타경55233
+[2023-01-24 23:27:07,217] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:27:07,327] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:27:07,403] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:27:10,829] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55233
+[2023-01-24 23:27:10,838] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:27:16,474] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:28:25,390] [DEBUG] (getAuctionList.py:685) > START 2019타경61903
+[2023-01-24 23:28:25,391] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:28:25,482] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:28:25,556] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:28:29,649] [DEBUG] (getAuctionList.py:911) > Complated insert: 2019타경61903
+[2023-01-24 23:28:29,654] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:28:35,714] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:30:31,004] [DEBUG] (getAuctionList.py:685) > START 2019타경61972
+[2023-01-24 23:30:31,004] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:30:31,094] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:30:31,158] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:30:35,122] [DEBUG] (getAuctionList.py:911) > Complated insert: 2019타경61972
+[2023-01-24 23:30:35,131] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:30:40,173] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:32:08,718] [DEBUG] (getAuctionList.py:685) > START 2019타경62043
+[2023-01-24 23:32:08,718] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:32:08,815] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:32:08,882] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:32:12,907] [DEBUG] (getAuctionList.py:911) > Complated insert: 2019타경62043
+[2023-01-24 23:32:12,913] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:32:17,895] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:32:50,848] [DEBUG] (getAuctionList.py:685) > START 2020타경51506
+[2023-01-24 23:32:50,849] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:32:50,948] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:32:51,011] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:32:54,402] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경51506
+[2023-01-24 23:32:54,407] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:32:59,194] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:33:02,820] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:34:39,662] [DEBUG] (getAuctionList.py:685) > START 2020타경51582
+[2023-01-24 23:34:39,663] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:34:39,757] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:34:39,818] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:34:43,252] [DEBUG] (getAuctionList.py:911) > Complated insert: 2020타경51582
+[2023-01-24 23:34:43,256] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:34:48,658] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:36:02,345] [DEBUG] (getAuctionList.py:685) > START 2021타경52957
+[2023-01-24 23:36:02,345] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:36:02,440] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:36:02,516] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:36:06,128] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경52957
+[2023-01-24 23:36:06,133] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:36:11,413] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:37:29,748] [DEBUG] (getAuctionList.py:685) > START 2021타경55956
+[2023-01-24 23:37:29,748] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:37:29,841] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:37:29,902] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:37:33,462] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경55956
+[2023-01-24 23:37:33,479] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:37:38,747] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:38:51,158] [DEBUG] (getAuctionList.py:685) > START 2022타경58327
+[2023-01-24 23:38:51,159] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:38:51,249] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:38:51,313] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:38:54,686] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경58327
+[2023-01-24 23:38:54,691] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:38:59,532] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:41:23,333] [DEBUG] (getAuctionList.py:685) > START 2022타경2481
+[2023-01-24 23:41:23,333] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:41:23,424] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:41:23,486] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:41:27,404] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경2481
+[2023-01-24 23:41:27,413] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:41:32,436] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:42:47,013] [DEBUG] (getAuctionList.py:685) > START 2022타경45280
+[2023-01-24 23:42:47,013] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:42:47,105] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:42:47,172] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:42:51,474] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경45280
+[2023-01-24 23:42:51,486] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:42:56,423] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:42:59,385] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:44:17,333] [DEBUG] (getAuctionList.py:685) > START 2022타경45587
+[2023-01-24 23:44:17,333] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:44:17,427] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:44:17,485] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:44:21,038] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경45587
+[2023-01-24 23:44:21,050] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:44:26,415] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:46:40,540] [DEBUG] (getAuctionList.py:685) > START 2022타경45778
+[2023-01-24 23:46:40,540] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:46:40,640] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:46:40,706] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:46:44,080] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경45778
+[2023-01-24 23:46:44,093] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:46:49,089] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:48:59,089] [DEBUG] (getAuctionList.py:685) > START 2022타경53586
+[2023-01-24 23:48:59,090] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:48:59,180] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:48:59,253] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:49:02,789] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경53586
+[2023-01-24 23:49:02,803] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:49:07,805] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:50:01,483] [DEBUG] (getAuctionList.py:685) > START 2022타경54022
+[2023-01-24 23:50:01,484] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:50:01,575] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:50:01,641] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:50:05,559] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경54022
+[2023-01-24 23:50:05,563] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:50:10,889] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:50:51,880] [DEBUG] (getAuctionList.py:685) > START 2022타경1529
+[2023-01-24 23:50:51,880] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:50:51,971] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:50:52,033] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:50:55,453] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경1529
+[2023-01-24 23:50:55,464] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:51:00,307] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:51:52,397] [DEBUG] (getAuctionList.py:685) > START 2022타경500590
+[2023-01-24 23:51:52,398] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:51:52,500] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:51:52,582] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:51:55,907] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경500590
+[2023-01-24 23:51:55,911] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:52:00,961] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:52:03,758] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:52:38,022] [DEBUG] (getAuctionList.py:685) > START 2022타경501807
+[2023-01-24 23:52:38,022] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:52:38,112] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:52:38,175] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:52:41,830] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경501807
+[2023-01-24 23:52:41,839] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:52:46,749] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:53:55,040] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-24 23:53:55,041] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:53:55,141] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:53:55,200] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-24 23:53:59,032] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-24 23:53:59,037] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-24 23:54:04,166] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-24 23:54:07,748] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-24 23:59:58,303] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-24 23:59:58,303] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-24 23:59:58,405] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-24 23:59:58,466] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:00:02,025] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:00:02,029] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:00:06,948] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:00:09,815] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:00:19,952] [ERROR] (getAuctionList.py:1070) > Error_ITEM_선택
+[2023-01-25 00:00:19,953] [ERROR] (getAuctionList.py:1071) > ('20180130004237', '3', False)
+[2023-01-25 00:00:19,953] [ERROR] (getAuctionList.py:1072) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="201801300042373"]"}
+  (Session info: headless chrome=109.0.5414.87)
+Stacktrace:
+0   chromedriver                        0x0000000105047b7c chromedriver + 4209532
+1   chromedriver                        0x0000000104fd3418 chromedriver + 3732504
+2   chromedriver                        0x0000000104c86368 chromedriver + 271208
+3   chromedriver                        0x0000000104cc1fc8 chromedriver + 516040
+4   chromedriver                        0x0000000104cf9804 chromedriver + 743428
+5   chromedriver                        0x0000000104cb459c chromedriver + 460188
+6   chromedriver                        0x0000000104cb5644 chromedriver + 464452
+7   chromedriver                        0x000000010501930c chromedriver + 4018956
+8   chromedriver                        0x000000010501cfd8 chromedriver + 4034520
+9   chromedriver                        0x000000010502311c chromedriver + 4059420
+10  chromedriver                        0x000000010501dbac chromedriver + 4037548
+11  chromedriver                        0x0000000104ff7bb0 chromedriver + 3881904
+12  chromedriver                        0x000000010503a120 chromedriver + 4153632
+13  chromedriver                        0x000000010503a274 chromedriver + 4153972
+14  chromedriver                        0x000000010504e82c chromedriver + 4237356
+15  libsystem_pthread.dylib             0x00000001a582a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a582508c thread_start + 8
+
+[2023-01-25 00:00:19,959] [ERROR] (getAuctionList.py:1070) > Error_ITEM_선택
+[2023-01-25 00:00:19,959] [ERROR] (getAuctionList.py:1071) > ('20180130004237', '4', False)
+[2023-01-25 00:00:19,959] [ERROR] (getAuctionList.py:1072) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="201801300042374"]"}
+  (Session info: headless chrome=109.0.5414.87)
+Stacktrace:
+0   chromedriver                        0x0000000105047b7c chromedriver + 4209532
+1   chromedriver                        0x0000000104fd3418 chromedriver + 3732504
+2   chromedriver                        0x0000000104c86368 chromedriver + 271208
+3   chromedriver                        0x0000000104cc1fc8 chromedriver + 516040
+4   chromedriver                        0x0000000104cf9804 chromedriver + 743428
+5   chromedriver                        0x0000000104cb459c chromedriver + 460188
+6   chromedriver                        0x0000000104cb5644 chromedriver + 464452
+7   chromedriver                        0x000000010501930c chromedriver + 4018956
+8   chromedriver                        0x000000010501cfd8 chromedriver + 4034520
+9   chromedriver                        0x000000010502311c chromedriver + 4059420
+10  chromedriver                        0x000000010501dbac chromedriver + 4037548
+11  chromedriver                        0x0000000104ff7bb0 chromedriver + 3881904
+12  chromedriver                        0x000000010503a120 chromedriver + 4153632
+13  chromedriver                        0x000000010503a274 chromedriver + 4153972
+14  chromedriver                        0x000000010504e82c chromedriver + 4237356
+15  libsystem_pthread.dylib             0x00000001a582a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a582508c thread_start + 8
+
+[2023-01-25 00:00:19,964] [ERROR] (getAuctionList.py:1070) > Error_ITEM_선택
+[2023-01-25 00:00:19,964] [ERROR] (getAuctionList.py:1071) > ('20180130004237', '5', False)
+[2023-01-25 00:00:19,964] [ERROR] (getAuctionList.py:1072) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="201801300042375"]"}
+  (Session info: headless chrome=109.0.5414.87)
+Stacktrace:
+0   chromedriver                        0x0000000105047b7c chromedriver + 4209532
+1   chromedriver                        0x0000000104fd3418 chromedriver + 3732504
+2   chromedriver                        0x0000000104c86368 chromedriver + 271208
+3   chromedriver                        0x0000000104cc1fc8 chromedriver + 516040
+4   chromedriver                        0x0000000104cf9804 chromedriver + 743428
+5   chromedriver                        0x0000000104cb459c chromedriver + 460188
+6   chromedriver                        0x0000000104cb5644 chromedriver + 464452
+7   chromedriver                        0x000000010501930c chromedriver + 4018956
+8   chromedriver                        0x000000010501cfd8 chromedriver + 4034520
+9   chromedriver                        0x000000010502311c chromedriver + 4059420
+10  chromedriver                        0x000000010501dbac chromedriver + 4037548
+11  chromedriver                        0x0000000104ff7bb0 chromedriver + 3881904
+12  chromedriver                        0x000000010503a120 chromedriver + 4153632
+13  chromedriver                        0x000000010503a274 chromedriver + 4153972
+14  chromedriver                        0x000000010504e82c chromedriver + 4237356
+15  libsystem_pthread.dylib             0x00000001a582a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a582508c thread_start + 8
+
+[2023-01-25 00:00:19,969] [ERROR] (getAuctionList.py:1070) > Error_ITEM_선택
+[2023-01-25 00:00:19,969] [ERROR] (getAuctionList.py:1071) > ('20180130004237', '6', False)
+[2023-01-25 00:00:19,969] [ERROR] (getAuctionList.py:1072) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="201801300042376"]"}
+  (Session info: headless chrome=109.0.5414.87)
+Stacktrace:
+0   chromedriver                        0x0000000105047b7c chromedriver + 4209532
+1   chromedriver                        0x0000000104fd3418 chromedriver + 3732504
+2   chromedriver                        0x0000000104c86368 chromedriver + 271208
+3   chromedriver                        0x0000000104cc1fc8 chromedriver + 516040
+4   chromedriver                        0x0000000104cf9804 chromedriver + 743428
+5   chromedriver                        0x0000000104cb459c chromedriver + 460188
+6   chromedriver                        0x0000000104cb5644 chromedriver + 464452
+7   chromedriver                        0x000000010501930c chromedriver + 4018956
+8   chromedriver                        0x000000010501cfd8 chromedriver + 4034520
+9   chromedriver                        0x000000010502311c chromedriver + 4059420
+10  chromedriver                        0x000000010501dbac chromedriver + 4037548
+11  chromedriver                        0x0000000104ff7bb0 chromedriver + 3881904
+12  chromedriver                        0x000000010503a120 chromedriver + 4153632
+13  chromedriver                        0x000000010503a274 chromedriver + 4153972
+14  chromedriver                        0x000000010504e82c chromedriver + 4237356
+15  libsystem_pthread.dylib             0x00000001a582a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a582508c thread_start + 8
+
+[2023-01-25 00:00:19,973] [ERROR] (getAuctionList.py:1070) > Error_ITEM_선택
+[2023-01-25 00:00:19,974] [ERROR] (getAuctionList.py:1071) > ('20180130004237', '7', False)
+[2023-01-25 00:00:19,974] [ERROR] (getAuctionList.py:1072) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="201801300042377"]"}
+  (Session info: headless chrome=109.0.5414.87)
+Stacktrace:
+0   chromedriver                        0x0000000105047b7c chromedriver + 4209532
+1   chromedriver                        0x0000000104fd3418 chromedriver + 3732504
+2   chromedriver                        0x0000000104c86368 chromedriver + 271208
+3   chromedriver                        0x0000000104cc1fc8 chromedriver + 516040
+4   chromedriver                        0x0000000104cf9804 chromedriver + 743428
+5   chromedriver                        0x0000000104cb459c chromedriver + 460188
+6   chromedriver                        0x0000000104cb5644 chromedriver + 464452
+7   chromedriver                        0x000000010501930c chromedriver + 4018956
+8   chromedriver                        0x000000010501cfd8 chromedriver + 4034520
+9   chromedriver                        0x000000010502311c chromedriver + 4059420
+10  chromedriver                        0x000000010501dbac chromedriver + 4037548
+11  chromedriver                        0x0000000104ff7bb0 chromedriver + 3881904
+12  chromedriver                        0x000000010503a120 chromedriver + 4153632
+13  chromedriver                        0x000000010503a274 chromedriver + 4153972
+14  chromedriver                        0x000000010504e82c chromedriver + 4237356
+15  libsystem_pthread.dylib             0x00000001a582a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x00000001a582508c thread_start + 8
+
+[2023-01-25 00:02:23,903] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:02:23,903] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:02:23,995] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:02:24,053] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:02:28,157] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:02:28,161] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:02:33,290] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:02:36,620] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:02:48,314] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:02:48,314] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:02:48,408] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:02:48,467] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:02:52,423] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:02:52,428] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:02:57,355] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:03:00,174] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:03:11,320] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:03:11,321] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:03:11,410] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:03:11,476] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:03:15,365] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:03:15,373] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:03:21,138] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:03:24,298] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:03:35,795] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:03:35,795] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:03:35,900] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:03:35,964] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:03:39,432] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:03:39,442] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:03:44,440] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:03:47,823] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:03:58,320] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:03:58,322] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:03:58,439] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:03:58,508] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:04:01,915] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:04:01,924] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:04:07,158] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:04:10,247] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:04:22,538] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:04:22,538] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:04:22,634] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:04:22,705] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:04:26,129] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:04:26,141] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:04:31,292] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:04:34,211] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:04:45,354] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:04:45,354] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:04:45,450] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:04:45,512] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:04:49,566] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:04:49,571] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:04:54,530] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:04:57,387] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:05:09,208] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:05:09,208] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:05:09,296] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:05:09,356] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:05:12,973] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:05:12,980] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:05:17,832] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:05:20,817] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:05:31,411] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:05:31,411] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:05:31,502] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:05:31,565] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:05:35,091] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:05:35,105] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:05:40,373] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:05:43,260] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:05:53,844] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:05:53,844] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:05:53,938] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:05:54,004] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:05:57,599] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:05:57,615] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:06:02,473] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:06:05,274] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:06:15,951] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:06:15,951] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:06:16,051] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:06:16,120] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:06:19,763] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:06:19,778] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:06:25,322] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:06:28,132] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:06:39,823] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:06:39,824] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:06:39,921] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:06:39,985] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:06:43,274] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:06:43,278] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:06:48,095] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:06:50,925] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:07:01,730] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:07:01,731] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:07:01,846] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:07:01,925] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:07:05,476] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:07:05,489] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:07:10,375] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:07:13,439] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:07:24,353] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:07:24,353] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:07:24,455] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:07:24,522] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:07:28,187] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:07:28,196] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:07:33,302] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:07:36,283] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:07:46,946] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:07:46,946] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:07:47,034] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:07:47,096] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:07:50,462] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:07:50,466] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:07:56,557] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:07:59,465] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:08:10,062] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:08:10,062] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:08:10,162] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:08:10,233] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:08:13,867] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:08:13,875] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:08:19,109] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:08:21,793] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:08:33,144] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:08:33,144] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:08:33,240] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:08:33,304] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:08:36,677] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:08:36,688] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:08:42,216] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:08:45,105] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:08:55,971] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:08:55,971] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:08:56,059] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:08:56,120] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:09:00,035] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:09:00,041] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:09:05,015] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:09:08,131] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:09:18,483] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:09:18,483] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:09:18,569] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:09:18,630] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:09:22,080] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:09:22,099] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:09:27,385] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:09:30,549] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:09:41,658] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:09:41,658] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:09:41,745] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:09:41,804] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:09:45,233] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:09:45,238] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:09:50,521] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:09:53,589] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:11:08,207] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:11:08,208] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:11:08,314] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:11:08,382] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:11:12,441] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:11:12,449] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:11:17,252] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:11:19,944] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:11:31,548] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:11:31,548] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:11:31,637] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:11:31,700] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:11:35,194] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:11:35,207] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:11:40,190] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:11:43,487] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:11:54,782] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:11:54,782] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:11:54,869] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:11:54,931] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:11:58,412] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:11:58,418] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:12:03,225] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:12:06,611] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:12:17,903] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:12:17,904] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:12:18,030] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:12:18,117] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:12:21,985] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:12:22,005] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:12:27,092] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:12:30,469] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:12:41,801] [DEBUG] (getAuctionList.py:685) > START 2018타경4237
+[2023-01-25 00:12:41,801] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:12:41,905] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:12:41,988] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:12:45,727] [DEBUG] (getAuctionList.py:911) > Complated insert: 2018타경4237
+[2023-01-25 00:12:45,739] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:12:50,646] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:12:53,720] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:13:04,484] [DEBUG] (getAuctionList.py:685) > START 2022타경200766
+[2023-01-25 00:13:04,484] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:13:04,582] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:13:04,642] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:13:08,556] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경200766
+[2023-01-25 00:13:08,560] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:13:13,830] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:18:11,494] [DEBUG] (getAuctionList.py:685) > START 2022타경3632
+[2023-01-25 00:18:11,494] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:18:11,594] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:18:11,658] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:18:15,145] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경3632
+[2023-01-25 00:18:15,156] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:18:20,142] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:19:37,088] [DEBUG] (getAuctionList.py:685) > START 2022타경55695
+[2023-01-25 00:19:37,089] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:19:37,192] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:19:37,258] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:19:41,097] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경55695
+[2023-01-25 00:19:41,109] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:19:45,890] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:19:48,860] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:21:19,187] [DEBUG] (getAuctionList.py:685) > START 2021타경33172
+[2023-01-25 00:21:19,188] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:21:19,280] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:21:19,340] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:21:22,663] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경33172
+[2023-01-25 00:21:22,668] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:21:27,648] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:23:08,847] [DEBUG] (getAuctionList.py:685) > START 2022타경6393
+[2023-01-25 00:23:08,847] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:23:08,934] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:23:09,000] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:23:12,493] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경6393
+[2023-01-25 00:23:12,499] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:23:17,325] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:24:22,703] [DEBUG] (getAuctionList.py:685) > START 2022타경6461
+[2023-01-25 00:24:22,703] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:24:22,797] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:24:22,858] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:24:26,431] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경6461
+[2023-01-25 00:24:26,438] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:24:31,459] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:24:34,128] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 00:25:41,383] [DEBUG] (getAuctionList.py:685) > START 2022타경6720
+[2023-01-25 00:25:41,384] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:25:41,502] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:25:41,573] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:25:44,929] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경6720
+[2023-01-25 00:25:44,940] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:25:49,896] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:27:07,744] [DEBUG] (getAuctionList.py:685) > START 2022타경6881
+[2023-01-25 00:27:07,744] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:27:07,843] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:27:07,903] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:27:11,498] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경6881
+[2023-01-25 00:27:11,504] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:27:16,351] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:29:12,640] [DEBUG] (getAuctionList.py:685) > START 2022타경105238
+[2023-01-25 00:29:12,640] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:29:12,741] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:29:12,806] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:29:16,575] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경105238
+[2023-01-25 00:29:16,587] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:29:21,400] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:30:28,730] [DEBUG] (getAuctionList.py:685) > START 2022타경109148
+[2023-01-25 00:30:28,730] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:30:28,827] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:30:28,886] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:30:32,737] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경109148
+[2023-01-25 00:30:32,749] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:30:37,644] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:32:08,435] [DEBUG] (getAuctionList.py:685) > START 2022타경110032
+[2023-01-25 00:32:08,436] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:32:08,525] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:32:08,596] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:32:12,566] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경110032
+[2023-01-25 00:32:12,575] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:32:17,799] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:37:37,590] [DEBUG] (getAuctionList.py:685) > START 2022타경18139
+[2023-01-25 00:37:37,591] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:37:37,702] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:37:37,770] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:37:41,180] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경18139
+[2023-01-25 00:37:41,184] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:37:46,291] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:42:24,831] [DEBUG] (getAuctionList.py:685) > START 2022타경18443
+[2023-01-25 00:42:24,831] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:42:24,936] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:42:25,005] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:42:28,506] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경18443
+[2023-01-25 00:42:28,511] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:42:33,733] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:46:31,619] [DEBUG] (getAuctionList.py:685) > START 2021타경107649
+[2023-01-25 00:46:31,619] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:46:31,725] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:46:31,794] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:46:35,412] [DEBUG] (getAuctionList.py:911) > Complated insert: 2021타경107649
+[2023-01-25 00:46:35,428] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:46:40,433] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:50:27,216] [DEBUG] (getAuctionList.py:685) > START 2022타경4365
+[2023-01-25 00:50:27,217] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:50:27,313] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:50:27,374] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:50:31,000] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4365
+[2023-01-25 00:50:31,004] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:50:36,143] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 00:59:51,169] [DEBUG] (getAuctionList.py:685) > START 2022타경4365
+[2023-01-25 00:59:51,170] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 00:59:51,258] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 00:59:51,319] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 00:59:54,880] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4365
+[2023-01-25 00:59:54,890] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 00:59:59,892] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 01:00:10,560] [DEBUG] (getAuctionList.py:685) > START 2022타경4365
+[2023-01-25 01:00:10,560] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 01:00:10,654] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 01:00:10,719] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 01:00:14,152] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4365
+[2023-01-25 01:00:14,157] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 01:00:19,700] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 01:00:30,927] [DEBUG] (getAuctionList.py:685) > START 2022타경4365
+[2023-01-25 01:00:30,927] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 01:00:31,023] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 01:00:31,092] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 01:00:35,221] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4365
+[2023-01-25 01:00:35,233] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 01:00:40,619] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 01:00:50,950] [DEBUG] (getAuctionList.py:685) > START 2022타경4594
+[2023-01-25 01:00:50,950] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 01:00:51,039] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 01:00:51,099] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 01:00:54,478] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4594
+[2023-01-25 01:00:54,488] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 01:00:59,811] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 01:01:03,035] [DEBUG] (getAuctionList.py:474) > 임차인 DB Insert 완료
+[2023-01-25 01:02:15,942] [DEBUG] (getAuctionList.py:685) > START 2022타경4808
+[2023-01-25 01:02:15,942] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 01:02:16,061] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 01:02:16,128] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 01:02:19,981] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경4808
+[2023-01-25 01:02:19,995] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 01:02:24,923] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료
+[2023-01-25 01:03:55,994] [DEBUG] (getAuctionList.py:685) > START 2022타경105909
+[2023-01-25 01:03:55,994] [DEBUG] (getAuctionList.py:689) > 기본조사 시작
+[2023-01-25 01:03:56,090] [DEBUG] (getAuctionList.py:736) > 목록내역 시작
+[2023-01-25 01:03:56,151] [DEBUG] (getAuctionList.py:877) > 감정평가 시작
+[2023-01-25 01:04:00,052] [DEBUG] (getAuctionList.py:911) > Complated insert: 2022타경105909
+[2023-01-25 01:04:00,056] [DEBUG] (getAuctionList.py:394) > 현황조사서 시작
+[2023-01-25 01:04:05,010] [DEBUG] (getAuctionList.py:468) > 임차내용 DB Insert 완료

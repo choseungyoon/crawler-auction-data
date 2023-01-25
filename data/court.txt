@@ -1,0 +1,60 @@
+서울중앙지방법원, %BC%AD%BF%EF%C1%DF%BE%D3%C1%F6%B9%E6%B9%FD%BF%F8
+서울동부지방법원, %BC%AD%BF%EF%B5%BF%BA%CE%C1%F6%B9%E6%B9%FD%BF%F8
+서울서부지방법원, %BC%AD%BF%EF%BC%AD%BA%CE%C1%F6%B9%E6%B9%FD%BF%F8
+서울남부지방법원, %BC%AD%BF%EF%B3%B2%BA%CE%C1%F6%B9%E6%B9%FD%BF%F8
+서울북부지방법원, %BC%AD%BF%EF%BA%CF%BA%CE%C1%F6%B9%E6%B9%FD%BF%F8
+의정부지방법원, %C0%C7%C1%A4%BA%CE%C1%F6%B9%E6%B9%FD%BF%F8
+의정부지방법원 고양지원, %B0%ED%BE%E7%C1%F6%BF%F8
+의정부지방법원 남양주지원, %B3%B2%BE%E7%C1%D6%C1%F6%BF%F8
+인천지방법원, %C0%CE%C3%B5%C1%F6%B9%E6%B9%FD%BF%F8
+인천지방법원 부천지원, %BA%CE%C3%B5%C1%F6%BF%F8
+수원지방법원, %BC%F6%BF%F8%C1%F6%B9%E6%B9%FD%BF%F8
+수원지방법원 성남지원, %BC%BA%B3%B2%C1%F6%BF%F8
+수원지방법원 여주지원, %BF%A9%C1%D6%C1%F6%BF%F8
+수원지방법원 평택지원, %C6%F2%C5%C3%C1%F6%BF%F8
+수원지방법원 안산지원, %BE%C8%BB%EA%C1%F6%BF%F8
+수원지방법원 안양지원, %BE%C8%BE%E7%C1%F6%BF%F8
+춘천지방법원, %C3%E1%C3%B5%C1%F6%B9%E6%B9%FD%BF%F8
+춘천지방법원 강릉지원, %B0%AD%B8%AA%C1%F6%BF%F8
+춘천지방법원 원주지원, %BF%F8%C1%D6%C1%F6%BF%F8
+춘천지방법원 영월지원, %BF%B5%BF%F9%C1%F6%BF%F8
+춘천지방법원 속초지원, %BC%D3%C3%CA%C1%F6%BF%F8
+청주지방법원, %C3%BB%C1%D6%C1%F6%B9%E6%B9%FD%BF%F8
+청주지방법원 충주지원, %C3%E6%C1%D6%C1%F6%BF%F8
+청주지방법원 제천지원, %C1%A6%C3%B5%C1%F6%BF%F8
+청주지방법원 영동지원, %BF%B5%B5%BF%C1%F6%BF%F8
+대전지방법원, %B4%EB%C0%FC%C1%F6%B9%E6%B9%FD%BF%F8
+대전지방법원 홍성지원, %C8%AB%BC%BA%C1%F6%BF%F8
+대전지방법원 논산지원, %B3%ED%BB%EA%C1%F6%BF%F8
+대전지방법원 천안지원, %C3%B5%BE%C8%C1%F6%BF%F8
+대전지방법원 공주지원, %B0%F8%C1%D6%C1%F6%BF%F8
+대전지방법원 서산지원, %BC%AD%BB%EA%C1%F6%BF%F8
+대구지방법원, %B4%EB%B1%B8%C1%F6%B9%E6%B9%FD%BF%F8
+대구지방법원 안동지원, %BE%C8%B5%BF%C1%F6%BF%F8
+대구지방법원 경주지원, %B0%E6%C1%D6%C1%F6%BF%F8
+대구지방법원 김천지원, %B1%E8%C3%B5%C1%F6%BF%F8
+대구지방법원 상주지원, %BB%F3%C1%D6%C1%F6%BF%F8
+대구지방법원 의성지원, %C0%C7%BC%BA%C1%F6%BF%F8
+대구지방법원 영덕지원, %BF%B5%B4%F6%C1%F6%BF%F8
+대구지방법원 포항지원, %C6%F7%C7%D7%C1%F6%BF%F8
+대구지방법원 서부지원, %B4%EB%B1%B8%BC%AD%BA%CE%C1%F6%BF%F8
+부산지방법원, %BA%CE%BB%EA%C1%F6%B9%E6%B9%FD%BF%F8
+부산지방법원 동부지원, %BA%CE%BB%EA%B5%BF%BA%CE%C1%F6%BF%F8
+부산지방법원 서부지원, %BA%CE%BB%EA%BC%AD%BA%CE%C1%F6%BF%F8
+울산지방법원, %BF%EF%BB%EA%C1%F6%B9%E6%B9%FD%BF%F8
+창원지방법원, %C3%A2%BF%F8%C1%F6%B9%E6%B9%FD%BF%F8
+창원지방법원 마산지원, %B8%B6%BB%EA%C1%F6%BF%F8
+창원지방법원 진주지원, %C1%F8%C1%D6%C1%F6%BF%F8
+창원지방법원 통영지원, %C5%EB%BF%B5%C1%F6%BF%F8
+창원지방법원 밀양지원, %B9%D0%BE%E7%C1%F6%BF%F8
+창원지방법원 거창지원, %B0%C5%C3%A2%C1%F6%BF%F8
+광주지방법원, %B1%A4%C1%D6%C1%F6%B9%E6%B9%FD%BF%F8
+광주지방법원 목포지원, %B8%F1%C6%F7%C1%F6%BF%F8
+광주지방법원 장흥지원, %C0%E5%C8%EF%C1%F6%BF%F8
+광주지방법원 순천지원, %BC%F8%C3%B5%C1%F6%BF%F8
+광주지방법원 해남지원, %C7%D8%B3%B2%C1%F6%BF%F8
+전주지방법원, %C0%FC%C1%D6%C1%F6%B9%E6%B9%FD%BF%F8
+전주지방법원 군산지원, %B1%BA%BB%EA%C1%F6%BF%F8
+전주지방법원 정읍지원, %C1%A4%C0%BE%C1%F6%BF%F8
+전주지방법원 남원지원, %B3%B2%BF%F8%C1%F6%BF%F8
+제주지방법원, %C1%A6%C1%D6%C1%F6%B9%E6%B9%FD%BF%F8
