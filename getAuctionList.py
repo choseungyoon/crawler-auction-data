@@ -57,8 +57,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        options = webdriver.ChromeOptions()
-        # options = webdriver.FirefoxOptions()
+        #options = webdriver.ChromeOptions()
+        options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
