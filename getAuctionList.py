@@ -1353,6 +1353,7 @@ def job():
 
 def updateJob():
     crawler = GetAuctionInfo()
+    crawler.setup_method("")
     loop = asyncio.get_event_loop()
     loop.run_until_complete(crawler.update_date())
     crawler.teardown_method("")
