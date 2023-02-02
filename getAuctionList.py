@@ -57,8 +57,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        #options = webdriver.ChromeOptions()
-        options = webdriver.FirefoxOptions()
+        options = webdriver.ChromeOptions()
+        #options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -69,9 +69,9 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        #self.driver = webdriver.Chrome('mac/chromedriver', options=options)
-        self.driver = webdriver.Firefox(
-            executable_path='linux/geckodriver', options=options)
+        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
+        # self.driver = webdriver.Firefox(
+        #     executable_path='linux/geckodriver', options=options)
 
         # self.driver.implicitly_wait(3)
 
@@ -1108,7 +1108,7 @@ class GetAuctionInfo():
 
         fromDate = datetime.now()
         fromDate = fromDate.replace(hour=0, minute=0, second=0)
-        toDate = fromDate - timedelta(days=5)
+        toDate = fromDate - timedelta(days=1)
 
         items = await db.item.find_many(
             where={
@@ -1340,8 +1340,8 @@ class GetAuctionInfo():
 
 
 def job():
-    itemType = ["도로", "임야", "아파트", "빌라", "대지",
-                "다세대주탁", "전", "답", "근린생활시설", "오피스텔", "단독주택"]
+    itemType = ["판매시설", "빌라", "아파트", "대지", "단독주택",
+                "다가구주택", "연립주택", "다세대주택", "임야", "전", "답"]
 
     for item in itemType:
         crawler = GetAuctionInfo()
@@ -1353,6 +1353,7 @@ def job():
 
 def updateJob():
     crawler = GetAuctionInfo()
+    crawler.setup_method("")
     loop = asyncio.get_event_loop()
     loop.run_until_complete(crawler.update_date())
     crawler.teardown_method("")
@@ -1360,7 +1361,7 @@ def updateJob():
 
 def reserve():
     updateJob()
-    job()
+    # job()
 
 
 reserve()
