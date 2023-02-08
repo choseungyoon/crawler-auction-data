@@ -57,8 +57,8 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        options = webdriver.ChromeOptions()
-        #options = webdriver.FirefoxOptions()
+        #options = webdriver.ChromeOptions()
+        options = webdriver.FirefoxOptions()
 
         options.add_argument("--headless")
         # open Browser in maximized mode
@@ -69,11 +69,11 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
-        # self.driver = webdriver.Firefox(
-        #     executable_path='linux/geckodriver', options=options)
+        #self.driver = webdriver.Chrome('mac/chromedriver', options=options)
+        self.driver = webdriver.Firefox(
+            executable_path='linux/geckodriver', options=options)
 
-        # self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(3)
 
         self.vars = {}
 
