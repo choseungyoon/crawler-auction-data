@@ -55,23 +55,12 @@ class GetAuctionInfo():
 
     def setup_method(self, method):
         # 옵션 생성
-        options = webdriver.ChromeOptions()
-        # options = webdriver.FirefoxOptions()
-        # options.add_argument("--headless")
-        # open Browser in maximized mode
-        options.add_argument("start-maximized")
-        options.add_argument("disable-infobars")  # disabling infobars
-        options.add_argument("--disable-extensions")  # disabling extensions
-        options.add_argument("--no-sandbox")
-
-        # overcome limited resource problems
-        options.add_argument("--disable-dev-shm-usage")
-
-        self.driver = webdriver.Chrome('linux/chromedriver', options=options)
-        # self.driver = webdriver.Firefox(
-        #     executable_path='linux/geckodriver', options=options)
-
-        # self.driver.implicitly_wait(3)
+        chrome_options = webdriver.ChromeOptions()
+        chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--no-sandbox')
+        chrome_options.add_argument('--disable-dev-shm-usage')
+        self.driver = webdriver.Chrome(
+            executable_path="linux/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
