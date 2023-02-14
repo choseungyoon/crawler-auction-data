@@ -41,7 +41,8 @@ jobs:
           pip install schedule
           pip install chromedriver-autoinstaller selenium pyvirtualdisplay
           pip install azure-cli
-          pip install azure-storage
+          pip install azure-storage-blob
+          pip install azure-storage-file-share
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Create folder
         run: |
