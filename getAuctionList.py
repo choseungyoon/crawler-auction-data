@@ -33,6 +33,8 @@ import schedule
 import logging
 import logging.handlers
 
+import binascii
+
 # LOG UPDATE ITEM
 log_update = logging.getLogger('snowdeer_log')
 log_update.setLevel(logging.DEBUG)
@@ -58,9 +60,9 @@ class GetAuctionInfo():
     def setup_method(self, method):
         # 옵션 생성
         options = webdriver.ChromeOptions()
-        #options = webdriver.FirefoxOptions()
+        # options = webdriver.FirefoxOptions()
 
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
         options.add_argument("disable-infobars")  # disabling infobars
@@ -248,7 +250,7 @@ class GetAuctionInfo():
 
     async def insertItem(self, caseNumber, caseIndex, itemNumber, itemType, initialPrice, minPrice, bidType, saleDate,
                          description, itemLocation, court, caseApplyDate, auctionApplyDate, allocationApplyDate,
-                         requestPrice, appraisal, areaOfBuilding, areaOfGround, numOfPass, share):
+                         requestPrice, appraisal, areaOfBuilding, areaOfGround, numOfPass, share, pdfValuation):
         db = Prisma()
         await db.connect()
         item = await db.item.create(
@@ -272,7 +274,8 @@ class GetAuctionInfo():
                 'areaOfBuilding':     areaOfBuilding,
                 'areaOfGround': areaOfGround,
                 'numOfPass':  numOfPass,
-                'share': share
+                'share': share,
+                'pdfValuation': pdfValuation
             }
         )
         print("Created : ", caseNumber)
@@ -378,9 +381,19 @@ class GetAuctionInfo():
 
                 if duplicated == False:
                     print("PASS : ", inputValue[1], " ", inputValue[2])
+
+                    # 감정평가서 업데이트
+                    if firstItem == (inputValue[1], inputValue[2]):
+                        itemList.append(
+                            (inputValue[1], inputValue[2], True))
+                    else:
+                        itemList.append(
+                            (inputValue[1], inputValue[2], False))
+                            
                 else:
                     print("ADD : ", inputValue[1], " ", inputValue[2])
 
+                    # 전체 업데이트
                     if firstItem == (inputValue[1], inputValue[2]):
                         itemList.append(
                             (inputValue[1], inputValue[2], True))
@@ -647,6 +660,84 @@ class GetAuctionInfo():
 
         print("기일내역 완료")
 
+    def 감정평가서_PDF_다운(self):
+        print("감정평가서 다운로드")
+        try:
+            self.vars["window_handles"] = self.driver.window_handles
+            self.driver.find_element(
+                By.XPATH, "//img[@alt='감정평가서 팝업']").click()
+
+            self.vars["win7232"] = self.wait_for_window(2000)
+            self.vars["root"] = self.driver.current_window_handle
+            self.driver.switch_to.window(self.vars["win7232"])
+
+            filename = 'pdf/valuation.pdf'
+
+            with open(filename, 'wb') as file:
+
+                iframe = self.driver.find_element(
+                    By.XPATH, "/html/frameset/frame[2]")
+                self.driver.switch_to.frame(iframe)
+                pdf_link = self.driver.find_element(By.TAG_NAME, "iframe")
+
+                # write file
+                with open(filename, 'wb') as handle:
+                    while True:
+                        try:
+                            headers = {
+                                # Github runner
+                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                                # Local
+                                # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                            }
+
+                            response = requests.get(
+                                pdf_link.get_attribute('src'), stream=True, headers=headers)
+
+                            if response.status_code == 200:
+                                break
+                        except Exception as e:
+                            print(
+                                "Error Write file ", e)
+                            time.sleep(3)
+
+                    if not response.ok:
+                        print(response)
+
+                    for block in response.iter_content(1024):
+                        if not block:
+                            break
+                        handle.write(block)
+
+                with open(filename, 'rb') as f:
+                    content = f.read()
+
+                hex = binascii.hexlify(content).decode('utf-8')
+
+                # Delete image files
+                folder = 'pdf/'
+                for filename in os.listdir(folder):
+                    file_path = os.path.join(folder, filename)
+                    try:
+                        if os.path.isfile(file_path) or os.path.islink(file_path):
+                            os.unlink(file_path)
+                        elif os.path.isdir(file_path):
+                            shutil.rmtree(file_path)
+                    except Exception as e:
+                        print('Failed to delete %s. Reason: %s' %
+                              (file_path, e))
+        except Exception as PDF_VALUATION_Error:
+            log_update.error(PDF_VALUATION_Error)
+
+        finally:
+            self.driver.close()
+            self.driver.switch_to.window(self.vars["root"])
+            self.driver.switch_to.frame(0)
+
+        print("감정평가서 다운로드 완료")
+
+        return hex
+
     async def crawler_data(self, itemInfo):
         log_update.debug("Start creating new item : " + itemInfo)
         formatYYYMMDDHHMM = '%Y.%m.%d %H:%M'
@@ -685,6 +776,8 @@ class GetAuctionInfo():
                         log_update.debug("START " + caseNumber)
 
                         share = False
+
+                        pdfValuation = self.감정평가서_PDF_다운()
 
                         log_update.debug("기본조사 시작")
                         # 기본정보
@@ -906,7 +999,8 @@ class GetAuctionInfo():
                                                        areaOfBuilding,
                                                        areaOfGround,
                                                        0,
-                                                       share)
+                                                       share,
+                                                       pdfValuation)
 
                         log_update.debug("Complated insert: " + caseNumber)
 
@@ -924,6 +1018,7 @@ class GetAuctionInfo():
                                 # 사진 업로드
                                 checkImage = self.driver.find_element(
                                     By.XPATH, "//*[@id='contents']/div[4]/div[2]/table/tbody/tr/td")
+
                                 if checkImage.text == "감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.":
                                     print("감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.")
                                 else:
@@ -977,6 +1072,7 @@ class GetAuctionInfo():
 
                                                         response = requests.get(
                                                             img.get_attribute('src'), stream=True, headers=headers)
+
                                                         if response.status_code == 200:
                                                             break
                                                     except Exception as e:
@@ -1341,8 +1437,7 @@ class GetAuctionInfo():
 
 
 def job():
-    itemType = ["판매시설", "빌라", "아파트", "대지", "단독주택",
-                "다가구주택", "연립주택", "다세대주택", "임야", "전", "답"]
+    itemType = ["오피스텔"]
 
     for item in itemType:
         crawler = GetAuctionInfo()
@@ -1361,8 +1456,8 @@ def updateJob():
 
 
 def reserve():
-    updateJob()
-    # job()
+    # updateJob()
+    job()
 
 
 reserve()

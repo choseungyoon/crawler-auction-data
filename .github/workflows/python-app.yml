@@ -48,4 +48,4 @@ jobs:
       - name: Run crawler
         run: |
           prisma generate
-          python getAuctionList.py
+          python InsertNewItem.py

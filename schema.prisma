@@ -67,6 +67,7 @@ model Item {
   images              String           @default("")
   uniqueCode          String           @default("")
   pdfHex              String           @default("") @db.LongText
+  pdfValuation        String           @default("") @db.LongText
   visited             Int              @default(0)
   certification       certification[]
   Recommend           recommend[]
@@ -81,7 +82,11 @@ model certification {
   purpose   String   @default("")
   date      DateTime
   detail    String   @db.MediumText
+  creditor  String   @default("")
+  amount    String   @default("")
   owner     String
+  type      String   @default("")
+  title     String   @default("")
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
 }
@@ -108,6 +113,7 @@ model Image {
   updatedAt       DateTime @updatedAt
   caseNumber      String
   cloudflareImgId String
+  imgSrc          String   @default("")
 }
 
 model resultAuction {
