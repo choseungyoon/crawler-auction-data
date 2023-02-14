@@ -57,7 +57,7 @@ class GetAuctionInfo():
         # 옵션 생성
         #options = webdriver.ChromeOptions()
         options = webdriver.FirefoxOptions()
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         # open Browser in maximized mode
         options.add_argument("start-maximized")
         options.add_argument("disable-infobars")  # disabling infobars
