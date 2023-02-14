@@ -368,7 +368,8 @@ class GetAuctionInfo():
 
             # Create a BlobServiceClient object using the connection string
             blob_service_client = BlobServiceClient.from_connection_string(
-                connect_str)
+                connect_str, max_block_size=4*1024*1024,  # Note: This is the default value
+                max_single_put_size=16*1024*1024)
 
             # Create a ContainerClient object for the container
             container_client = blob_service_client.get_container_client(
@@ -446,11 +447,6 @@ class GetAuctionInfo():
                         handle.write(block)
 
                 fileUrl = self.Upload_감정평가서_Azure(filename)
-
-                # with open(filename, 'rb') as f:
-                #     content = f.read()
-
-                # hex = binascii.hexlify(content).decode('utf-8')
 
                 # Delete pdf files
                 folder = 'pdf/'
@@ -627,53 +623,48 @@ class GetAuctionInfo():
                         # Download image file
                         print('images/' + nameOfImage +
                               "_" + str(i) + ".png")
-                        with open('images/' + nameOfImage + "_" + str(i) + ".png", 'wb') as file:
-                            # identify image to be captured
 
-                            img = None
+                        img = None
+                        while True:
+                            try:
+                                img = self.driver.find_element(
+                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                                break
+                            except Exception as ImgNotFoundError:
+                                print("ImgNotFoundError : ",
+                                      ImgNotFoundError)
+                                time.sleep(5)
+
+                        # write file
+                        with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
                             while True:
                                 try:
-                                    img = self.driver.find_element(
-                                        By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-                                    break
-                                except Exception as ImgNotFoundError:
-                                    print("ImgNotFoundError : ",
-                                          ImgNotFoundError)
-                                    time.sleep(2)
+                                    headers = {
+                                        # Github runner
+                                        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
+                                    }
 
-                            # write file
-                            with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                while True:
-                                    try:
+                                    response = requests.get(
+                                        img.get_attribute('src'), stream=True, headers=headers)
 
-                                        headers = {
-                                            # Github runner
-                                            "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                                            # Local
-                                            # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                                        }
-
-                                        response = requests.get(
-                                            img.get_attribute('src'), stream=True, headers=headers)
-
-                                        if response.status_code == 200:
-                                            break
-                                    except Exception as e:
-                                        print(
-                                            "Error Write file ", e)
-                                        time.sleep(3)
-
-                                if not response.ok:
-                                    print(response)
-
-                                for block in response.iter_content(1024):
-                                    if not block:
+                                    if response.status_code == 200:
                                         break
-                                    handle.write(block)
+                                except Exception as e:
+                                    print(
+                                        "Error Write file ", e)
+                                    time.sleep(3)
 
-                            # Uplocat image to Azure Storage blob
-                            self.uploadImageToAzure(
-                                'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
+                            if not response.ok:
+                                print(response)
+
+                            for block in response.iter_content(1024):
+                                if not block:
+                                    break
+                                handle.write(block)
+
+                        # Uplocat image to Azure Storage blob
+                        self.uploadImageToAzure(
+                            'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
 
                         # nextpage
                         pagination = self.driver.find_element(
@@ -689,6 +680,7 @@ class GetAuctionInfo():
                                     print("GO TO PAGE : ",
                                           imagePageIndex)
                                     page.click()
+                                    time.sleep(5)
                                     break
                             else:
                                 if int(page.text) == imagePageIndex+1:
@@ -696,6 +688,7 @@ class GetAuctionInfo():
                                     print("GO TO PAGE : ",
                                           imagePageIndex)
                                     page.click()
+                                    time.sleep(5)
                                     break
                     await self.insertImage(imageObjects)
 

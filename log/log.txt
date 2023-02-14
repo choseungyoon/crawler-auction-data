@@ -129,3 +129,61 @@
 [2023-02-14 17:39:25,237] [ERROR] (InsertNewItem.py:995) > HTTPConnectionPool(host='localhost', port=55989): Max retries exceeded with url: /session/beea5404f5424bf735eba3f8471602b8/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107ebe3a0>: Failed to establish a new connection: [Errno 61] Connection refused'))
 [2023-02-14 17:39:25,256] [ERROR] (InsertNewItem.py:995) > HTTPConnectionPool(host='localhost', port=55989): Max retries exceeded with url: /session/beea5404f5424bf735eba3f8471602b8/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107ebe1c0>: Failed to establish a new connection: [Errno 61] Connection refused'))
 [2023-02-14 17:39:25,258] [ERROR] (InsertNewItem.py:995) > HTTPConnectionPool(host='localhost', port=55989): Max retries exceeded with url: /session/beea5404f5424bf735eba3f8471602b8/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x11ce70910>: Failed to establish a new connection: [Errno 61] Connection refused'))
+[2023-02-14 23:35:49,813] [DEBUG] (InsertNewItem.py:206) > 감정평가 시작
+[2023-02-14 23:35:49,970] [DEBUG] (InsertNewItem.py:223) > 목록내역 시작
+[2023-02-14 23:36:57,245] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:04,319] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:11,462] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:18,908] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:25,924] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:32,897] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:39,947] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:46,982] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:37:54,108] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:01,410] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:09,286] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:17,530] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:25,080] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:32,411] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:40,423] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:48,255] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:38:55,822] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:03,217] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:11,509] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:19,743] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:27,536] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:35,128] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:43,572] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:51,007] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:39:59,033] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:40:06,017] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:40:12,877] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:40:20,243] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:40:30,107] [DEBUG] (InsertNewItem.py:770) > 현황조사서 시작
+[2023-02-14 23:40:34,875] [DEBUG] (InsertNewItem.py:844) > 임차내용 DB Insert 완료
+[2023-02-14 23:40:38,069] [DEBUG] (InsertNewItem.py:850) > 임차인 DB Insert 완료
+[2023-02-14 23:40:38,878] [DEBUG] (InsertNewItem.py:206) > 감정평가 시작
+[2023-02-14 23:40:39,042] [DEBUG] (InsertNewItem.py:223) > 목록내역 시작
+[2023-02-14 23:43:45,771] [DEBUG] (InsertNewItem.py:770) > 현황조사서 시작
+[2023-02-14 23:43:50,712] [DEBUG] (InsertNewItem.py:844) > 임차내용 DB Insert 완료
+[2023-02-14 23:43:53,860] [DEBUG] (InsertNewItem.py:850) > 임차인 DB Insert 완료
+[2023-02-14 23:44:50,753] [DEBUG] (InsertNewItem.py:206) > 감정평가 시작
+[2023-02-14 23:44:50,904] [DEBUG] (InsertNewItem.py:223) > 목록내역 시작
+[2023-02-14 23:45:13,532] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:45:21,065] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:45:28,208] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:45:35,461] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:45:43,181] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:45:51,012] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:45:59,015] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:46:07,176] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:46:14,637] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:46:22,083] [DEBUG] (InsertNewItem.py:480) > Upload to Azure storage serivce
+[2023-02-14 23:46:30,943] [DEBUG] (InsertNewItem.py:770) > 현황조사서 시작
+[2023-02-14 23:46:35,744] [DEBUG] (InsertNewItem.py:844) > 임차내용 DB Insert 완료
+[2023-02-14 23:46:38,459] [DEBUG] (InsertNewItem.py:850) > 임차인 DB Insert 완료
+[2023-02-14 23:46:39,291] [DEBUG] (InsertNewItem.py:206) > 감정평가 시작
+[2023-02-14 23:46:39,413] [DEBUG] (InsertNewItem.py:223) > 목록내역 시작
+[2023-02-14 23:46:40,969] [ERROR] (InsertNewItem.py:981) > HTTPConnectionPool(host='localhost', port=58841): Max retries exceeded with url: /session/db3e85e604c85b88a2e2317224170e2a/window (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107979610>: Failed to establish a new connection: [Errno 61] Connection refused'))
+[2023-02-14 23:46:40,978] [ERROR] (InsertNewItem.py:981) > HTTPConnectionPool(host='localhost', port=58841): Max retries exceeded with url: /session/db3e85e604c85b88a2e2317224170e2a/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1084021c0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+[2023-02-14 23:46:40,985] [ERROR] (InsertNewItem.py:981) > HTTPConnectionPool(host='localhost', port=58841): Max retries exceeded with url: /session/db3e85e604c85b88a2e2317224170e2a/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x107979610>: Failed to establish a new connection: [Errno 61] Connection refused'))
