@@ -56,11 +56,11 @@ class GetAuctionInfo():
     def setup_method(self, method):
         # 옵션 생성
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(
-            executable_path="linux/chromedriver", chrome_options=chrome_options)
+            executable_path="mac/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
@@ -110,10 +110,11 @@ class GetAuctionInfo():
                 duplicated = await self.selectItemByCaseIndex(inputValue[1], inputValue[2])
 
                 if duplicated == False:
-                    print("PASS : ", inputValue[1], " ", inputValue[2])
+                    log_update.debug(
+                        "PASS : " + inputValue[1] + " " + inputValue[2])
                 else:
-                    print("ADD : ", inputValue[1], " ", inputValue[2])
-
+                    log_update.debug(
+                        "ADD : " + inputValue[1] + " " + inputValue[2])
                     # 전체 업데이트
                     if firstItem == (inputValue[1], inputValue[2]):
                         itemList.append(
@@ -160,7 +161,7 @@ class GetAuctionInfo():
 
                 break
             except Exception as NextPageException:
-                print("NextPageException :", NextPageException)
+                log_update.error("NextPageException : " + NextPageException)
 
             finally:
                 return isFinished
@@ -195,7 +196,7 @@ class GetAuctionInfo():
                 'pdfValuation': pdfValuation
             }
         )
-        print("Created : ", caseNumber)
+        log_update.debug("Created : " + caseNumber)
         await db.disconnect()
 
         return item.id
@@ -347,7 +348,7 @@ class GetAuctionInfo():
                     areaOfGround += thisGround
 
                 elif tds[1].text == "건물":
-                    print("건물")
+                    log_update.debug("건물")
 
                 estateIdx = estateIdx + 1
 
@@ -359,7 +360,8 @@ class GetAuctionInfo():
             log_update.error("Error line : " + line)
 
     def Upload_감정평가서_Azure(self, filePath):
-        print("감정평가서 Upload to Azure")
+        log_update.debug("감정평가서 Upload to Azure")
+
         try:
             config = dotenv_values(".env")
             # Define connection string and container name
@@ -388,17 +390,17 @@ class GetAuctionInfo():
             with open(local_path, "rb") as data:
                 blob_client.upload_blob(data)
 
-            print(blob_client.url)
+            log_update.debug(blob_client.url)
 
             return blob_client.url
 
         except Exception as ex:
-            print('Exception:')
-            print(ex)
+            log_update.debug('Exception:')
+            log_update.debug(ex)
             return "none"
 
     def 감정평가서_PDF_다운(self):
-        print("감정평가서 다운로드")
+        log_update.debug("감정평가서 다운로드")
         fileUrl = "none"
         try:
             self.vars["window_handles"] = self.driver.window_handles
@@ -434,12 +436,12 @@ class GetAuctionInfo():
                             if response.status_code == 200:
                                 break
                         except Exception as e:
-                            print(
+                            log_update.error(
                                 "Error Write file ", e)
                             time.sleep(3)
 
                     if not response.ok:
-                        print(response)
+                        log_update.debug(response)
 
                     for block in response.iter_content(1024):
                         if not block:
@@ -458,8 +460,8 @@ class GetAuctionInfo():
                         elif os.path.isdir(file_path):
                             shutil.rmtree(file_path)
                     except Exception as e:
-                        print('Failed to delete %s. Reason: %s' %
-                              (file_path, e))
+                        log_update.error('Failed to delete %s. Reason: %s' %
+                                         (file_path, e))
         except Exception as PDF_VALUATION_Error:
             log_update.error(PDF_VALUATION_Error)
 
@@ -468,7 +470,7 @@ class GetAuctionInfo():
             self.driver.switch_to.window(self.vars["root"])
             self.driver.switch_to.frame(0)
 
-        print("감정평가서 다운로드 완료")
+        log_update.debug("감정평가서 다운로드 완료")
 
         return fileUrl
 
@@ -509,11 +511,11 @@ class GetAuctionInfo():
             imageObjects.append(
                 {"caseNumber": caseNumber, "imgSrc": blob_client.url, "cloudflareImgId": ""})
 
-            print(blob_client.url)
+            log_update.debug(blob_client.url)
 
         except Exception as ex:
-            print('Exception:')
-            print(ex)
+            log_update.error('Exception:')
+            log_update.error(ex)
 
     async def checkImageDuplicated(self):
         db = Prisma()
@@ -543,7 +545,7 @@ class GetAuctionInfo():
         await db.resultauction.create_many(
             data=resultAuctionObjects
         )
-        print("Completed insert result of auction")
+        log_update.debug("Completed insert result of auction")
         await db.disconnect()
 
     async def insertLeaseDetail(self, leaseDetails):
@@ -553,7 +555,7 @@ class GetAuctionInfo():
         await db.leasedetail.create_many(
             data=leaseDetails
         )
-        print("Completed insert leaseDetails")
+        log_update.debug("Completed insert leaseDetails")
         await db.disconnect()
 
     async def insertEstateList(self, estateList):
@@ -563,7 +565,7 @@ class GetAuctionInfo():
         await db.realestatelist.create_many(
             data=estateList
         )
-        print("Completed insert estateLists")
+        log_update.debug("Completed insert estateLists")
         await db.disconnect()
 
     async def insertLeasePeople(self, leasePeoples):
@@ -574,7 +576,7 @@ class GetAuctionInfo():
         await db.leasepeople.create_many(
             data=leasePeoples
         )
-        print("Completed insert lease peoples")
+        log_update.debug("Completed insert lease peoples")
         await db.disconnect()
 
     async def insertImage(self, imageObjects):
@@ -583,23 +585,23 @@ class GetAuctionInfo():
         await db.image.create_many(
             data=imageObjects
         )
-        print("Completed insert images")
+        log_update.debug("Completed insert images")
         await db.disconnect()
 
     async def 이미지업로드(self):
         try:
             imageDuplicated = await self.checkImageDuplicated()
             if imageDuplicated == True:
-                print("PASS : UPLOAD IMAGE")
+                log_update.debug("PASS : UPLOAD IMAGE")
             else:
-                print("START UPLOAD IMAGE")
+                log_update.debug("START UPLOAD IMAGE")
 
                 # 사진 업로드
                 checkImage = self.driver.find_element(
                     By.XPATH, "//*[@id='contents']/div[4]/div[2]/table/tbody/tr/td")
 
                 if checkImage.text == "감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.":
-                    print("감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.")
+                    log_update.debug("감정평가서와 현황조사서에 등록된 사진이미지가 없습니다.")
                 else:
                     self.vars["window_handles"] = self.driver.window_handles
                     self.driver.find_element(
@@ -615,14 +617,15 @@ class GetAuctionInfo():
                     numOfImg = int(self.driver.find_element(
                         By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/div[2]/div/span").text)
 
+                    log_update.debug("사진 갯수 : " + str(numOfImg))
                     imageObjects = []
                     imagePageIndex = 1
 
                     for i in range(numOfImg):
                         # something
                         # Download image file
-                        print('images/' + nameOfImage +
-                              "_" + str(i) + ".png")
+                        log_update.debug(
+                            'images/' + nameOfImage + "_" + str(i) + ".png")
 
                         img = None
                         while True:
@@ -631,8 +634,8 @@ class GetAuctionInfo():
                                     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
                                 break
                             except Exception as ImgNotFoundError:
-                                print("ImgNotFoundError : ",
-                                      ImgNotFoundError)
+                                log_update.error("ImgNotFoundError : ",
+                                                 ImgNotFoundError)
                                 time.sleep(5)
 
                         # write file
@@ -650,12 +653,12 @@ class GetAuctionInfo():
                                     if response.status_code == 200:
                                         break
                                 except Exception as e:
-                                    print(
+                                    log_update.error(
                                         "Error Write file ", e)
                                     time.sleep(3)
 
                             if not response.ok:
-                                print(response)
+                                log_update.debug(response)
 
                             for block in response.iter_content(1024):
                                 if not block:
@@ -672,23 +675,23 @@ class GetAuctionInfo():
 
                         pages = pagination.find_elements(
                             By.TAG_NAME, 'a')
+
                         for page in pages:
                             if not page.text:
                                 if page.find_element(By.TAG_NAME,
                                                      ("img")).get_attribute("alt") == "다음":
                                     imagePageIndex = imagePageIndex + 1
-                                    print("GO TO PAGE : ",
-                                          imagePageIndex)
+                                    log_update.debug("GO TO PAGE : 다음")
                                     page.click()
-                                    time.sleep(5)
+                                    time.sleep(2)
                                     break
                             else:
-                                if int(page.text) == imagePageIndex+1:
+                                if int(page.text) == imagePageIndex + 1:
                                     imagePageIndex = imagePageIndex + 1
-                                    print("GO TO PAGE : ",
-                                          imagePageIndex)
+                                    log_update.debug(
+                                        "GO TO PAGE : " + str(imagePageIndex))
                                     page.click()
-                                    time.sleep(5)
+                                    time.sleep(2)
                                     break
                     await self.insertImage(imageObjects)
 
@@ -702,11 +705,10 @@ class GetAuctionInfo():
                             elif os.path.isdir(file_path):
                                 shutil.rmtree(file_path)
                         except Exception as e:
-                            print('Failed to delete %s. Reason: %s' %
-                                  (file_path, e))
+                            log_update.error('Failed to delete %s. Reason: %s' %
+                                             (file_path, e))
 
-                    print("사진 업로드 완료")
-
+                    log_update.debug("사진 업로드 완료")
                     self.driver.close()
                     self.driver.switch_to.window(
                         self.vars["root"])
@@ -760,7 +762,7 @@ class GetAuctionInfo():
 
         await self.기일내역_DB_업데이트(arrayResultAuction, itemId)
 
-        print("기일내역 완료")
+        log_update.debug("기일내역 완료")
 
     async def 현황조사서_데이터(self, itemId):
         log_update.debug("현황조사서 시작")
@@ -861,6 +863,8 @@ class GetAuctionInfo():
         self.caseNumber = self.driver.find_element(
             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[1]").text.split(' ')[0]
 
+        log_update.debug("사건번호 : " + self.caseNumber
+                         )
         itemNumber = self.driver.find_element(
             By.XPATH, "//*[@id='contents']/div[4]/table[1]/tbody/tr[1]/td[2]").text
 
@@ -946,8 +950,7 @@ class GetAuctionInfo():
         return itemId
 
     async def 물건업데이트(self):
-
-        print("START GET ITEMS")
+        log_update.debug("START GET ITEMS")
         while True:
             itemList = await self.법원경매정보_물건리스트_가져오기()
 
@@ -983,7 +986,7 @@ class GetAuctionInfo():
     async def linkToCourt(self, courtName):
 
         # 법원 사이트 오픈
-        print(courtName)
+        log_update.debug(courtName)
         self.driver.get("http://www.courtauction.go.kr")
         self.driver.switch_to.frame(0)
 
@@ -1002,11 +1005,11 @@ class GetAuctionInfo():
 
 def crawler():
     courtList = [
-        "서울서부지방법원", "서울중앙지방법원", "서울동부지방법원",  "서울남부지방법원", "서울북부지방법원", "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
+        "서울북부지방법원", "서울중앙지방법원", "서울서부지방법원", "서울동부지방법원",  "서울남부지방법원",  "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
         "성남지원", "여주지원", "평택지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
         "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
         "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
-        "장흥지원", "순천지원", "해남지원", "전주지방법원", "군산지원", "정읍지원", "남원지원", "제주지방법원", ""]
+        "장흥지원", "순천지원", "해남지원", "전주지방법원", "군산지원", "정읍지원", "남원지원", "제주지방법원"]
 
     for court in courtList:
         crawler = GetAuctionInfo()
