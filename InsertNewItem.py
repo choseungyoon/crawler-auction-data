@@ -606,6 +606,9 @@ class GetAuctionInfo():
                     self.vars["window_handles"] = self.driver.window_handles
                     self.driver.find_element(
                         By.CSS_SELECTOR, "#photo0 li:nth-child(1) img").click()
+
+                    time.sleep(5)
+
                     self.vars["win1583"] = self.wait_for_window(
                         2000)
                     self.vars["root"] = self.driver.current_window_handle
@@ -683,7 +686,7 @@ class GetAuctionInfo():
                                     imagePageIndex = imagePageIndex + 1
                                     log_update.debug("GO TO PAGE : 다음")
                                     page.click()
-                                    time.sleep(2)
+                                    time.sleep(5)
                                     break
                             else:
                                 if int(page.text) == imagePageIndex + 1:
@@ -691,7 +694,7 @@ class GetAuctionInfo():
                                     log_update.debug(
                                         "GO TO PAGE : " + str(imagePageIndex))
                                     page.click()
-                                    time.sleep(2)
+                                    time.sleep(5)
                                     break
                     await self.insertImage(imageObjects)
 
