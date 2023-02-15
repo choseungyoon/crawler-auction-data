@@ -60,7 +60,7 @@ class GetAuctionInfo():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(
-            executable_path="linux/chromedriver", chrome_options=chrome_options)
+            executable_path="mac/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
@@ -635,6 +635,7 @@ class GetAuctionInfo():
                             try:
                                 img = self.driver.find_element(
                                     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                                log_update.debug(img.text)
                                 break
                             except Exception as ImgNotFoundError:
                                 log_update.error("ImgNotFoundError : ",
@@ -651,7 +652,7 @@ class GetAuctionInfo():
                                     }
 
                                     response = requests.get(
-                                        img.get_attribute('src'), stream=True, headers=headers)
+                                        img.get_attribute('src'), stream=True, headers=headers, timeout=60)
 
                                     if response.status_code == 200:
                                         break
