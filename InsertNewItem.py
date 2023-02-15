@@ -60,7 +60,7 @@ class GetAuctionInfo():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(
-            executable_path="mac/chromedriver", chrome_options=chrome_options)
+            executable_path="linux/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
