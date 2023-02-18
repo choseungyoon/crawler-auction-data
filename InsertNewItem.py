@@ -649,14 +649,18 @@ class GetAuctionInfo():
                     for i in range(numOfImg):
                         # something
                         # Download image file
-                        log_update.debug(
-                            'images/' + nameOfImage + "_" + str(i) + ".png")
+                        filename = 'images/' + nameOfImage + \
+                            '_' + str(i) + '.png'
+                        log_update.debug(filename)
 
                         img = None
 
                         # img = self.driver.find_element(
                         #     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-                        while True:
+                        timeout = 10
+                        max_retries = 10
+                        for j in range(max_retries):
+
                             time.sleep(5)
                             try:
                                 img = WebDriverWait(self.driver, 10).until(
@@ -667,39 +671,66 @@ class GetAuctionInfo():
                             except Exception as ErrorGetImgSrc:
                                 log_update.error("ErrorGetImgSrc")
                                 log_update.error(ErrorGetImgSrc)
+                        else:
+                            print(
+                                "Failed to get image arc after {max_retries} retries.")
 
-                            # DownLoad & Upload image file
-                        with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                            while True:
-                                time.sleep(5)
+                        # DownLoad & Upload image file
+                        timeout = 10
+                        max_retries = 10
+
+                        if img != None:
+                            for k in range(max_retries):
                                 try:
-                                    headers = {
-                                        # Github runner
-                                        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
-                                    }
-                                    log_update.debug("Img src : " +
-                                                     img.get_attribute('src'))
-
                                     response = requests.get(
-                                        img.get_attribute('src'), stream=True, headers=headers, timeout=60)
+                                        img.get_attribute('src'), timeout=timeout)
+                                    response.raise_for_status()
 
-                                    if response.status_code == 200:
-                                        break
-                                except Exception as GetImageResponseError:
-                                    log_update.error(
-                                        "GetImageResponseError ", GetImageResponseError)
+                                    with open(filename, "wb") as f:
+                                        f.write(response.content)
+                                    self.uploadImageToAzure(
+                                        filename, imageObjects, nameOfImage)
 
-                            if not response.ok:
-                                log_update.debug(response)
-
-                            for block in response.iter_content(1024):
-                                if not block:
                                     break
-                                handle.write(block)
+                                except requests.exceptions.RequestException as e:
+                                    print(f"Error downloading image: {e}")
+                            else:
+                                print(
+                                    "Failed to download image after {max_retries} retries.")
 
-                            # Uplocat image to Azure Storage blob
-                            self.uploadImageToAzure(
-                                'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
+                        # with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+
+                        #     while True:
+                        #         time.sleep(5)
+
+                        #         try:
+                        #             headers = {
+                        #                 # Github runner
+                        #                 "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
+                        #             }
+                        #             log_update.debug("Img src : " +
+                        #                              img.get_attribute('src'))
+
+                        #             response = requests.get(
+                        #                 img.get_attribute('src'), headers=headers, timeout=60)
+
+                        #             if response.status_code == 200:
+                        #                 break
+                        #         except Exception as GetImageResponseError:
+                        #             log_update.error(
+                        #                 "GetImageResponseError ", GetImageResponseError)
+
+                        #     if not response.ok:
+                        #         log_update.debug(response)
+
+                        #     for block in response.iter_content(1024):
+                        #         if not block:
+                        #             break
+                        #         handle.write(block)
+
+                        #     # Uplocat image to Azure Storage blob
+                        #     self.uploadImageToAzure(
+                        #         'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
 
                         # nextpage
                         pagination = self.driver.find_element(
@@ -1039,11 +1070,11 @@ class GetAuctionInfo():
 
 def crawler():
     courtList = [
-        "성남지원", "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
+        "군산지원", "성남지원", "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
         "여주지원", "평택지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
         "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
         "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
-        "장흥지원", "순천지원", "해남지원", "전주지방법원", "군산지원", "정읍지원", "남원지원", "제주지방법원", "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원"]
+        "장흥지원", "순천지원", "해남지원", "전주지방법원",  "정읍지원", "남원지원", "제주지방법원", "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원"]
 
     for court in courtList:
         crawler = GetAuctionInfo()
