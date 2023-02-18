@@ -1,6 +1,6 @@
 generator client {
   provider             = "prisma-client-py"
-  previewFeatures      = ["referentialIntegrity"]
+  previewFeatures      = ["fullTextSearch"]
   interface            = "asyncio"
   recursive_type_depth = "5"
 }
@@ -67,7 +67,6 @@ model Item {
   images              String           @default("")
   uniqueCode          String           @default("")
   pdfHex              String           @default("") @db.LongText
-  pdfValuation        String           @default("") @db.LongText
   visited             Int              @default(0)
   certification       certification[]
   Recommend           recommend[]
@@ -114,6 +113,14 @@ model Image {
   caseNumber      String
   cloudflareImgId String
   imgSrc          String   @default("")
+}
+
+model valuation {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  caseNumber String
+  src        String   @default("")
 }
 
 model resultAuction {

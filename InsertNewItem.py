@@ -27,6 +27,10 @@ import logging.handlers
 from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
 from dotenv import dotenv_values
 
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
 import binascii
 
 # logging
@@ -60,7 +64,7 @@ class GetAuctionInfo():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(
-            executable_path="mac/chromedriver", chrome_options=chrome_options)
+            executable_path="linux/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
@@ -98,8 +102,13 @@ class GetAuctionInfo():
             By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
 
         for line in table:
-            chks = line.find_elements(By.NAME, "chk")
+            tds = line.find_elements(By.TAG_NAME, "td")
 
+            if "자동차" in tds[2].text:
+                log_update.debug("SKIP 자동차")
+                continue
+
+            chks = line.find_elements(By.NAME, "chk")
             for chk in chks:
                 inputValue = chk.get_attribute("value").split(',')
                 if isFirst == True:
@@ -168,7 +177,7 @@ class GetAuctionInfo():
 
     async def insertItem(self, caseNumber, caseIndex, itemNumber, itemType, initialPrice, minPrice, bidType, saleDate,
                          description, itemLocation, court, caseApplyDate, auctionApplyDate, allocationApplyDate,
-                         requestPrice, appraisal, areaOfBuilding, areaOfGround, numOfPass, share, pdfValuation):
+                         requestPrice, appraisal, areaOfBuilding, areaOfGround, numOfPass, share):
         db = Prisma()
         await db.connect()
         item = await db.item.create(
@@ -192,11 +201,24 @@ class GetAuctionInfo():
                 'areaOfBuilding':     areaOfBuilding,
                 'areaOfGround': areaOfGround,
                 'numOfPass':  numOfPass,
-                'share': share,
-                'pdfValuation': pdfValuation
+                'share': share
             }
         )
         log_update.debug("Created : " + caseNumber)
+        await db.disconnect()
+
+        return item.id
+
+    async def Insert_감정평가서(self, src):
+        db = Prisma()
+        await db.connect()
+        item = await db.valuation.create(
+            data={
+                'caseNumber': self.caseNumber,
+                'src': src
+            }
+        )
+        log_update.debug("Completed  - insert 감정평가서")
         await db.disconnect()
 
         return item.id
@@ -399,7 +421,7 @@ class GetAuctionInfo():
             log_update.debug(ex)
             return "none"
 
-    def 감정평가서_PDF_다운(self):
+    async def 감정평가서_PDF_다운(self):
         log_update.debug("감정평가서 다운로드")
         fileUrl = "none"
         try:
@@ -449,6 +471,8 @@ class GetAuctionInfo():
                         handle.write(block)
 
                 fileUrl = self.Upload_감정평가서_Azure(filename)
+                if fileUrl != "none":
+                    await self.Insert_감정평가서(fileUrl)
 
                 # Delete pdf files
                 folder = 'pdf/'
@@ -462,6 +486,7 @@ class GetAuctionInfo():
                     except Exception as e:
                         log_update.error('Failed to delete %s. Reason: %s' %
                                          (file_path, e))
+
         except Exception as PDF_VALUATION_Error:
             log_update.error(PDF_VALUATION_Error)
 
@@ -469,10 +494,7 @@ class GetAuctionInfo():
             self.driver.close()
             self.driver.switch_to.window(self.vars["root"])
             self.driver.switch_to.frame(0)
-
-        log_update.debug("감정평가서 다운로드 완료")
-
-        return fileUrl
+            log_update.debug("감정평가서 다운로드 완료")
 
     def uploadImageToAzure(self, imgFileName, imageObjects, caseNumber):
         log_update.debug("Upload to Azure storage serivce")
@@ -633,45 +655,52 @@ class GetAuctionInfo():
                         img = None
                         while True:
                             try:
-                                img = self.driver.find_element(
-                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
-                                log_update.debug(img.text)
+                                # img = self.driver.find_element(
+                                #     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+
+                                img = WebDriverWait(self.driver, 10).until(
+                                    EC.presence_of_element_located(
+                                        (By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img"))
+                                )
+
+                                # write file
+                                with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+                                    while True:
+                                        try:
+                                            headers = {
+                                                # Github runner
+                                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
+                                            }
+                                            log_update.debug("Img src : " +
+                                                             img.get_attribute('src'))
+
+                                            response = requests.get(
+                                                img.get_attribute('src'), stream=True, headers=headers, timeout=60)
+
+                                            if response.status_code == 200:
+                                                break
+                                        except Exception as e:
+                                            log_update.error(
+                                                "Error Write file ", e)
+                                            time.sleep(3)
+
+                                    if not response.ok:
+                                        log_update.debug(response)
+
+                                    for block in response.iter_content(1024):
+                                        if not block:
+                                            break
+                                        handle.write(block)
+
+                                # Uplocat image to Azure Storage blob
+                                self.uploadImageToAzure(
+                                    'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
+
                                 break
                             except Exception as ImgNotFoundError:
                                 log_update.error("ImgNotFoundError : ",
                                                  ImgNotFoundError)
                                 time.sleep(5)
-
-                        # write file
-                        with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                            while True:
-                                try:
-                                    headers = {
-                                        # Github runner
-                                        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
-                                    }
-
-                                    response = requests.get(
-                                        img.get_attribute('src'), stream=True, headers=headers, timeout=60)
-
-                                    if response.status_code == 200:
-                                        break
-                                except Exception as e:
-                                    log_update.error(
-                                        "Error Write file ", e)
-                                    time.sleep(3)
-
-                            if not response.ok:
-                                log_update.debug(response)
-
-                            for block in response.iter_content(1024):
-                                if not block:
-                                    break
-                                handle.write(block)
-
-                        # Uplocat image to Azure Storage blob
-                        self.uploadImageToAzure(
-                            'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
 
                         # nextpage
                         pagination = self.driver.find_element(
@@ -922,7 +951,7 @@ class GetAuctionInfo():
         numOfPass = self.유찰_카운트()
 
         # 감정평가서 다운로드
-        pdfValuation = self.감정평가서_PDF_다운()
+        await self.감정평가서_PDF_다운()
 
         itemId = await self.insertItem(self.caseNumber,
                                        item[0],
@@ -943,8 +972,8 @@ class GetAuctionInfo():
                                        목록내역데이터[1],
                                        목록내역데이터[0],
                                        numOfPass,
-                                       목록내역데이터[5],
-                                       pdfValuation)
+                                       목록내역데이터[5])
+
         # 부동산 내역
         if len(목록내역데이터[2]) > 0:
             for estateItem in 목록내역데이터[2]:
@@ -1009,11 +1038,11 @@ class GetAuctionInfo():
 
 def crawler():
     courtList = [
-        "서울북부지방법원", "서울중앙지방법원", "서울동부지방법원",  "서울남부지방법원", "서울서부지방법원", "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
-        "성남지원", "여주지원", "평택지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
+        "성남지원", "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
+        "여주지원", "평택지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
         "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
         "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
-        "장흥지원", "순천지원", "해남지원", "전주지방법원", "군산지원", "정읍지원", "남원지원", "제주지방법원"]
+        "장흥지원", "순천지원", "해남지원", "전주지방법원", "군산지원", "정읍지원", "남원지원", "제주지방법원", "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원"]
 
     for court in courtList:
         crawler = GetAuctionInfo()
