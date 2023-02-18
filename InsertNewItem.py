@@ -653,54 +653,53 @@ class GetAuctionInfo():
                             'images/' + nameOfImage + "_" + str(i) + ".png")
 
                         img = None
-                        while True:
-                            try:
-                                # img = self.driver.find_element(
-                                #     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
 
+                        # img = self.driver.find_element(
+                        #     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                        while True:
+                            time.sleep(5)
+                            try:
                                 img = WebDriverWait(self.driver, 10).until(
                                     EC.presence_of_element_located(
                                         (By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img"))
                                 )
-
-                                # write file
-                                with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-                                    while True:
-                                        try:
-                                            headers = {
-                                                # Github runner
-                                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
-                                            }
-                                            log_update.debug("Img src : " +
-                                                             img.get_attribute('src'))
-
-                                            response = requests.get(
-                                                img.get_attribute('src'), stream=True, headers=headers, timeout=60)
-
-                                            if response.status_code == 200:
-                                                break
-                                        except Exception as e:
-                                            log_update.error(
-                                                "Error Write file ", e)
-                                            time.sleep(3)
-
-                                    if not response.ok:
-                                        log_update.debug(response)
-
-                                    for block in response.iter_content(1024):
-                                        if not block:
-                                            break
-                                        handle.write(block)
-
-                                # Uplocat image to Azure Storage blob
-                                self.uploadImageToAzure(
-                                    'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
-
                                 break
-                            except Exception as ImgNotFoundError:
-                                log_update.error("ImgNotFoundError : ",
-                                                 ImgNotFoundError)
+                            except Exception as ErrorGetImgSrc:
+                                log_update.error("ErrorGetImgSrc")
+                                log_update.error(ErrorGetImgSrc)
+
+                            # DownLoad & Upload image file
+                        with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
+                            while True:
                                 time.sleep(5)
+                                try:
+                                    headers = {
+                                        # Github runner
+                                        "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
+                                    }
+                                    log_update.debug("Img src : " +
+                                                     img.get_attribute('src'))
+
+                                    response = requests.get(
+                                        img.get_attribute('src'), stream=True, headers=headers, timeout=60)
+
+                                    if response.status_code == 200:
+                                        break
+                                except Exception as GetImageResponseError:
+                                    log_update.error(
+                                        "GetImageResponseError ", GetImageResponseError)
+
+                            if not response.ok:
+                                log_update.debug(response)
+
+                            for block in response.iter_content(1024):
+                                if not block:
+                                    break
+                                handle.write(block)
+
+                            # Uplocat image to Azure Storage blob
+                            self.uploadImageToAzure(
+                                'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
 
                         # nextpage
                         pagination = self.driver.find_element(
@@ -726,7 +725,9 @@ class GetAuctionInfo():
                                     page.click()
                                     time.sleep(5)
                                     break
-                    await self.insertImage(imageObjects)
+
+                    if len(imageObjects) != 0:
+                        await self.insertImage(imageObjects)
 
                     # Delete img files
                     folder = 'images/'
