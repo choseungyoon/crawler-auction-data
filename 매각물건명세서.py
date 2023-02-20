@@ -53,7 +53,7 @@ class GetSellItemDetail():
     def setup_method(self, method):
         # 옵션 생성
         chrome_options = webdriver.ChromeOptions()
-        # chrome_options.add_argument('--headless')
+        chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
 
@@ -67,7 +67,7 @@ class GetSellItemDetail():
         chrome_options.add_experimental_option("prefs", prefs)
 
         self.driver = webdriver.Chrome(
-            executable_path="mac/chromedriver", chrome_options=chrome_options)
+            executable_path="linux/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
