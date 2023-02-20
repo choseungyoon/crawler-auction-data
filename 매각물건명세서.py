@@ -53,7 +53,7 @@ class GetSellItemDetail():
     def setup_method(self, method):
         # 옵션 생성
         options = webdriver.ChromeOptions()
-        # chrome_options.add_argument('--headless')
+        # options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
 
@@ -67,7 +67,7 @@ class GetSellItemDetail():
         options.add_experimental_option("prefs", prefs)
 
         self.driver = webdriver.Chrome(
-            executable_path="linux/chromedriver", chrome_options=options)
+            executable_path="mac/chromedriver", chrome_options=options)
 
         self.vars = {}
 
@@ -269,6 +269,7 @@ def crawler():
         "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
         "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
         "장흥지원", "순천지원", "해남지원", "전주지방법원",   "남원지원", "제주지방법원",  "정읍지원", "평택지원", "군산지원", "성남지원", "의정부지방법원", "고양지원", "남양주지원"]
+
     for court in courtList:
         crawler = GetSellItemDetail()
         crawler.setup_method("")

@@ -1205,7 +1205,7 @@ class GetAuctionInfo():
         fromDate = datetime.now()
         fromDate = fromDate.replace(hour=0, minute=0, second=0)
 
-        toDate = fromDate - timedelta(days=1)
+        toDate = fromDate - timedelta(days=100)
 
         items = await db.item.find_many(
             where={

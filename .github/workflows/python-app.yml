@@ -53,4 +53,4 @@ jobs:
       - name: Run crawler
         run: |
           prisma generate
-          python 매각물건명세서.py
+          python getAuctionList.py
