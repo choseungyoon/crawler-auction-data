@@ -53,7 +53,7 @@ class GetSellItemDetail():
     def setup_method(self, method):
         # 옵션 생성
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
 
@@ -115,21 +115,6 @@ class GetSellItemDetail():
         else:
             return False
 
-    async def 감정평가서_업데이트_확인(self, 사건번호):
-        db = Prisma()
-        await db.connect()
-
-        items = await db.valuation.count(
-            where={
-                'caseNumber': 사건번호,
-            })
-        await db.disconnect()
-
-        if items == 0:
-            return True
-        else:
-            return False
-
     async def Insert_매각물건명세서_DB(self, 사건번호, 물건번호, src):
         db = Prisma()
         await db.connect()
@@ -159,7 +144,7 @@ class GetSellItemDetail():
                           (file_path, e))
         log.debug("Completed delete files in downloads folder")
 
-    def Upload_매각물건명세서_To_Azure(self, caseNumber, itemNumber):
+    def Upload_To_Azure(self, caseNumber, itemNumber, fileName, blobName):
         try:
             config = dotenv_values(".env")
             # Define connection string and container name
@@ -176,13 +161,10 @@ class GetSellItemDetail():
                 container_name)
 
             # Define the path to the local file to upload
-            local_path = 'downloads/매각물건명세서.pdf'
-
-            # Get Date
-            date = str(datetime.now().date())
+            local_path = fileName
 
             # Define the name for the blob in Azure Storage
-            blob_name = "매각물건명세서" + caseNumber + "_" + itemNumber + "_" + date + ".pdf"
+            blob_name = blobName
 
             # Create a BlobClient object for the blob
             blob_client = container_client.get_blob_client(blob_name)
@@ -214,10 +196,16 @@ class GetSellItemDetail():
         while not any(fname.endswith('.pdf') for fname in os.listdir(os.path.realpath(self.download_dir))):
             time.sleep(1)
 
-        fileSrc = self.Upload_매각물건명세서_To_Azure(사건번호, 물건번호)
+        # Get Date
+        date = str(datetime.now().date())
+
+        fileSrc = self.Upload_To_Azure(
+            사건번호, 물건번호, 'downloads/매각물건명세서.pdf',  "매각물건명세서_" + 사건번호 + "_" + 물건번호 + "_" + date + ".pdf")
 
         if fileSrc != 'none':
             await self.Insert_매각물건명세서_DB(사건번호, 물건번호, fileSrc)
+
+        await self.DeletePdfFileInDrive()
 
         self.driver.find_element(
             By.CSS_SELECTOR, ".btn_prev > img").click()
@@ -254,15 +242,12 @@ class GetSellItemDetail():
                         log.debug(사건번호 + " " + 물건번호)
 
                         isUpdateStatementForSale = await self.매각물건명세서_업데이트_확인(사건번호, 물건번호)
-                        # isUpdateValuation = await self.감정평가서_업데이트_확인(사건번호)
 
                         if isUpdateStatementForSale == True:
                             log.debug("START 매각물건명세서")
                             await self.업데이트_매각물건명세서(사건번호, 물건번호, count)
                         else:
                             log.debug("PASS 매각물건명세서")
-
-                        await self.DeletePdfFileInDrive()
 
                         count = count + 1
                     # 다음
