@@ -5,6 +5,7 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.common.exceptions import StaleElementReferenceException
 
 from prisma import Prisma
 
@@ -64,7 +65,7 @@ class GetAuctionInfo():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(
-            executable_path="linux/chromedriver", chrome_options=chrome_options)
+            executable_path="mac/chromedriver", chrome_options=chrome_options)
 
         self.vars = {}
 
@@ -103,6 +104,9 @@ class GetAuctionInfo():
 
         for line in table:
             tds = line.find_elements(By.TAG_NAME, "td")
+
+            if tds[0].text == '검색결과가 없습니다.':
+                continue
 
             if "자동차" in tds[2].text:
                 log_update.debug("SKIP 자동차")
@@ -222,6 +226,19 @@ class GetAuctionInfo():
         await db.disconnect()
 
         return item.id
+
+    async def Select_감정평가서(self):
+        db = Prisma()
+        await db.connect()
+        cntValuation = await db.valuation.count(
+            data={
+                'caseNumber': self.caseNumber
+            }
+        )
+        if cntValuation > 0:
+            return True
+        else:
+            return False
 
     def 감정평가요양표_요약(self):
         appraisal = ""
@@ -424,6 +441,10 @@ class GetAuctionInfo():
     async def 감정평가서_PDF_다운(self):
         log_update.debug("감정평가서 다운로드")
         fileUrl = "none"
+
+        if self.Select_감정평가서() == True:
+            return
+
         try:
             self.vars["window_handles"] = self.driver.window_handles
             self.driver.find_element(
@@ -653,37 +674,38 @@ class GetAuctionInfo():
                             '_' + str(i) + '.png'
                         log_update.debug(filename)
 
-                        img = None
+                        image_src = None
 
                         # img = self.driver.find_element(
                         #     By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
                         timeout = 10
                         max_retries = 10
                         for j in range(max_retries):
-
-                            time.sleep(5)
                             try:
-                                img = WebDriverWait(self.driver, 10).until(
-                                    EC.presence_of_element_located(
-                                        (By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img"))
-                                )
+                                # Wait for the new page to load and extract the image URLs
+                                WebDriverWait(self.driver, 10).until(
+                                    EC.presence_of_element_located((By.TAG_NAME, "img")))
+
+                                image_element = self.driver.find_element(
+                                    By.XPATH, "//*[@id='pop_contents_1']/form/div[2]/table/tbody/tr[1]/td/img")
+                                image_src = image_element.get_attribute(
+                                    "src")
+
+                                log_update.debug(image_src)
                                 break
                             except Exception as ErrorGetImgSrc:
                                 log_update.error("ErrorGetImgSrc")
                                 log_update.error(ErrorGetImgSrc)
                         else:
                             print(
-                                "Failed to get image arc after {max_retries} retries.")
+                                "Failed to get image src after {max_retries} retries.")
 
                         # DownLoad & Upload image file
-                        timeout = 10
-                        max_retries = 10
-
-                        if img != None:
+                        if image_src != None:
                             for k in range(max_retries):
                                 try:
                                     response = requests.get(
-                                        img.get_attribute('src'), timeout=timeout)
+                                        image_src, timeout=timeout)
                                     response.raise_for_status()
 
                                     with open(filename, "wb") as f:
@@ -698,47 +720,12 @@ class GetAuctionInfo():
                                 print(
                                     "Failed to download image after {max_retries} retries.")
 
-                        # with open('images/' + nameOfImage + '_' + str(i) + '.png', 'wb') as handle:
-
-                        #     while True:
-                        #         time.sleep(5)
-
-                        #         try:
-                        #             headers = {
-                        #                 # Github runner
-                        #                 "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.5414.74 Safari/537.36"
-                        #             }
-                        #             log_update.debug("Img src : " +
-                        #                              img.get_attribute('src'))
-
-                        #             response = requests.get(
-                        #                 img.get_attribute('src'), headers=headers, timeout=60)
-
-                        #             if response.status_code == 200:
-                        #                 break
-                        #         except Exception as GetImageResponseError:
-                        #             log_update.error(
-                        #                 "GetImageResponseError ", GetImageResponseError)
-
-                        #     if not response.ok:
-                        #         log_update.debug(response)
-
-                        #     for block in response.iter_content(1024):
-                        #         if not block:
-                        #             break
-                        #         handle.write(block)
-
-                        #     # Uplocat image to Azure Storage blob
-                        #     self.uploadImageToAzure(
-                        #         'images/' + nameOfImage + "_" + str(i) + ".png", imageObjects, nameOfImage)
-
                         # nextpage
                         pagination = self.driver.find_element(
                             By.CLASS_NAME, "page2")
 
                         pages = pagination.find_elements(
                             By.TAG_NAME, 'a')
-
                         for page in pages:
                             if not page.text:
                                 if page.find_element(By.TAG_NAME,
@@ -1070,11 +1057,11 @@ class GetAuctionInfo():
 
 def crawler():
     courtList = [
-        "군산지원", "성남지원", "의정부지방법원", "고양지원", "남양주지원", "인천지방법원", "부천지원", "수원지방법원",
-        "여주지원", "평택지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
+        "인천지방법원", "부천지원", "수원지방법원",
+        "여주지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
         "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
         "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
-        "장흥지원", "순천지원", "해남지원", "전주지방법원",  "정읍지원", "남원지원", "제주지방법원", "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원"]
+        "장흥지원", "순천지원", "해남지원", "전주지방법원",   "남원지원", "제주지방법원", "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원", "정읍지원", "평택지원", "군산지원", "성남지원", "의정부지방법원", "고양지원", "남양주지원"]
 
     for court in courtList:
         crawler = GetAuctionInfo()

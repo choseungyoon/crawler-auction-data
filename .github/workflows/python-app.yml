@@ -53,4 +53,4 @@ jobs:
       - name: Run crawler
         run: |
           prisma generate
-          python InsertNewItem.py
+          python 매각물건명세서.py

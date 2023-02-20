@@ -123,6 +123,15 @@ model valuation {
   src        String   @default("")
 }
 
+model statementOfSale {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  caseNumber String
+  itemNumber Int
+  src        String   @default("")
+}
+
 model resultAuction {
   id           Int       @id @default(autoincrement())
   createdAt    DateTime  @default(now())

@@ -1,0 +1,247 @@
+[2023-02-20 16:55:10,648] [DEBUG] (매각물건명세서.py:248) > 2021타경3486 1
+[2023-02-20 16:55:14,030] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:55:14,030] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:55:14,076] [DEBUG] (매각물건명세서.py:248) > 2021타경4601 1
+[2023-02-20 16:55:18,108] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:55:18,108] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:55:18,132] [DEBUG] (매각물건명세서.py:248) > 2021타경5222 1
+[2023-02-20 16:55:21,657] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:55:21,657] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:55:21,689] [DEBUG] (매각물건명세서.py:248) > 2021타경5673 1
+[2023-02-20 16:55:24,417] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:55:24,425] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:55:24,446] [DEBUG] (매각물건명세서.py:248) > 2021타경6409 1
+[2023-02-20 16:55:28,188] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:56:07,124] [DEBUG] (매각물건명세서.py:248) > 2021타경3486 1
+[2023-02-20 16:56:10,612] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:56:10,612] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:10,641] [DEBUG] (매각물건명세서.py:248) > 2021타경4601 1
+[2023-02-20 16:56:13,979] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:56:13,979] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:14,014] [DEBUG] (매각물건명세서.py:248) > 2021타경5222 1
+[2023-02-20 16:56:17,716] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:56:17,717] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:17,763] [DEBUG] (매각물건명세서.py:248) > 2021타경5673 1
+[2023-02-20 16:56:20,711] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:56:20,723] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:20,743] [DEBUG] (매각물건명세서.py:248) > 2021타경6409 1
+[2023-02-20 16:56:24,170] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:56:29,078] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD6409_2023-02-20.pdf
+[2023-02-20 16:56:33,599] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:33,624] [DEBUG] (매각물건명세서.py:248) > 2021타경103409 1
+[2023-02-20 16:56:36,779] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:56:41,662] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD103409_2023-02-20.pdf
+[2023-02-20 16:56:46,445] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:46,467] [DEBUG] (매각물건명세서.py:248) > 2021타경105139 1
+[2023-02-20 16:56:49,663] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:56:54,554] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD105139_2023-02-20.pdf
+[2023-02-20 16:56:59,341] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:56:59,364] [DEBUG] (매각물건명세서.py:248) > 2021타경107555 1
+[2023-02-20 16:57:02,565] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:57:07,011] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD107555_2023-02-20.pdf
+[2023-02-20 16:57:11,042] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:57:11,066] [DEBUG] (매각물건명세서.py:248) > 2021타경108671 1
+[2023-02-20 16:57:13,812] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:57:18,082] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD108671_2023-02-20.pdf
+[2023-02-20 16:57:22,698] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:57:22,720] [DEBUG] (매각물건명세서.py:248) > 2021타경109605 1
+[2023-02-20 16:57:25,855] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:57:30,227] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD109605_2023-02-20.pdf
+[2023-02-20 16:57:34,949] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:57:34,969] [DEBUG] (매각물건명세서.py:248) > 2021타경111653 1
+[2023-02-20 16:57:39,426] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:57:43,514] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD111653_2023-02-20.pdf
+[2023-02-20 16:57:48,175] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:57:48,206] [DEBUG] (매각물건명세서.py:248) > 2021타경113345 1
+[2023-02-20 16:57:51,718] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:57:56,211] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD113345_2023-02-20.pdf
+[2023-02-20 16:58:00,417] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:58:00,443] [DEBUG] (매각물건명세서.py:248) > 2021타경114102 1
+[2023-02-20 16:58:03,251] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:58:07,894] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD114102_2023-02-20.pdf
+[2023-02-20 16:58:13,700] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:58:13,728] [DEBUG] (매각물건명세서.py:248) > 2021타경114607 1
+[2023-02-20 16:58:17,212] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:58:21,645] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD114607_2023-02-20.pdf
+[2023-02-20 16:58:27,623] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:58:27,655] [DEBUG] (매각물건명세서.py:248) > 2021타경114874 1
+[2023-02-20 16:58:31,296] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:58:36,869] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD114874_2023-02-20.pdf
+[2023-02-20 16:58:41,610] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:58:41,639] [DEBUG] (매각물건명세서.py:248) > 2021타경115921 1
+[2023-02-20 16:58:44,641] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:58:49,281] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD115921_2023-02-20.pdf
+[2023-02-20 16:58:53,675] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:58:53,701] [DEBUG] (매각물건명세서.py:248) > 2021타경116276 1
+[2023-02-20 16:58:57,154] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:59:02,403] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD116276_2023-02-20.pdf
+[2023-02-20 16:59:06,819] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:59:06,846] [DEBUG] (매각물건명세서.py:248) > 2021타경116801 1
+[2023-02-20 16:59:10,014] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:59:14,432] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2021%ED%83%80%EA%B2%BD116801_2023-02-20.pdf
+[2023-02-20 16:59:19,440] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:59:19,468] [DEBUG] (매각물건명세서.py:248) > 2022타경1104 1
+[2023-02-20 16:59:22,986] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:59:27,199] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD1104_2023-02-20.pdf
+[2023-02-20 16:59:32,013] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:59:32,033] [DEBUG] (매각물건명세서.py:248) > 2022타경100018 1
+[2023-02-20 16:59:34,935] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:59:40,153] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD100018_2023-02-20.pdf
+[2023-02-20 16:59:44,637] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:59:45,027] [DEBUG] (매각물건명세서.py:248) > 2022타경101004 1
+[2023-02-20 16:59:48,453] [DEBUG] (매각물건명세서.py:257) > PASS 매각물건명세서
+[2023-02-20 16:59:48,454] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 16:59:48,481] [DEBUG] (매각물건명세서.py:248) > 2022타경101301 1
+[2023-02-20 16:59:52,537] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 16:59:57,664] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD101301_2023-02-20.pdf
+[2023-02-20 17:00:01,983] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:00:02,008] [DEBUG] (매각물건명세서.py:248) > 2022타경101493 1
+[2023-02-20 17:00:06,274] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:00:10,569] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD101493_2023-02-20.pdf
+[2023-02-20 17:00:15,056] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:00:15,088] [DEBUG] (매각물건명세서.py:248) > 2022타경101493 2
+[2023-02-20 17:00:19,486] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:00:27,771] [DEBUG] (매각물건명세서.py:193) > Exception:
+[2023-02-20 17:00:27,771] [DEBUG] (매각물건명세서.py:194) > The specified blob already exists.
+RequestId:625d806b-001e-0066-1d01-45afde000000
+Time:2023-02-20T08:00:29.6120962Z
+ErrorCode:BlobAlreadyExists
+Content: <?xml version="1.0" encoding="utf-8"?><Error><Code>BlobAlreadyExists</Code><Message>The specified blob already exists.
+RequestId:625d806b-001e-0066-1d01-45afde000000
+Time:2023-02-20T08:00:29.6120962Z</Message></Error>
+[2023-02-20 17:00:27,964] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:00:27,992] [DEBUG] (매각물건명세서.py:248) > 2022타경101752 1
+[2023-02-20 17:00:30,846] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:00:35,073] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD101752_2023-02-20.pdf
+[2023-02-20 17:00:39,906] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:00:39,934] [DEBUG] (매각물건명세서.py:248) > 2022타경101837 1
+[2023-02-20 17:00:43,552] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:00:48,648] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD101837_2023-02-20.pdf
+[2023-02-20 17:00:53,423] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:00:53,447] [DEBUG] (매각물건명세서.py:248) > 2022타경102175 1
+[2023-02-20 17:00:56,956] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:01:00,943] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD102175_2023-02-20.pdf
+[2023-02-20 17:01:05,404] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:01:05,424] [DEBUG] (매각물건명세서.py:248) > 2022타경102281 1
+[2023-02-20 17:01:08,598] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:01:12,924] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD102281_2023-02-20.pdf
+[2023-02-20 17:01:17,389] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:01:17,410] [DEBUG] (매각물건명세서.py:248) > 2022타경102519 1
+[2023-02-20 17:01:20,920] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:01:26,137] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD102519_2023-02-20.pdf
+[2023-02-20 17:01:30,854] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:01:30,877] [DEBUG] (매각물건명세서.py:248) > 2022타경102786 1
+[2023-02-20 17:01:34,154] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:01:38,748] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD102786_2023-02-20.pdf
+[2023-02-20 17:01:43,503] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:01:43,527] [DEBUG] (매각물건명세서.py:248) > 2022타경103505 1
+[2023-02-20 17:01:47,325] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:01:51,327] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD103505_2023-02-20.pdf
+[2023-02-20 17:01:55,490] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:01:55,511] [DEBUG] (매각물건명세서.py:248) > 2022타경103673 1
+[2023-02-20 17:01:58,577] [DEBUG] (매각물건명세서.py:254) > START 매각물건명세서
+[2023-02-20 17:02:03,302] [DEBUG] (매각물건명세서.py:188) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD103673_2023-02-20.pdf
+[2023-02-20 17:02:07,454] [DEBUG] (매각물건명세서.py:154) > Completed delete files in pdf folder
+[2023-02-20 17:02:07,478] [DEBUG] (매각물건명세서.py:248) > 2022타경104539 1
+[2023-02-20 17:07:47,737] [DEBUG] (매각물건명세서.py:253) > 2021타경3486 1
+[2023-02-20 17:07:51,064] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:07:51,064] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:07:55,119] [DEBUG] (매각물건명세서.py:253) > 2021타경4601 1
+[2023-02-20 17:07:58,372] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:07:58,373] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:07:58,399] [DEBUG] (매각물건명세서.py:253) > 2021타경5222 1
+[2023-02-20 17:08:01,518] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:01,519] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:01,551] [DEBUG] (매각물건명세서.py:253) > 2021타경5673 1
+[2023-02-20 17:08:05,205] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:05,206] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:05,232] [DEBUG] (매각물건명세서.py:253) > 2021타경6409 1
+[2023-02-20 17:08:09,164] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:09,164] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:09,192] [DEBUG] (매각물건명세서.py:253) > 2021타경103409 1
+[2023-02-20 17:08:12,570] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:12,570] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:12,593] [DEBUG] (매각물건명세서.py:253) > 2021타경105139 1
+[2023-02-20 17:08:15,670] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:15,671] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:15,696] [DEBUG] (매각물건명세서.py:253) > 2021타경107555 1
+[2023-02-20 17:08:18,733] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:18,733] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:18,758] [DEBUG] (매각물건명세서.py:253) > 2021타경108671 1
+[2023-02-20 17:08:22,110] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:22,111] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:22,152] [DEBUG] (매각물건명세서.py:253) > 2021타경109605 1
+[2023-02-20 17:08:25,103] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:25,104] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:25,136] [DEBUG] (매각물건명세서.py:253) > 2021타경111653 1
+[2023-02-20 17:08:28,246] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:28,247] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:28,279] [DEBUG] (매각물건명세서.py:253) > 2021타경113345 1
+[2023-02-20 17:08:31,639] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:31,639] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:31,676] [DEBUG] (매각물건명세서.py:253) > 2021타경114102 1
+[2023-02-20 17:08:34,736] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:34,737] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:34,762] [DEBUG] (매각물건명세서.py:253) > 2021타경114607 1
+[2023-02-20 17:08:38,392] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:38,393] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:38,419] [DEBUG] (매각물건명세서.py:253) > 2021타경114874 1
+[2023-02-20 17:08:41,396] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:41,397] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:41,426] [DEBUG] (매각물건명세서.py:253) > 2021타경115921 1
+[2023-02-20 17:08:44,808] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:44,810] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:44,841] [DEBUG] (매각물건명세서.py:253) > 2021타경116276 1
+[2023-02-20 17:08:47,915] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:47,916] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:47,943] [DEBUG] (매각물건명세서.py:253) > 2021타경116801 1
+[2023-02-20 17:08:51,280] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:51,282] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:51,311] [DEBUG] (매각물건명세서.py:253) > 2022타경1104 1
+[2023-02-20 17:08:54,971] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:54,972] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:55,004] [DEBUG] (매각물건명세서.py:253) > 2022타경100018 1
+[2023-02-20 17:08:58,357] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:08:58,358] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:08:58,926] [DEBUG] (매각물건명세서.py:253) > 2022타경101004 1
+[2023-02-20 17:09:02,345] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:02,346] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:02,376] [DEBUG] (매각물건명세서.py:253) > 2022타경101301 1
+[2023-02-20 17:09:06,337] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:06,338] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:06,368] [DEBUG] (매각물건명세서.py:253) > 2022타경101493 1
+[2023-02-20 17:09:10,404] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:10,404] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:10,425] [DEBUG] (매각물건명세서.py:253) > 2022타경101493 2
+[2023-02-20 17:09:13,639] [DEBUG] (매각물건명세서.py:259) > START 매각물건명세서
+[2023-02-20 17:09:18,933] [DEBUG] (매각물건명세서.py:193) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD101493__22023-02-20.pdf
+[2023-02-20 17:09:24,145] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:24,173] [DEBUG] (매각물건명세서.py:253) > 2022타경101752 1
+[2023-02-20 17:09:27,229] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:27,229] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:27,260] [DEBUG] (매각물건명세서.py:253) > 2022타경101837 1
+[2023-02-20 17:09:30,596] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:30,597] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:30,621] [DEBUG] (매각물건명세서.py:253) > 2022타경102175 1
+[2023-02-20 17:09:33,376] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:33,378] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:33,411] [DEBUG] (매각물건명세서.py:253) > 2022타경102281 1
+[2023-02-20 17:09:36,503] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:36,503] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:36,530] [DEBUG] (매각물건명세서.py:253) > 2022타경102519 1
+[2023-02-20 17:09:39,072] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:39,072] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:39,098] [DEBUG] (매각물건명세서.py:253) > 2022타경102786 1
+[2023-02-20 17:09:41,981] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:41,982] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:42,003] [DEBUG] (매각물건명세서.py:253) > 2022타경103505 1
+[2023-02-20 17:09:44,746] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:44,747] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:44,776] [DEBUG] (매각물건명세서.py:253) > 2022타경103673 1
+[2023-02-20 17:09:48,113] [DEBUG] (매각물건명세서.py:262) > PASS 매각물건명세서
+[2023-02-20 17:09:48,114] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:48,145] [DEBUG] (매각물건명세서.py:253) > 2022타경104539 1
+[2023-02-20 17:09:51,227] [DEBUG] (매각물건명세서.py:259) > START 매각물건명세서
+[2023-02-20 17:09:56,150] [DEBUG] (매각물건명세서.py:193) > https://auctionworld.blob.core.windows.net/statementsale/%EB%A7%A4%EA%B0%81%EB%AC%BC%EA%B1%B4%EB%AA%85%EC%84%B8%EC%84%9C2022%ED%83%80%EA%B2%BD104539__12023-02-20.pdf
+[2023-02-20 17:09:59,793] [DEBUG] (매각물건명세서.py:159) > Completed delete files in downloads folder
+[2023-02-20 17:09:59,820] [DEBUG] (매각물건명세서.py:253) > 2022타경104935 1
