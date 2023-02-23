@@ -91,6 +91,9 @@ class GetSellItemDetail():
 
         for tr in trs:
             tds = tr.find_elements(By.TAG_NAME, "td")
+            tds[0].text.find("")
+            if tds[0].text.find("없습니다") > 0:
+                break
             date_time_convert = datetime.strptime(
                 tds[0].text, self.format_string)
             if date_time_convert < self.seven_days_after:
@@ -211,8 +214,11 @@ class GetSellItemDetail():
             By.CSS_SELECTOR, ".btn_prev > img").click()
 
     async def openAuction(self, courtName):
+        log.debug(courtName)
         # 모바일 법원 사이트 오픈
         self.driver.get("http://ms.courtauction.go.kr/")
+
+        time.sleep(2)
         dropdown = self.driver.find_element(By.ID, "idJiwonNm")
         dropdown.find_element(
             By.XPATH, "//option[. = '{}']".format(courtName)).click()
@@ -223,52 +229,68 @@ class GetSellItemDetail():
         itemList = self.기일별_매각일정_가져오기()
 
         for item in itemList:
+            try:
+                log.debug(item)
+                # 경매계 클릭
+                self.driver.find_element(By.LINK_TEXT, item).click()
 
-            # 경매계 클릭
-            self.driver.find_element(By.LINK_TEXT, item).click()
+                while True:
+                    try:
+                        ul = self.driver.find_element(
+                            By.XPATH, "//*[@id='content']/div/ul")
+                        count = 1
+                        for li in ul.find_elements(By.TAG_NAME, "li"):
 
-            while True:
-                try:
-                    ul = self.driver.find_element(
-                        By.XPATH, "//*[@id='content']/div/ul")
-                    count = 1
-                    for li in ul.find_elements(By.TAG_NAME, "li"):
+                            if self.driver.find_element(
+                                    By.CSS_SELECTOR, "li:nth-child(" + str(count) + ") .l_info").text.find("자동차") > 0:
+                                continue
 
-                        사건번호 = self.driver.find_element(
-                            By.CSS_SELECTOR, "li:nth-child(" + str(count) + ") .l_info").text.split('|')[0].replace("사건번호 :", "").strip()
-                        물건번호 = self.driver.find_element(
-                            By.CSS_SELECTOR, "li:nth-child(" + str(count) + ") .l_info").text.split('|')[1].replace("물건번호 :", "").strip()
+                            사건번호 = self.driver.find_element(
+                                By.CSS_SELECTOR, "li:nth-child(" + str(count) + ") .l_info").text.split('|')[0].replace("사건번호 :", "").strip()
+                            물건번호 = self.driver.find_element(
+                                By.CSS_SELECTOR, "li:nth-child(" + str(count) + ") .l_info").text.split('|')[1].replace("물건번호 :", "").strip()
 
-                        log.debug(사건번호 + " " + 물건번호)
+                            log.debug(사건번호 + " " + 물건번호)
 
-                        isUpdateStatementForSale = await self.매각물건명세서_업데이트_확인(사건번호, 물건번호)
+                            isUpdateStatementForSale = await self.매각물건명세서_업데이트_확인(사건번호, 물건번호)
 
-                        if isUpdateStatementForSale == True:
-                            log.debug("START 매각물건명세서")
-                            await self.업데이트_매각물건명세서(사건번호, 물건번호, count)
-                        else:
-                            log.debug("PASS 매각물건명세서")
+                            if isUpdateStatementForSale == True:
+                                log.debug("START 매각물건명세서")
+                                await self.업데이트_매각물건명세서(사건번호, 물건번호, count)
+                            else:
+                                log.debug("PASS 매각물건명세서")
 
-                        count = count + 1
-                    # 다음
-                    self.driver.find_element(
-                        By.CSS_SELECTOR, ".next01").click()
+                            count = count + 1
+                        # 다음
+                        self.driver.find_element(
+                            By.CSS_SELECTOR, ".next01").click()
 
-                except NoSuchElementException:
-                    break
-
-            # 뒤로가기
-            self.driver.find_element(
-                By.CSS_SELECTOR, ".btn_prev > img").click()
+                    except NoSuchElementException:
+                        log.error(NoSuchElementException)
+                        self.driver.find_element(
+                            By.CSS_SELECTOR, ".btn_prev > img").click()
+                        break
+            except Exception as ex:
+                log.error(ex)
+                # 뒤로가기
+                self.driver.find_element(
+                    By.CSS_SELECTOR, ".btn_prev > img").click()
 
 
 def crawler():
     courtList = [
-        "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원", "인천지방법원", "부천지원", "수원지방법원",
-        "여주지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
-        "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
-        "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
-        "장흥지원", "순천지원", "해남지원", "전주지방법원",   "남원지원", "제주지방법원",  "정읍지원", "평택지원", "군산지원", "성남지원", "의정부지방법원", "고양지원", "남양주지원"]
+        "부산동부지원", "부산서부지원", "울산지방법원", "창원지방법원", "마산지원",
+        "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
+        "장흥지원", "순천지원", "해남지원",
+        "전주지방법원",   "남원지원", "제주지방법원",  "정읍지원", "평택지원", "군산지원",
+        "성남지원", "의정부지방법원", "고양지원", "남양주지원", "서울남부지방법원",
+        "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원",
+        "인천지방법원", "부천지원", "수원지방법원", "여주지원", "안산지원", "안양지원",
+        "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원",
+        "충주지원", "제천지원", "영동지원", "대전지방법원", "홍성지원", "논산지원",
+        "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원",
+        "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
+        "대구서부지원", "부산지방법원"]
 
     for court in courtList:
         crawler = GetSellItemDetail()

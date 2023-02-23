@@ -41,7 +41,7 @@ log_update.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '[%(asctime)s] [%(levelname)s] (%(filename)s:%(lineno)d) > %(message)s')
 
-fileHandler = logging.FileHandler('./log/log.txt', encoding='utf-8')
+fileHandler = logging.FileHandler('./log/log_newItem.txt', encoding='utf-8')
 streamHandler = logging.StreamHandler()
 
 fileHandler.setFormatter(formatter)
@@ -125,16 +125,24 @@ class GetAuctionInfo():
                 if duplicated == False:
                     log_update.debug(
                         "PASS : " + inputValue[1] + " " + inputValue[2])
+
+                    self.caseNumber = tds[1].text.split('\n')[1].strip()
+
+                    isUpdateValuation = await self.감정평가서_업데이트_확인()
+
+                    if isUpdateValuation == True:
+                        itemList.append(
+                            (inputValue[1], inputValue[2], True, True, self.caseNumber))
                 else:
                     log_update.debug(
                         "ADD : " + inputValue[1] + " " + inputValue[2])
                     # 전체 업데이트
                     if firstItem == (inputValue[1], inputValue[2]):
                         itemList.append(
-                            (inputValue[1], inputValue[2], True))
+                            (inputValue[1], inputValue[2], True, False))
                     else:
                         itemList.append(
-                            (inputValue[1], inputValue[2], False))
+                            (inputValue[1], inputValue[2], False, False))
 
         return itemList
 
@@ -181,7 +189,7 @@ class GetAuctionInfo():
 
     async def insertItem(self, caseNumber, caseIndex, itemNumber, itemType, initialPrice, minPrice, bidType, saleDate,
                          description, itemLocation, court, caseApplyDate, auctionApplyDate, allocationApplyDate,
-                         requestPrice, appraisal, areaOfBuilding, areaOfGround, numOfPass, share):
+                         requestPrice, appraisal, areaOfBuilding, areaOfGround, numOfPass, share, shareGround):
         db = Prisma()
         await db.connect()
         item = await db.item.create(
@@ -205,7 +213,9 @@ class GetAuctionInfo():
                 'areaOfBuilding':     areaOfBuilding,
                 'areaOfGround': areaOfGround,
                 'numOfPass':  numOfPass,
-                'share': share
+                'share': share,
+                'shareGround': shareGround
+
             }
         )
         log_update.debug("Created : " + caseNumber)
@@ -227,15 +237,18 @@ class GetAuctionInfo():
 
         return item.id
 
-    async def Select_감정평가서(self):
+    async def 감정평가서_업데이트_확인(self):
         db = Prisma()
         await db.connect()
-        cntValuation = await db.valuation.count(
-            data={
-                'caseNumber': self.caseNumber
-            }
-        )
-        if cntValuation > 0:
+
+        items = await db.valuation.count(
+            where={
+                'caseNumber': self.caseNumber,
+            })
+
+        await db.disconnect()
+
+        if items == 0:
             return True
         else:
             return False
@@ -273,6 +286,7 @@ class GetAuctionInfo():
             estateIdx = 0
             itemLocation = None
             share = False
+            shareGround = False
 
             for tr in estateListTbody.find_elements(By.TAG_NAME, "tr"):
                 tds = tr.find_elements(By.TAG_NAME, "td")
@@ -326,8 +340,9 @@ class GetAuctionInfo():
                                         float(each[0])
 
                                 if isShare < 1.0:
-                                    share = True
+                                    shareGround = True
                                     thisGround = thisGround * isShare
+
                     areaOfGround += thisGround
 
                 elif tds[1].text == "집합건물":
@@ -391,7 +406,7 @@ class GetAuctionInfo():
 
                 estateIdx = estateIdx + 1
 
-            return [areaOfGround, areaOfBuilding, estateList, estateIdx, itemLocation, share]
+            return [areaOfGround, areaOfBuilding, estateList, estateIdx, itemLocation, share, shareGround]
 
         except Exception as Error_목록내역:
             log_update.error("Error_목록내역")
@@ -425,97 +440,99 @@ class GetAuctionInfo():
             # Create a BlobClient object for the blob
             blob_client = container_client.get_blob_client(blob_name)
 
+            timeout = 300
             # Upload the file to Azure Storage
             with open(local_path, "rb") as data:
-                blob_client.upload_blob(data)
+                blob_client.upload_blob(data, timeout=timeout)
 
             log_update.debug(blob_client.url)
 
             return blob_client.url
 
-        except Exception as ex:
-            log_update.debug('Exception:')
-            log_update.debug(ex)
+        except Exception as UploadAzureError:
+            log_update.debug('UploadAzureError:')
+            log_update.debug(UploadAzureError)
             return "none"
 
     async def 감정평가서_PDF_다운(self):
         log_update.debug("감정평가서 다운로드")
         fileUrl = "none"
 
-        if self.Select_감정평가서() == True:
-            return
+        isUpdateValuation = await self.감정평가서_업데이트_확인()
 
-        try:
-            self.vars["window_handles"] = self.driver.window_handles
-            self.driver.find_element(
-                By.XPATH, "//img[@alt='감정평가서 팝업']").click()
+        if isUpdateValuation == True:
 
-            self.vars["win7232"] = self.wait_for_window(2000)
-            self.vars["root"] = self.driver.current_window_handle
-            self.driver.switch_to.window(self.vars["win7232"])
+            try:
+                self.vars["window_handles"] = self.driver.window_handles
+                self.driver.find_element(
+                    By.XPATH, "//img[@alt='감정평가서 팝업']").click()
 
-            filename = 'pdf/valuation.pdf'
+                self.vars["win7232"] = self.wait_for_window(2000)
+                self.vars["root"] = self.driver.current_window_handle
+                self.driver.switch_to.window(self.vars["win7232"])
 
-            with open(filename, 'wb') as file:
-                iframe = self.driver.find_element(
-                    By.XPATH, "/html/frameset/frame[2]")
-                self.driver.switch_to.frame(iframe)
-                pdf_link = self.driver.find_element(By.TAG_NAME, "iframe")
+                filename = 'pdf/valuation.pdf'
 
-                # write file
-                with open(filename, 'wb') as handle:
-                    while True:
-                        try:
-                            headers = {
-                                # Github runner
-                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                                # Local
-                                # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                            }
+                with open(filename, 'wb') as file:
+                    iframe = self.driver.find_element(
+                        By.XPATH, "/html/frameset/frame[2]")
+                    self.driver.switch_to.frame(iframe)
+                    pdf_link = self.driver.find_element(By.TAG_NAME, "iframe")
 
-                            response = requests.get(
-                                pdf_link.get_attribute('src'), stream=True, headers=headers)
+                    # write file
+                    with open(filename, 'wb') as handle:
+                        while True:
+                            try:
+                                headers = {
+                                    # Github runner
+                                    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                                    # Local
+                                    # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                                }
 
-                            if response.status_code == 200:
+                                response = requests.get(
+                                    pdf_link.get_attribute('src'), stream=True, headers=headers)
+
+                                if response.status_code == 200:
+                                    break
+                            except Exception as e:
+                                log_update.error(
+                                    "Error Write file ", e)
+                                time.sleep(3)
+
+                        if not response.ok:
+                            log_update.debug(response)
+
+                        for block in response.iter_content(1024):
+                            if not block:
                                 break
+                            handle.write(block)
+
+                    fileUrl = self.Upload_감정평가서_Azure(filename)
+                    if fileUrl != "none":
+                        await self.Insert_감정평가서(fileUrl)
+
+                    # Delete pdf files
+                    folder = 'pdf/'
+                    for filename in os.listdir(folder):
+                        file_path = os.path.join(folder, filename)
+                        try:
+                            if os.path.isfile(file_path) or os.path.islink(file_path):
+                                os.unlink(file_path)
+                            elif os.path.isdir(file_path):
+                                shutil.rmtree(file_path)
                         except Exception as e:
-                            log_update.error(
-                                "Error Write file ", e)
-                            time.sleep(3)
+                            log_update.error('Failed to delete %s. Reason: %s' %
+                                             (file_path, e))
 
-                    if not response.ok:
-                        log_update.debug(response)
+            except Exception as PDF_VALUATION_Error:
+                log_update.error(PDF_VALUATION_Error)
 
-                    for block in response.iter_content(1024):
-                        if not block:
-                            break
-                        handle.write(block)
-
-                fileUrl = self.Upload_감정평가서_Azure(filename)
-                if fileUrl != "none":
-                    await self.Insert_감정평가서(fileUrl)
-
-                # Delete pdf files
-                folder = 'pdf/'
-                for filename in os.listdir(folder):
-                    file_path = os.path.join(folder, filename)
-                    try:
-                        if os.path.isfile(file_path) or os.path.islink(file_path):
-                            os.unlink(file_path)
-                        elif os.path.isdir(file_path):
-                            shutil.rmtree(file_path)
-                    except Exception as e:
-                        log_update.error('Failed to delete %s. Reason: %s' %
-                                         (file_path, e))
-
-        except Exception as PDF_VALUATION_Error:
-            log_update.error(PDF_VALUATION_Error)
-
-        finally:
-            self.driver.close()
-            self.driver.switch_to.window(self.vars["root"])
-            self.driver.switch_to.frame(0)
-            log_update.debug("감정평가서 다운로드 완료")
+            finally:
+                self.driver.close()
+                self.driver.switch_to.window(self.vars["root"])
+                self.driver.switch_to.frame(0)
+                log_update.debug("감정평가서 다운로드 완료")
 
     def uploadImageToAzure(self, imgFileName, imageObjects, caseNumber):
         log_update.debug("Upload to Azure storage serivce")
@@ -991,7 +1008,8 @@ class GetAuctionInfo():
                                        목록내역데이터[1],
                                        목록내역데이터[0],
                                        numOfPass,
-                                       목록내역데이터[5])
+                                       목록내역데이터[5],
+                                       목록내역데이터[6])
 
         # 부동산 내역
         if len(목록내역데이터[2]) > 0:
@@ -1012,17 +1030,25 @@ class GetAuctionInfo():
                     # 물건 화면으로 접속
                     self.물건선택(item)
 
-                    # 물건기본정보 + 감정평가요양표 요약 + 목록내역 + 감정평가서
-                    itemId = await self.물건기본정보(item)
+                    if item[3] == True:
+                        # 감정평가서 다운로드
+                        log_update.debug("감정평가서만 업데이트")
+                        # 감정평가서 다운로드
+                        self.caseNumber = item[4]
+                        await self.감정평가서_PDF_다운()
+                    else:
 
-                    # 사진
-                    await self.이미지업로드()
+                        # 물건기본정보 + 감정평가요양표 요약 + 목록내역 + 감정평가서
+                        itemId = await self.물건기본정보(item)
 
-                    # 기일내역
-                    await self.기일내역_데이터(itemId)
+                        # 사진
+                        await self.이미지업로드()
 
-                    # 현황조사서
-                    await self.현황조사서_데이터(itemId)
+                        # 기일내역
+                        await self.기일내역_데이터(itemId)
+
+                        # 현황조사서
+                        await self.현황조사서_데이터(itemId)
 
                     # 물건리스트로 돌아가기
                     self.driver.find_element(

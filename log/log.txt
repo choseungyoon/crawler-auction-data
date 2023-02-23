@@ -1,4 +1,0 @@
-[2023-02-20 18:36:16,570] [DEBUG] (getAuctionList.py:1300) > START
-[2023-02-20 18:36:16,571] [DEBUG] (getAuctionList.py:1301) > 매각기일 Update 시작
-[2023-02-20 18:36:36,419] [DEBUG] (getAuctionList.py:1307) > 오늘의 매각결과 업데이트 물건 수 : 2264
-[2023-02-20 18:36:36,420] [DEBUG] (getAuctionList.py:1311) > 2021타경103744

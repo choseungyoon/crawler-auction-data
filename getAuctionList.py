@@ -42,7 +42,7 @@ log_update.setLevel(logging.DEBUG)
 formatter = logging.Formatter(
     '[%(asctime)s] [%(levelname)s] (%(filename)s:%(lineno)d) > %(message)s')
 
-fileHandler = logging.FileHandler('./log/log.txt', encoding='utf-8')
+fileHandler = logging.FileHandler('./log/log_update.txt', encoding='utf-8')
 streamHandler = logging.StreamHandler()
 
 fileHandler.setFormatter(formatter)
@@ -71,7 +71,7 @@ class GetAuctionInfo():
         # overcome limited resource problems
         options.add_argument("--disable-dev-shm-usage")
 
-        self.driver = webdriver.Chrome('linux/chromedriver', options=options)
+        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
         # self.driver = webdriver.Firefox(
         #     executable_path='linux/geckodriver', options=options)
 
@@ -1205,7 +1205,7 @@ class GetAuctionInfo():
         fromDate = datetime.now()
         fromDate = fromDate.replace(hour=0, minute=0, second=0)
 
-        toDate = fromDate - timedelta(days=100)
+        toDate = fromDate - timedelta(days=3)
 
         items = await db.item.find_many(
             where={

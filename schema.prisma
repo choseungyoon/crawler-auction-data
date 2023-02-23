@@ -59,6 +59,7 @@ model Item {
   lastestStatus       String           @default("")
   numOfPass           Int              @default(0)
   share               Boolean          @default(false)
+  shareGround         Boolean          @default(false)
   resultAuction       resultAuction[]
   leaseDetail         leaseDetail[]
   leasePeople         leasePeople[]
