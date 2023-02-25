@@ -9,6 +9,7 @@ from selenium.common.exceptions import StaleElementReferenceException
 
 from prisma import Prisma
 
+import glob
 import os
 import re
 import shutil
@@ -472,58 +473,48 @@ class GetAuctionInfo():
                 self.driver.switch_to.window(self.vars["win7232"])
 
                 filename = 'pdf/valuation.pdf'
+                pdf_files = glob.glob('*.pdf')
 
-                with open(filename, 'wb') as file:
+                with open(filename, 'wb') as handle:
                     iframe = self.driver.find_element(
                         By.XPATH, "/html/frameset/frame[2]")
                     self.driver.switch_to.frame(iframe)
                     pdf_link = self.driver.find_element(By.TAG_NAME, "iframe")
 
-                    # write file
-                    with open(filename, 'wb') as handle:
-                        while True:
-                            try:
-                                headers = {
-                                    # Github runner
-                                    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                                    # Local
-                                    # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                                }
+                    while True:
+                        try:
+                            headers = {
+                                # Github runner
+                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                                # Local
+                                # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                            }
 
-                                response = requests.get(
-                                    pdf_link.get_attribute('src'), stream=True, headers=headers)
+                            response = requests.get(
+                                pdf_link.get_attribute('src'), stream=True, headers=headers)
 
-                                if response.status_code == 200:
-                                    break
-                            except Exception as e:
-                                log_update.error(
-                                    "Error Write file ", e)
-                                time.sleep(3)
-
-                        if not response.ok:
-                            log_update.debug(response)
-
-                        for block in response.iter_content(1024):
-                            if not block:
+                            if response.status_code == 200:
                                 break
-                            handle.write(block)
+                        except Exception as e:
+                            log_update.error(
+                                "Error Write file ", e)
+                            time.sleep(3)
+
+                    if not response.ok:
+                        log_update.debug(response)
+
+                    for block in response.iter_content(1024):
+                        if not block:
+                            break
+                        handle.write(block)
 
                     fileUrl = self.Upload_감정평가서_Azure(filename)
                     if fileUrl != "none":
                         await self.Insert_감정평가서(fileUrl)
 
-                    # Delete pdf files
-                    folder = 'pdf/'
-                    for filename in os.listdir(folder):
-                        file_path = os.path.join(folder, filename)
-                        try:
-                            if os.path.isfile(file_path) or os.path.islink(file_path):
-                                os.unlink(file_path)
-                            elif os.path.isdir(file_path):
-                                shutil.rmtree(file_path)
-                        except Exception as e:
-                            log_update.error('Failed to delete %s. Reason: %s' %
-                                             (file_path, e))
+                # Delete pdf files
+                os.remove(filename)
+                os.remove(pdf_files[0])
 
             except Exception as PDF_VALUATION_Error:
                 log_update.error(PDF_VALUATION_Error)
