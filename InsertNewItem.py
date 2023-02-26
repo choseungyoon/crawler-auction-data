@@ -132,6 +132,8 @@ class GetAuctionInfo():
                     isUpdateValuation = await self.감정평가서_업데이트_확인()
 
                     if isUpdateValuation == True:
+                        log_update.debug(
+                            "감정평가서 업데이트 필요 " + inputValue[1] + " " + inputValue[2])
                         itemList.append(
                             (inputValue[1], inputValue[2], True, True, self.caseNumber))
                 else:
@@ -475,38 +477,40 @@ class GetAuctionInfo():
                 filename = 'pdf/valuation.pdf'
                 pdf_files = glob.glob('*.pdf')
 
-                with open(filename, 'wb') as handle:
+                with open(filename, 'wb') as file:
                     iframe = self.driver.find_element(
                         By.XPATH, "/html/frameset/frame[2]")
                     self.driver.switch_to.frame(iframe)
                     pdf_link = self.driver.find_element(By.TAG_NAME, "iframe")
 
-                    while True:
-                        try:
-                            headers = {
-                                # Github runner
-                                "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                                # Local
-                                # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
-                            }
+                    # write file
+                    with open(filename, 'wb') as handle:
+                        while True:
+                            try:
+                                headers = {
+                                    # Github runner
+                                    "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                                    # Local
+                                    # "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
+                                }
 
-                            response = requests.get(
-                                pdf_link.get_attribute('src'), stream=True, headers=headers)
+                                response = requests.get(
+                                    pdf_link.get_attribute('src'), stream=True, headers=headers)
 
-                            if response.status_code == 200:
+                                if response.status_code == 200:
+                                    break
+                            except Exception as e:
+                                log_update.error(
+                                    "Error Write file ", e)
+                                time.sleep(3)
+
+                        if not response.ok:
+                            log_update.debug(response)
+
+                        for block in response.iter_content(1024):
+                            if not block:
                                 break
-                        except Exception as e:
-                            log_update.error(
-                                "Error Write file ", e)
-                            time.sleep(3)
-
-                    if not response.ok:
-                        log_update.debug(response)
-
-                    for block in response.iter_content(1024):
-                        if not block:
-                            break
-                        handle.write(block)
+                            handle.write(block)
 
                     fileUrl = self.Upload_감정평가서_Azure(filename)
                     if fileUrl != "none":
@@ -1074,11 +1078,13 @@ class GetAuctionInfo():
 
 def crawler():
     courtList = [
-        "인천지방법원", "부천지원", "수원지방법원",
-        "여주지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원",
-        "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원",
-        "대구서부지원", "부산지방법원", "부산동부법원", "부산서부법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원",
-        "장흥지원", "순천지원", "해남지원", "전주지방법원",   "남원지원", "제주지방법원", "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원", "정읍지원", "평택지원", "군산지원", "성남지원", "의정부지방법원", "고양지원", "남양주지원"]
+        "부산동부지원", "성남지원", "남양주지원", "부산서부지원",  "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원",
+        "서울북부지방법원", "서울중앙지방법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원",
+        "거창지원", "광주지방법원", "목포지원", "장흥지원", "순천지원", "해남지원", "전주지방법원",   "남원지원", "제주지방법원",
+        "정읍지원", "평택지원", "군산지원", "의정부지방법원", "고양지원",  "인천지방법원", "부천지원", "수원지방법원",
+        "여주지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원",
+        "제천지원", "영동지원", "대전지방법원", "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원",
+        "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원", "대구서부지원", "부산지방법원"]
 
     for court in courtList:
         crawler = GetAuctionInfo()
