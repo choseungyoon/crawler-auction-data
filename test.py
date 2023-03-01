@@ -1,32 +1,92 @@
-from azure.storage.blob import BlobServiceClient, BlobClient, ContainerClient
-from dotenv import dotenv_values
-try:
-    config = dotenv_values(".env")
-    # Define connection string and container name
-    connect_str = config["AZURE_CON_STRING"]
-    container_name = config["AZURE_CONTAINER_IMAGE"]
+from urllib.parse import urljoin
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+from selenium.common.exceptions import StaleElementReferenceException
 
-    # Create a BlobServiceClient object using the connection string
-    blob_service_client = BlobServiceClient.from_connection_string(connect_str)
+import requests
+from bs4 import BeautifulSoup
+import asyncio
 
-    # Create a ContainerClient object for the container
-    container_client = blob_service_client.get_container_client(container_name)
 
-    # Define the path to the local file to upload
-    local_path = "azure_test/2019타경5285_1.png"
+class GetAuctionInfo():
 
-    # Define the name for the blob in Azure Storage
-    blob_name = ""
+    def setup_method(self, method):
+        # 옵션 생성
+        options = webdriver.ChromeOptions()
 
-    # Create a BlobClient object for the blob
-    blob_client = container_client.get_blob_client(blob_name)
+        options.add_argument("--headless")
+        # open Browser in maximized mode
+        options.add_argument("start-maximized")
+        options.add_argument("disable-infobars")  # disabling infobars
+        options.add_argument("--disable-extensions")  # disabling extensions
+        options.add_argument("--no-sandbox")
 
-    # Upload the file to Azure Storage
-    with open(local_path, "rb") as data:
-        blob_client.upload_blob(data)
+        # overcome limited resource problems
+        options.add_argument("--disable-dev-shm-usage")
+        self.driver = webdriver.Chrome('mac/chromedriver', options=options)
+        self.driver.implicitly_wait(3)
+        self.vars = {}
 
-    print(blob_client.url)
+    def teardown_method(self, method):
+        self.driver.quit()
 
-except Exception as ex:
-    print('Exception:')
-    print(ex)
+    async def update_date(self):
+
+        # Get item need update
+
+        try:
+            # Open courtauctuon page
+            self.setup_method("")
+            url = "http://www.courtauction.go.kr/RetrieveRealEstDetailInqSaList.laf?jiwonNm=%BC%AD%BF%EF%C1%DF%BE%D3%C1%F6%B9%E6%B9%FD%BF%F8&saNo=20210130002500&_SRCH_SRNID=PNO102014"
+
+            self.driver.get(url)
+            self.driver.implicitly_wait(time_to_wait=1000)
+
+            html = self.driver.page_source
+            soup = BeautifulSoup(html, 'html.parser')
+
+            contents = soup.find(id='contents')
+
+            table_title = contents.find_all('div', {"class": "table_title"})
+
+            print(table_title[0])
+
+            # 사건기본내역
+            basicCaseInfo = contents.find('table', {"summary": "사건기본내역 표"})
+
+            # Find all the <link> tags that refer to external stylesheets
+            link_tags = soup.find_all(
+                'link', rel='stylesheet', href=True)
+
+            # For each <link> tag, fetch the CSS file and add it to the result
+            result = ''
+            for link_tag in link_tags:
+                # Convert the relative URL to an absolute URL
+                css_url = urljoin(url, link_tag['href'])
+                css_response = requests.get(css_url)
+                result += css_response.text
+
+            # Print the result
+            print(result)
+
+        except Exception as UpdateException:
+            print(UpdateException)
+
+        # close page
+        self.teardown_method("")
+
+
+def updateJob():
+    crawler = GetAuctionInfo()
+    crawler.setup_method("")
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(crawler.update_date())
+    crawler.teardown_method("")
+
+
+updateJob()

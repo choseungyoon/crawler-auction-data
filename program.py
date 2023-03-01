@@ -1,6 +1,5 @@
 import getAuctionList
 import 매각물건명세서
-import New.InsertNewItem as InsertNewItem
 
 
 def service_func():
