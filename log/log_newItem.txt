@@ -1,0 +1,121 @@
+[2023-03-04 00:01:40,917] [DEBUG] (InsertNewItem.py:1199) > 서울남부지방법원
+[2023-03-04 00:01:43,009] [DEBUG] (InsertNewItem.py:1153) > START GET ITEMS
+[2023-03-04 00:01:46,525] [DEBUG] (InsertNewItem.py:127) > PASS : 20180130008351 1
+[2023-03-04 00:01:51,892] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 1
+[2023-03-04 00:01:57,481] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 2
+[2023-03-04 00:02:02,889] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 3
+[2023-03-04 00:02:08,628] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009333 1
+[2023-03-04 00:02:14,353] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009586 1
+[2023-03-04 00:02:19,781] [DEBUG] (InsertNewItem.py:140) > ADD : 20200130112949 1
+[2023-03-04 00:02:22,548] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005444 1
+[2023-03-04 00:02:27,970] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005611 1
+[2023-03-04 00:02:33,819] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005635 3
+[2023-03-04 00:02:39,454] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005901 1
+[2023-03-04 00:02:44,600] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005994 1
+[2023-03-04 00:02:49,715] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006430 1
+[2023-03-04 00:02:54,815] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006751 1
+[2023-03-04 00:03:00,030] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006768 1
+[2023-03-04 00:03:05,156] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006942 1
+[2023-03-04 00:03:10,554] [DEBUG] (InsertNewItem.py:140) > ADD : 20210130100905 1
+[2023-03-04 00:03:18,178] [DEBUG] (InsertNewItem.py:930) > 사건번호 : 2020타경112949
+[2023-03-04 00:03:18,300] [DEBUG] (InsertNewItem.py:262) > 감정평가 시작
+[2023-03-04 00:03:18,482] [DEBUG] (InsertNewItem.py:279) > 목록내역 시작
+[2023-03-04 00:03:18,705] [DEBUG] (InsertNewItem.py:461) > 감정평가서 다운로드
+[2023-03-04 00:03:25,738] [DEBUG] (InsertNewItem.py:420) > 감정평가서 Upload to Azure
+[2023-03-04 00:03:44,632] [DEBUG] (InsertNewItem.py:451) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2020%ED%83%80%EA%B2%BD112949.pdf
+[2023-03-04 00:03:48,111] [DEBUG] (InsertNewItem.py:238) > Completed  - insert 감정평가서
+[2023-03-04 00:03:48,123] [ERROR] (InsertNewItem.py:524) > list index out of range
+[2023-03-04 00:03:48,232] [DEBUG] (InsertNewItem.py:530) > 감정평가서 다운로드 완료
+[2023-03-04 00:03:51,364] [DEBUG] (InsertNewItem.py:224) > Created : 2020타경112949
+[2023-03-04 00:03:54,338] [DEBUG] (InsertNewItem.py:623) > Completed insert estateLists
+[2023-03-04 00:03:57,518] [DEBUG] (InsertNewItem.py:652) > START UPLOAD IMAGE
+[2023-03-04 00:04:04,877] [DEBUG] (InsertNewItem.py:678) > 사진 갯수 : 11
+[2023-03-04 00:04:04,877] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_0.png
+[2023-03-04 00:04:04,893] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kj/2020/1216&filename=B000212202001301129491.jpg&downloadfilename=B000212202001301129491.jpg
+[2023-03-04 00:04:05,217] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:06,930] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_0.png
+[2023-03-04 00:04:06,972] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 2
+[2023-03-04 00:04:12,119] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_1.png
+[2023-03-04 00:04:12,150] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kj/2020/1216&filename=B000212202001301129492.jpg&downloadfilename=B000212202001301129492.jpg
+[2023-03-04 00:04:12,339] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:13,917] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_1.png
+[2023-03-04 00:04:14,003] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 3
+[2023-03-04 00:04:19,199] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_2.png
+[2023-03-04 00:04:19,237] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kj/2020/1216&filename=B000212202001301129493.jpg&downloadfilename=B000212202001301129493.jpg
+[2023-03-04 00:04:19,465] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:21,125] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_2.png
+[2023-03-04 00:04:21,211] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 4
+[2023-03-04 00:04:26,377] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_3.png
+[2023-03-04 00:04:26,417] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kj/2020/1216&filename=B000212202001301129494.jpg&downloadfilename=B000212202001301129494.jpg
+[2023-03-04 00:04:26,684] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:28,314] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_3.png
+[2023-03-04 00:04:28,428] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 5
+[2023-03-04 00:04:33,687] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_4.png
+[2023-03-04 00:04:33,727] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B000212202001301129495.jpg&downloadfilename=B000212202001301129495.jpg
+[2023-03-04 00:04:34,008] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:36,409] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_4.png
+[2023-03-04 00:04:36,504] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 6
+[2023-03-04 00:04:41,757] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_5.png
+[2023-03-04 00:04:41,785] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B000212202001301129496.jpg&downloadfilename=B000212202001301129496.jpg
+[2023-03-04 00:04:42,120] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:44,414] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_5.png
+[2023-03-04 00:04:44,544] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 7
+[2023-03-04 00:04:49,729] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_6.png
+[2023-03-04 00:04:49,760] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B000212202001301129497.jpg&downloadfilename=B000212202001301129497.jpg
+[2023-03-04 00:04:50,004] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:51,750] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_6.png
+[2023-03-04 00:04:51,877] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 8
+[2023-03-04 00:04:57,042] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_7.png
+[2023-03-04 00:04:57,074] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B000212202001301129498.jpg&downloadfilename=B000212202001301129498.jpg
+[2023-03-04 00:04:57,379] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:04:59,212] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_7.png
+[2023-03-04 00:04:59,342] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 9
+[2023-03-04 00:05:04,557] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_8.png
+[2023-03-04 00:05:04,596] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B000212202001301129499.jpg&downloadfilename=B000212202001301129499.jpg
+[2023-03-04 00:05:04,838] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:05:06,637] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_8.png
+[2023-03-04 00:05:06,788] [DEBUG] (InsertNewItem.py:753) > GO TO PAGE : 10
+[2023-03-04 00:05:12,014] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_9.png
+[2023-03-04 00:05:12,053] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B0002122020013011294910.jpg&downloadfilename=B0002122020013011294910.jpg
+[2023-03-04 00:05:12,340] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:05:14,450] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_9.png
+[2023-03-04 00:05:14,625] [DEBUG] (InsertNewItem.py:746) > GO TO PAGE : 다음
+[2023-03-04 00:05:19,793] [DEBUG] (InsertNewItem.py:687) > images/2020타경112949_10.png
+[2023-03-04 00:05:19,825] [DEBUG] (InsertNewItem.py:706) > https://www.courtauction.go.kr/DownFront?spec=default&dir=kp/2020/1218&filename=B0002122020013011294911.jpg&downloadfilename=B0002122020013011294911.jpg
+[2023-03-04 00:05:20,070] [DEBUG] (InsertNewItem.py:533) > Upload to Azure storage serivce
+[2023-03-04 00:05:21,682] [DEBUG] (InsertNewItem.py:569) > https://auctionworld.blob.core.windows.net/auctionworldimage/2020%ED%83%80%EA%B2%BD112949_10.png
+[2023-03-04 00:05:24,557] [DEBUG] (InsertNewItem.py:643) > Completed insert images
+[2023-03-04 00:05:24,561] [DEBUG] (InsertNewItem.py:775) > 사진 업로드 완료
+[2023-03-04 00:05:29,517] [DEBUG] (InsertNewItem.py:603) > Completed insert result of auction
+[2023-03-04 00:05:29,529] [DEBUG] (InsertNewItem.py:829) > 기일내역 완료
+[2023-03-04 00:05:29,530] [DEBUG] (InsertNewItem.py:832) > 현황조사서 시작
+[2023-03-04 00:05:34,850] [DEBUG] (InsertNewItem.py:613) > Completed insert leaseDetails
+[2023-03-04 00:05:34,860] [DEBUG] (InsertNewItem.py:906) > 임차내용 DB Insert 완료
+[2023-03-04 00:05:38,809] [DEBUG] (InsertNewItem.py:1119) > 사건상세 Copy
+[2023-03-04 00:06:30,671] [DEBUG] (InsertNewItem.py:1101) > Update_사건내역상세
+[2023-03-04 00:06:42,533] [ERROR] (InsertNewItem.py:1190) > can only concatenate str (not "int") to str
+[2023-03-04 00:06:42,543] [ERROR] (InsertNewItem.py:1190) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101301009051"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001053cd1c0 chromedriver + 4248000
+1   chromedriver                        0x000000010534ddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000105002ec4 chromedriver + 274116
+3   chromedriver                        0x000000010503ebe4 chromedriver + 519140
+4   chromedriver                        0x000000010507a054 chromedriver + 761940
+5   chromedriver                        0x0000000105031200 chromedriver + 463360
+6   chromedriver                        0x0000000105032318 chromedriver + 467736
+7   chromedriver                        0x000000010539b060 chromedriver + 4042848
+8   chromedriver                        0x000000010539f8a4 chromedriver + 4061348
+9   chromedriver                        0x00000001053a73d0 chromedriver + 4092880
+10  chromedriver                        0x00000001053a06e4 chromedriver + 4064996
+11  chromedriver                        0x00000001053760fc chromedriver + 3891452
+12  chromedriver                        0x00000001053c0a64 chromedriver + 4196964
+13  chromedriver                        0x00000001053c0bb8 chromedriver + 4197304
+14  chromedriver                        0x00000001053d4650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-04 00:06:44,097] [DEBUG] (InsertNewItem.py:1199) > 서울동부지방법원
+[2023-03-04 00:06:45,819] [DEBUG] (InsertNewItem.py:1153) > START GET ITEMS
+[2023-03-04 00:06:48,781] [DEBUG] (InsertNewItem.py:127) > PASS : 20190130005561 1
+[2023-03-04 00:06:54,104] [DEBUG] (InsertNewItem.py:127) > PASS : 20190130005561 2

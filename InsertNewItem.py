@@ -62,7 +62,7 @@ class GetAuctionInfo():
     def setup_method(self, method):
         # 옵션 생성
         chrome_options = webdriver.ChromeOptions()
-        chrome_options.add_argument('--headless')
+        # chrome_options.add_argument('--headless')
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(
@@ -1014,6 +1014,140 @@ class GetAuctionInfo():
 
         return itemId
 
+    def 사건기본내역(self, contents):
+
+        사건기본내역 = ""
+
+        table_title = contents.find_all('div', {"class": "table_title"})
+        basicCaseInfo = contents.find('table', {"summary": "사건기본내역 표"})
+
+        사건기본내역 += str(table_title[0])
+        사건기본내역 += str(basicCaseInfo)
+
+        return 사건기본내역
+
+    def 사건내역(self, contents):
+        사건내역 = """
+      <link rel="stylesheet" type="text/css" href="/common.css">
+      <link rel="stylesheet" type="text/css" href="/btn_box.css">
+      <link rel="stylesheet" type="text/css" href="/sub.css">
+      <link rel="stylesheet" type="text/css" href="/table.css"> """
+        사건기본내역 = self.사건기본내역(contents)
+
+        사건내역 += 사건기본내역
+
+        tableContents = contents.find_all(
+            'div', {"class": "table_contents"})
+
+        for tableContent in tableContents:
+            for a_tag in tableContent.find_all('a'):
+                a_tag.extract()
+            for img_tag in tableContent.find_all('img'):
+                img_tag.extract()
+            tableContent = str(tableContent).replace(": 등기기록 열람", '')
+
+            사건내역 += tableContent
+
+        return 사건내역
+
+    def 기일내역(self, contents):
+        기일내역 = """
+      <link rel="stylesheet" type="text/css" href="/common.css">
+      <link rel="stylesheet" type="text/css" href="/btn_box.css">
+      <link rel="stylesheet" type="text/css" href="/sub.css">
+      <link rel="stylesheet" type="text/css" href="/table.css"> """
+
+        table_title = contents.find_all('div', {"class": "table_title"})
+        basicCaseInfo = contents.find('table', {"summary": "기일내역 표"})
+
+        기일내역 += str(table_title[0])
+
+        for a_tag in basicCaseInfo.find_all('a'):
+            a_tag.extract()
+        for img_tag in basicCaseInfo.find_all('img'):
+            img_tag.extract()
+
+        기일내역 += str(basicCaseInfo)
+
+        return 기일내역
+
+    def 문건송달내역(self, contents):
+
+        전체 = """ 
+      <link rel="stylesheet" type="text/css" href="/common.css">
+      <link rel="stylesheet" type="text/css" href="/btn_box.css">
+      <link rel="stylesheet" type="text/css" href="/sub.css">
+      <link rel="stylesheet" type="text/css" href="/table.css"> """
+
+        문건내역 = ""
+        table_title = contents.find_all('div', {"class": "table_title"})
+        basicCaseInfo = contents.find('table', {"summary": "문건처리내역 표"})
+
+        문건내역 += str(table_title[0])
+        문건내역 += str(basicCaseInfo)
+
+        송달내역 = ""
+        basicCaseInfo = contents.find('table', {"summary": "송달내역 표"})
+
+        송달내역 += str(table_title[1])
+        송달내역 += str(basicCaseInfo)
+
+        전체 += 문건내역 + 송달내역
+
+        # print(전체)
+        return 전체
+
+    async def Update_사건내역상세(self, itemId, 사건내역, 기일내역, 물건내역):
+        log_update.debug("Update_사건내역상세")
+
+        db = Prisma()
+        await db.connect()
+        item = await db.item.update(
+            where={
+                'id': itemId
+            },
+            data={
+                'copyCaseInfo': 사건내역,
+                'copyDateInfo': 기일내역,
+                'copyMailInfo': 물건내역
+            }
+        )
+        await db.disconnect()
+
+    async def 사건상세Copy(self, itemId):
+        log_update.debug("사건상세 Copy")
+
+        # 사건상세정보 클릭
+        self.driver.find_element(
+            By.XPATH, "//img[@alt='사건상세조회']").click()
+
+        html = self.driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        contents = soup.find(id='contents')
+
+        # 사건내역
+        사건내역 = self.사건내역(contents)
+
+        # 기일내역
+        self.driver.find_element(
+            By.LINK_TEXT, "기일내역").click()
+        html = self.driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        contents = soup.find(id='contents')
+        기일내역 = self.기일내역(contents)
+
+        # 문건/송달내역
+        self.driver.find_element(
+            By.LINK_TEXT, "문건/송달내역").click()
+        html = self.driver.page_source
+        soup = BeautifulSoup(html, 'html.parser')
+        contents = soup.find(id='contents')
+
+        물건내역 = self.문건송달내역(contents)
+
+        # Update DB
+        await self.Update_사건내역상세(itemId, 사건내역, 기일내역, 물건내역)
+
     async def 물건업데이트(self):
         log_update.debug("START GET ITEMS")
         while True:
@@ -1045,6 +1179,8 @@ class GetAuctionInfo():
                         # 현황조사서
                         await self.현황조사서_데이터(itemId)
 
+                        # 법원경매정보 사건상세 Copy
+                        await self.사건상세Copy(itemId)
                     # 물건리스트로 돌아가기
                     self.driver.find_element(
                         By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
@@ -1078,13 +1214,13 @@ class GetAuctionInfo():
 
 def crawler():
     courtList = [
-        "부산동부지원", "성남지원", "남양주지원", "부산서부지원",  "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원",
-        "서울북부지방법원", "서울중앙지방법원", "울산지방법원", "창원지방법원", "마산지원", "진주지원", "통영지원", "밀양지원",
-        "거창지원", "광주지방법원", "목포지원", "장흥지원", "순천지원", "해남지원", "전주지방법원",   "남원지원", "제주지방법원",
-        "정읍지원", "평택지원", "군산지원", "의정부지방법원", "고양지원",  "인천지방법원", "부천지원", "수원지방법원",
-        "여주지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원", "청주지방법원", "충주지원",
-        "제천지원", "영동지원", "대전지방법원", "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원", "대구지방법원", "안동지원",
-        "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원", "대구서부지원", "부산지방법원"]
+        "서울남부지방법원", "서울동부지방법원",  "서울서부지방법원", "서울북부지방법원", "서울중앙지방법원", "울산지방법원", "창원지방법원",
+        "마산지원", "진주지원", "통영지원", "밀양지원", "거창지원", "광주지방법원", "목포지원", "장흥지원", "순천지원", "해남지원",
+        "전주지방법원",   "남원지원", "제주지방법원", "정읍지원", "평택지원", "군산지원", "의정부지방법원", "고양지원",  "인천지방법원",
+        "부천지원", "수원지방법원", "여주지원", "안산지원", "안양지원", "춘천지방법원", "강릉지원", "원주지원", "속초지원", "영월지원",
+        "청주지방법원", "충주지원", "제천지원", "영동지원", "대전지방법원", "홍성지원", "논산지원", "천안지원", "공주지원", "서산지원",
+        "대구지방법원", "안동지원", "경주지원", "김천지원", "상주지원", "의성지원", "영덕지원", "포항지원", "대구서부지원", "부산지방법원",
+        "부산동부지원", "성남지원", "남양주지원", "부산서부지원"]
 
     for court in courtList:
         crawler = GetAuctionInfo()

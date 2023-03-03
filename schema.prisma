@@ -12,13 +12,13 @@ datasource db {
 
 model User {
   id        Int      @id @default(autoincrement())
-  phone     String?  @unique
+  phone     String?  @default("")
   email     String?  @unique
   name      String
-  password  String
-  avatar    String?
+  password  String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+  admin     Boolean  @default(false)
   tokens    Token[]
   Fav       Fav[]
 }
@@ -69,6 +69,9 @@ model Item {
   uniqueCode          String           @default("")
   pdfHex              String           @default("") @db.LongText
   visited             Int              @default(0)
+  copyCaseInfo        String           @default("") @db.LongText
+  copyDateInfo        String           @default("") @db.LongText
+  copyMailInfo        String           @default("") @db.LongText
   certification       certification[]
   Recommend           recommend[]
   adminComment        adminComment[]
@@ -84,7 +87,6 @@ model certification {
   detail    String   @db.MediumText
   creditor  String   @default("")
   amount    String   @default("")
-  owner     String
   type      String   @default("")
   title     String   @default("")
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
@@ -142,6 +144,7 @@ model resultAuction {
   location     String?
   minSalePrice String?
   result       String?
+  round        Int?      @default(0)
   item         Item      @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId       Int
 
