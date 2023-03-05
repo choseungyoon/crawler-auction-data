@@ -100,6 +100,19 @@ class GetAuctionInfo():
         itemList = []
         isFirst = True
 
+        # html = self.driver.page_source
+        # soup = BeautifulSoup(html, 'html.parser')
+        # contents = soup.find(id='contents')
+        # table = contents.find('table', {"summary": "물건상세검색 결과 표"})
+
+        # tbody = table.find("tbody")
+
+        # 사건_List = tbody.find_all("tr")
+
+        # for 사건 in 사건_List:
+        #     tds = 사건.find_all("td")
+        #     print(tds[1].text)
+
         table = self.driver.find_elements(
             By.XPATH, "//*[@id='contents']/div[4]/form[1]/table")
 
@@ -109,13 +122,20 @@ class GetAuctionInfo():
             if tds[0].text == '검색결과가 없습니다.':
                 continue
 
-            if "자동차" in tds[2].text:
-                log_update.debug("SKIP 자동차")
-                continue
+            trs = line.find_elements(By.TAG_NAME, "tr")
 
-            chks = line.find_elements(By.NAME, "chk")
-            for chk in chks:
-                inputValue = chk.get_attribute("value").split(',')
+            for tr in trs:
+                if tr.text == """사건번호 물건번호\n용도 소재지 및 내역 비고 감정평가액\n최저매각가격\n(단위:원) 담당계\n매각기일\n(입찰기간)\n진행상태""":
+                    continue
+
+                inputValue = tr.find_element(By.NAME, "chk").get_attribute(
+                    "value").split(',')
+                tds = tr.find_elements(By.TAG_NAME, "td")
+
+                if "자동차" in tds[2].text:
+                    log_update.debug("SKIP 자동차")
+                    continue
+
                 if isFirst == True:
                     firstItem = (inputValue[1], inputValue[2])
                     isFirst = False
@@ -134,8 +154,12 @@ class GetAuctionInfo():
                     if isUpdateValuation == True:
                         log_update.debug(
                             "감정평가서 업데이트 필요 " + inputValue[1] + " " + inputValue[2])
-                        itemList.append(
-                            (inputValue[1], inputValue[2], True, True, self.caseNumber))
+                        if firstItem == (inputValue[1], inputValue[2]):
+                            itemList.append(
+                                (inputValue[1], inputValue[2], True, True, self.caseNumber))
+                        else:
+                            itemList.append(
+                                (inputValue[1], inputValue[2], False, True, self.caseNumber))
                 else:
                     log_update.debug(
                         "ADD : " + inputValue[1] + " " + inputValue[2])
@@ -146,7 +170,6 @@ class GetAuctionInfo():
                     else:
                         itemList.append(
                             (inputValue[1], inputValue[2], False, False))
-
         return itemList
 
     def 물건선택(self, item):
@@ -518,7 +541,6 @@ class GetAuctionInfo():
 
                 # Delete pdf files
                 os.remove(filename)
-                os.remove(pdf_files[0])
 
             except Exception as PDF_VALUATION_Error:
                 log_update.error(PDF_VALUATION_Error)

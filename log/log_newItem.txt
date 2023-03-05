@@ -119,3 +119,546 @@ Stacktrace:
 [2023-03-04 00:06:45,819] [DEBUG] (InsertNewItem.py:1153) > START GET ITEMS
 [2023-03-04 00:06:48,781] [DEBUG] (InsertNewItem.py:127) > PASS : 20190130005561 1
 [2023-03-04 00:06:54,104] [DEBUG] (InsertNewItem.py:127) > PASS : 20190130005561 2
+[2023-03-05 15:00:18,525] [DEBUG] (InsertNewItem.py:1199) > 서울남부지방법원
+[2023-03-05 15:00:21,153] [DEBUG] (InsertNewItem.py:1152) > START GET ITEMS
+[2023-03-05 15:01:11,367] [DEBUG] (InsertNewItem.py:1199) > 서울남부지방법원
+[2023-03-05 15:01:14,625] [DEBUG] (InsertNewItem.py:1152) > START GET ITEMS
+[2023-03-05 15:01:18,893] [DEBUG] (InsertNewItem.py:127) > PASS : 20180130008351 1
+[2023-03-05 15:01:25,795] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 1
+[2023-03-05 15:01:32,105] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 2
+[2023-03-05 15:01:38,608] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 3
+[2023-03-05 15:01:44,399] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009333 1
+[2023-03-05 15:01:51,150] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009586 1
+[2023-03-05 15:01:57,606] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130112949 1
+[2023-03-05 15:02:03,757] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005444 1
+[2023-03-05 15:02:09,906] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005611 1
+[2023-03-05 15:02:15,411] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005635 3
+[2023-03-05 15:02:20,790] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005901 1
+[2023-03-05 15:02:26,609] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005994 1
+[2023-03-05 15:02:32,941] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006430 1
+[2023-03-05 15:02:38,568] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006751 1
+[2023-03-05 15:02:44,924] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006768 1
+[2023-03-05 15:02:50,458] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130100905 1
+[2023-03-05 15:02:56,450] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101328 1
+[2023-03-05 15:03:01,739] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101670 1
+[2023-03-05 15:03:08,325] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103126 1
+[2023-03-05 15:03:11,275] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130103126 1
+[2023-03-05 15:03:14,475] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103171 1
+[2023-03-05 15:03:17,487] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130103171 1
+[2023-03-05 15:03:21,169] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130104495 1
+[2023-03-05 15:03:24,238] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130104495 1
+[2023-03-05 15:03:27,817] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130104921 1
+[2023-03-05 15:03:30,691] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130104921 1
+[2023-03-05 15:03:34,051] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130105726 1
+[2023-03-05 15:03:36,885] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130105726 1
+[2023-03-05 15:03:39,935] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106217 1
+[2023-03-05 15:03:42,654] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106217 1
+[2023-03-05 15:03:45,891] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106316 1
+[2023-03-05 15:03:49,012] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106316 1
+[2023-03-05 15:03:52,803] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106361 1
+[2023-03-05 15:03:55,582] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106361 1
+[2023-03-05 15:03:59,343] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106446 1
+[2023-03-05 15:04:02,275] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106446 1
+[2023-03-05 15:04:05,795] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106606 1
+[2023-03-05 15:04:08,711] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106606 1
+[2023-03-05 15:04:12,175] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106651 1
+[2023-03-05 15:04:15,089] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106651 1
+[2023-03-05 15:04:18,534] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106651 2
+[2023-03-05 15:04:21,080] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130106651 2
+[2023-03-05 15:04:24,390] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130107081 1
+[2023-03-05 15:04:27,144] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130107081 1
+[2023-03-05 15:04:30,954] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130107715 1
+[2023-03-05 15:04:33,791] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130107715 1
+[2023-03-05 15:04:36,787] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130107890 1
+[2023-03-05 15:04:39,493] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130107890 1
+[2023-03-05 15:04:42,599] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130108299 1
+[2023-03-05 15:04:46,029] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130108299 1
+[2023-03-05 15:04:49,971] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130108497 1
+[2023-03-05 15:04:52,659] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130108497 1
+[2023-03-05 15:04:56,199] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130108961 1
+[2023-03-05 15:04:58,568] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130108961 1
+[2023-03-05 15:05:01,675] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130109193 1
+[2023-03-05 15:05:04,311] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130109193 1
+[2023-03-05 15:05:07,493] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130109193 2
+[2023-03-05 15:05:10,176] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130109193 2
+[2023-03-05 15:05:11,932] [DEBUG] (InsertNewItem.py:1164) > 감정평가서만 업데이트
+[2023-03-05 15:05:11,933] [DEBUG] (InsertNewItem.py:461) > 감정평가서 다운로드
+[2023-03-05 15:05:20,521] [DEBUG] (InsertNewItem.py:420) > 감정평가서 Upload to Azure
+[2023-03-05 15:05:25,035] [DEBUG] (InsertNewItem.py:451) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD103126.pdf
+[2023-03-05 15:05:28,834] [DEBUG] (InsertNewItem.py:238) > Completed  - insert 감정평가서
+[2023-03-05 15:05:28,841] [ERROR] (InsertNewItem.py:524) > list index out of range
+[2023-03-05 15:05:28,913] [DEBUG] (InsertNewItem.py:530) > 감정평가서 다운로드 완료
+[2023-03-05 15:05:45,701] [DEBUG] (InsertNewItem.py:1164) > 감정평가서만 업데이트
+[2023-03-05 15:05:45,701] [DEBUG] (InsertNewItem.py:461) > 감정평가서 다운로드
+[2023-03-05 15:07:13,625] [DEBUG] (InsertNewItem.py:1164) > 감정평가서만 업데이트
+[2023-03-05 15:08:38,728] [DEBUG] (InsertNewItem.py:1203) > 서울남부지방법원
+[2023-03-05 15:08:42,978] [DEBUG] (InsertNewItem.py:1156) > START GET ITEMS
+[2023-03-05 15:08:47,423] [DEBUG] (InsertNewItem.py:127) > PASS : 20180130008351 1
+[2023-03-05 15:08:53,509] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 1
+[2023-03-05 15:08:58,995] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 2
+[2023-03-05 15:09:05,285] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 3
+[2023-03-05 15:09:12,003] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009333 1
+[2023-03-05 15:09:18,757] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009586 1
+[2023-03-05 15:09:24,851] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130112949 1
+[2023-03-05 15:09:31,654] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005444 1
+[2023-03-05 15:09:38,414] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005611 1
+[2023-03-05 15:09:44,250] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005635 3
+[2023-03-05 15:09:50,527] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005901 1
+[2023-03-05 15:09:56,790] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005994 1
+[2023-03-05 15:10:02,340] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006430 1
+[2023-03-05 15:10:08,463] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006751 1
+[2023-03-05 15:10:14,781] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006768 1
+[2023-03-05 15:10:20,873] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130100905 1
+[2023-03-05 15:10:26,374] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101328 1
+[2023-03-05 15:10:33,354] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101670 1
+[2023-03-05 15:10:40,469] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103126 1
+[2023-03-05 15:10:47,229] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103171 1
+[2023-03-05 15:10:52,404] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130104495 1
+[2023-03-05 15:10:57,616] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130104921 1
+[2023-03-05 15:11:03,148] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130105726 1
+[2023-03-05 15:11:08,432] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106217 1
+[2023-03-05 15:11:15,184] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106316 1
+[2023-03-05 15:11:21,943] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106361 1
+[2023-03-05 15:11:29,007] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106446 1
+[2023-03-05 15:11:35,422] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106606 1
+[2023-03-05 15:11:41,220] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106651 1
+[2023-03-05 15:11:47,830] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106651 2
+[2023-03-05 15:11:53,751] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130107081 1
+[2023-03-05 15:11:59,411] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130107715 1
+[2023-03-05 15:12:05,151] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130107890 1
+[2023-03-05 15:12:10,356] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130108299 1
+[2023-03-05 15:12:16,615] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130108497 1
+[2023-03-05 15:12:22,755] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130108961 1
+[2023-03-05 15:12:28,641] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130109193 1
+[2023-03-05 15:12:35,099] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130109193 2
+[2023-03-05 15:12:41,659] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130110278 1
+[2023-03-05 15:12:44,059] [DEBUG] (InsertNewItem.py:135) > 감정평가서 업데이트 필요 20210130110278 1
+[2023-03-05 15:12:47,090] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130110353 1
+[2023-03-05 15:15:21,945] [DEBUG] (InsertNewItem.py:1203) > 서울남부지방법원
+[2023-03-05 15:15:24,890] [DEBUG] (InsertNewItem.py:1156) > START GET ITEMS
+[2023-03-05 15:15:28,366] [DEBUG] (InsertNewItem.py:127) > PASS : 20180130008351 1
+[2023-03-05 15:15:34,495] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 1
+[2023-03-05 15:15:39,983] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 2
+[2023-03-05 15:15:46,124] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 3
+[2023-03-05 15:15:52,885] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009333 1
+[2023-03-05 15:15:59,360] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009586 1
+[2023-03-05 15:16:05,787] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130112949 1
+[2023-03-05 15:16:11,985] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005444 1
+[2023-03-05 15:16:18,012] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005611 1
+[2023-03-05 15:16:23,778] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005635 3
+[2023-03-05 15:16:29,050] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005901 1
+[2023-03-05 15:16:34,963] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005994 1
+[2023-03-05 15:16:41,115] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006430 1
+[2023-03-05 15:16:47,605] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006751 1
+[2023-03-05 15:16:53,466] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006768 1
+[2023-03-05 15:16:59,849] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130100905 1
+[2023-03-05 15:17:06,612] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101328 1
+[2023-03-05 15:17:13,680] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101670 1
+[2023-03-05 15:17:20,456] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103126 1
+[2023-03-05 15:17:26,579] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103171 1
+[2023-03-05 15:17:32,493] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130104495 1
+[2023-03-05 15:17:38,648] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130104921 1
+[2023-03-05 15:17:44,842] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130105726 1
+[2023-03-05 15:17:51,468] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106217 1
+[2023-03-05 15:17:57,581] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106316 1
+[2023-03-05 15:18:04,057] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130106361 1
+[2023-03-05 15:19:39,383] [DEBUG] (InsertNewItem.py:1205) > 서울남부지방법원
+[2023-03-05 15:19:42,018] [DEBUG] (InsertNewItem.py:1158) > START GET ITEMS
+[2023-03-05 15:19:46,188] [DEBUG] (InsertNewItem.py:127) > PASS : 20180130008351 1
+[2023-03-05 15:19:53,008] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 1
+[2023-03-05 15:19:59,467] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 2
+[2023-03-05 15:20:05,093] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130007580 3
+[2023-03-05 15:20:11,372] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009333 1
+[2023-03-05 15:20:17,076] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130009586 1
+[2023-03-05 15:20:23,534] [DEBUG] (InsertNewItem.py:127) > PASS : 20200130112949 1
+[2023-03-05 15:20:29,950] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005444 1
+[2023-03-05 15:20:36,067] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005611 1
+[2023-03-05 15:20:41,169] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005635 3
+[2023-03-05 15:20:46,852] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005901 1
+[2023-03-05 15:20:53,017] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130005994 1
+[2023-03-05 15:20:59,163] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006430 1
+[2023-03-05 15:21:06,226] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006751 1
+[2023-03-05 15:21:12,669] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130006768 1
+[2023-03-05 15:21:19,129] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130100905 1
+[2023-03-05 15:21:25,321] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101328 1
+[2023-03-05 15:21:30,954] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130101670 1
+[2023-03-05 15:21:37,632] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103126 1
+[2023-03-05 15:21:43,706] [DEBUG] (InsertNewItem.py:127) > PASS : 20210130103171 1
+[2023-03-05 15:29:03,043] [DEBUG] (InsertNewItem.py:1204) > 서울남부지방법원
+[2023-03-05 15:29:09,736] [DEBUG] (InsertNewItem.py:1157) > START GET ITEMS
+[2023-03-05 15:30:04,466] [DEBUG] (InsertNewItem.py:127) > PASS : 20180130008351 1
+[2023-03-05 15:43:24,947] [DEBUG] (InsertNewItem.py:1208) > 서울남부지방법원
+[2023-03-05 15:43:27,517] [DEBUG] (InsertNewItem.py:1161) > START GET ITEMS
+[2023-03-05 15:47:01,525] [DEBUG] (InsertNewItem.py:1211) > 서울남부지방법원
+[2023-03-05 15:47:08,116] [DEBUG] (InsertNewItem.py:1164) > START GET ITEMS
+[2023-03-05 20:32:57,620] [DEBUG] (InsertNewItem.py:1214) > 서울남부지방법원
+[2023-03-05 20:33:00,380] [DEBUG] (InsertNewItem.py:1167) > START GET ITEMS
+[2023-03-05 20:39:59,616] [DEBUG] (InsertNewItem.py:1213) > 서울남부지방법원
+[2023-03-05 20:40:01,785] [DEBUG] (InsertNewItem.py:1166) > START GET ITEMS
+[2023-03-05 20:40:34,410] [DEBUG] (InsertNewItem.py:1213) > 서울남부지방법원
+[2023-03-05 20:40:36,308] [DEBUG] (InsertNewItem.py:1166) > START GET ITEMS
+[2023-03-05 20:43:25,545] [DEBUG] (InsertNewItem.py:1219) > 서울남부지방법원
+[2023-03-05 20:43:27,103] [DEBUG] (InsertNewItem.py:1172) > START GET ITEMS
+[2023-03-05 20:44:31,790] [DEBUG] (InsertNewItem.py:1217) > 서울남부지방법원
+[2023-03-05 20:44:33,572] [DEBUG] (InsertNewItem.py:1170) > START GET ITEMS
+[2023-03-05 20:48:29,620] [DEBUG] (InsertNewItem.py:1222) > 서울남부지방법원
+[2023-03-05 20:48:31,286] [DEBUG] (InsertNewItem.py:1175) > START GET ITEMS
+[2023-03-05 20:52:58,701] [DEBUG] (InsertNewItem.py:1223) > 서울남부지방법원
+[2023-03-05 20:53:00,408] [DEBUG] (InsertNewItem.py:1176) > START GET ITEMS
+[2023-03-05 20:53:48,984] [DEBUG] (InsertNewItem.py:1222) > 서울남부지방법원
+[2023-03-05 20:53:51,572] [DEBUG] (InsertNewItem.py:1175) > START GET ITEMS
+[2023-03-05 20:56:16,089] [DEBUG] (InsertNewItem.py:1222) > 서울남부지방법원
+[2023-03-05 20:56:17,968] [DEBUG] (InsertNewItem.py:1175) > START GET ITEMS
+[2023-03-05 20:57:25,935] [DEBUG] (InsertNewItem.py:1225) > 서울남부지방법원
+[2023-03-05 20:57:27,810] [DEBUG] (InsertNewItem.py:1178) > START GET ITEMS
+[2023-03-05 20:57:43,070] [DEBUG] (InsertNewItem.py:1225) > 서울남부지방법원
+[2023-03-05 20:57:45,370] [DEBUG] (InsertNewItem.py:1178) > START GET ITEMS
+[2023-03-05 20:58:20,164] [DEBUG] (InsertNewItem.py:1224) > 서울남부지방법원
+[2023-03-05 20:58:21,856] [DEBUG] (InsertNewItem.py:1177) > START GET ITEMS
+[2023-03-05 20:58:40,395] [DEBUG] (InsertNewItem.py:147) > PASS : 20180130008351 1
+[2023-03-05 21:00:30,940] [DEBUG] (InsertNewItem.py:1222) > 서울남부지방법원
+[2023-03-05 21:00:33,193] [DEBUG] (InsertNewItem.py:1175) > START GET ITEMS
+[2023-03-05 21:00:46,820] [DEBUG] (InsertNewItem.py:147) > PASS : 20180130008351 1
+[2023-03-05 21:00:58,605] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130007580 1
+[2023-03-05 21:01:12,818] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20200130007580 1
+[2023-03-05 21:01:16,906] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130007580 2
+[2023-03-05 21:01:19,225] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20200130007580 2
+[2023-03-05 21:01:22,136] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130007580 3
+[2023-03-05 21:01:24,624] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20200130007580 3
+[2023-03-05 21:01:27,606] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130009333 1
+[2023-03-05 21:01:30,014] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20200130009333 1
+[2023-03-05 21:01:32,619] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130009586 1
+[2023-03-05 21:01:34,949] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20200130009586 1
+[2023-03-05 21:01:37,544] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130112949 1
+[2023-03-05 21:01:42,437] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005444 1
+[2023-03-05 21:01:44,788] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005444 1
+[2023-03-05 21:01:47,433] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005611 1
+[2023-03-05 21:01:49,884] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005611 1
+[2023-03-05 21:01:52,599] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005635 3
+[2023-03-05 21:01:55,101] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005635 3
+[2023-03-05 21:01:57,779] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005901 1
+[2023-03-05 21:02:00,358] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005901 1
+[2023-03-05 21:02:03,037] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005994 1
+[2023-03-05 21:02:06,573] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005994 1
+[2023-03-05 21:02:09,919] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130006430 1
+[2023-03-05 21:02:12,620] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130006430 1
+[2023-03-05 21:02:15,686] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130006751 1
+[2023-03-05 21:02:17,943] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130006751 1
+[2023-03-05 21:02:21,410] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130006768 1
+[2023-03-05 21:02:23,770] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130006768 1
+[2023-03-05 21:02:26,641] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130100905 1
+[2023-03-05 21:02:32,112] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130101328 1
+[2023-03-05 21:02:34,530] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130101328 1
+[2023-03-05 21:02:37,399] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130101670 1
+[2023-03-05 21:02:41,295] [DEBUG] (InsertNewItem.py:1187) > 감정평가서만 업데이트
+[2023-03-05 21:02:56,899] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:03:02,993] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:03:20,137] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2020%ED%83%80%EA%B2%BD7580.pdf
+[2023-03-05 21:03:24,089] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:03:24,095] [ERROR] (InsertNewItem.py:547) > list index out of range
+[2023-03-05 21:03:24,160] [DEBUG] (InsertNewItem.py:553) > 감정평가서 다운로드 완료
+[2023-03-05 21:03:35,900] [DEBUG] (InsertNewItem.py:1187) > 감정평가서만 업데이트
+[2023-03-05 21:03:35,900] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:03:44,817] [DEBUG] (InsertNewItem.py:1187) > 감정평가서만 업데이트
+[2023-03-05 21:03:44,817] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:03:47,875] [DEBUG] (InsertNewItem.py:1187) > 감정평가서만 업데이트
+[2023-03-05 21:03:47,875] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:03:53,023] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:04:03,648] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2020%ED%83%80%EA%B2%BD9333.pdf
+[2023-03-05 21:04:07,113] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:04:07,126] [ERROR] (InsertNewItem.py:547) > list index out of range
+[2023-03-05 21:04:07,202] [DEBUG] (InsertNewItem.py:553) > 감정평가서 다운로드 완료
+[2023-03-05 21:04:08,045] [DEBUG] (InsertNewItem.py:1187) > 감정평가서만 업데이트
+[2023-03-05 21:04:08,046] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:04:13,908] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:04:32,206] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2020%ED%83%80%EA%B2%BD9586.pdf
+[2023-03-05 21:04:35,761] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:04:35,765] [ERROR] (InsertNewItem.py:547) > list index out of range
+[2023-03-05 21:04:35,808] [DEBUG] (InsertNewItem.py:553) > 감정평가서 다운로드 완료
+[2023-03-05 21:04:36,536] [DEBUG] (InsertNewItem.py:1187) > 감정평가서만 업데이트
+[2023-03-05 21:04:36,536] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:04:42,034] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:05:03,266] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD5444.pdf
+[2023-03-05 21:05:06,895] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:05:06,903] [ERROR] (InsertNewItem.py:547) > list index out of range
+[2023-03-05 21:05:06,964] [DEBUG] (InsertNewItem.py:553) > 감정평가서 다운로드 완료
+[2023-03-05 21:05:06,999] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300056111"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,005] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300056353"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,010] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300059011"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,015] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300059941"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,020] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300064301"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,025] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300067511"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,030] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300067681"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:07,035] [ERROR] (InsertNewItem.py:1213) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101301013281"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x00000001044951c0 chromedriver + 4248000
+1   chromedriver                        0x0000000104415dc0 chromedriver + 3726784
+2   chromedriver                        0x00000001040caec4 chromedriver + 274116
+3   chromedriver                        0x0000000104106be4 chromedriver + 519140
+4   chromedriver                        0x0000000104142054 chromedriver + 761940
+5   chromedriver                        0x00000001040f9200 chromedriver + 463360
+6   chromedriver                        0x00000001040fa318 chromedriver + 467736
+7   chromedriver                        0x0000000104463060 chromedriver + 4042848
+8   chromedriver                        0x00000001044678a4 chromedriver + 4061348
+9   chromedriver                        0x000000010446f3d0 chromedriver + 4092880
+10  chromedriver                        0x00000001044686e4 chromedriver + 4064996
+11  chromedriver                        0x000000010443e0fc chromedriver + 3891452
+12  chromedriver                        0x0000000104488a64 chromedriver + 4196964
+13  chromedriver                        0x0000000104488bb8 chromedriver + 4197304
+14  chromedriver                        0x000000010449c650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:05:08,534] [DEBUG] (InsertNewItem.py:1222) > 서울동부지방법원
+[2023-03-05 21:05:10,623] [DEBUG] (InsertNewItem.py:1175) > START GET ITEMS
+[2023-03-05 21:05:13,465] [DEBUG] (InsertNewItem.py:147) > PASS : 20190130005561 1
+[2023-03-05 21:07:31,777] [DEBUG] (InsertNewItem.py:1221) > 서울남부지방법원
+[2023-03-05 21:07:33,969] [DEBUG] (InsertNewItem.py:1174) > START GET ITEMS
+[2023-03-05 21:07:37,670] [DEBUG] (InsertNewItem.py:147) > PASS : 20180130008351 1
+[2023-03-05 21:07:43,594] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130007580 1
+[2023-03-05 21:07:48,483] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130007580 2
+[2023-03-05 21:07:53,499] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130007580 3
+[2023-03-05 21:07:58,966] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130009333 1
+[2023-03-05 21:08:04,301] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130009586 1
+[2023-03-05 21:08:09,403] [DEBUG] (InsertNewItem.py:147) > PASS : 20200130112949 1
+[2023-03-05 21:08:14,833] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005444 1
+[2023-03-05 21:08:20,690] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005611 1
+[2023-03-05 21:08:23,315] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005611 1
+[2023-03-05 21:08:25,964] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005635 3
+[2023-03-05 21:08:28,513] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005635 3
+[2023-03-05 21:08:31,357] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005901 1
+[2023-03-05 21:08:33,640] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005901 1
+[2023-03-05 21:08:36,390] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130005994 1
+[2023-03-05 21:08:38,669] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130005994 1
+[2023-03-05 21:08:41,479] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130006430 1
+[2023-03-05 21:08:44,224] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130006430 1
+[2023-03-05 21:08:47,081] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130006751 1
+[2023-03-05 21:08:49,319] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130006751 1
+[2023-03-05 21:08:52,114] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130006768 1
+[2023-03-05 21:08:54,466] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130006768 1
+[2023-03-05 21:08:57,329] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130100905 1
+[2023-03-05 21:09:03,172] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130101328 1
+[2023-03-05 21:09:05,511] [DEBUG] (InsertNewItem.py:155) > 감정평가서 업데이트 필요 20210130101328 1
+[2023-03-05 21:09:08,293] [DEBUG] (InsertNewItem.py:147) > PASS : 20210130101670 1
+[2023-03-05 21:09:25,345] [DEBUG] (InsertNewItem.py:1186) > 감정평가서만 업데이트
+[2023-03-05 21:09:25,346] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:09:30,670] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:09:48,637] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD5611.pdf
+[2023-03-05 21:09:52,421] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:09:52,502] [DEBUG] (InsertNewItem.py:552) > 감정평가서 다운로드 완료
+[2023-03-05 21:10:10,011] [DEBUG] (InsertNewItem.py:1186) > 감정평가서만 업데이트
+[2023-03-05 21:10:10,011] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:10:25,865] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:13:18,483] [DEBUG] (InsertNewItem.py:479) > UploadAzureError:
+[2023-03-05 21:13:18,486] [DEBUG] (InsertNewItem.py:480) > ('Connection aborted.', timeout('The write operation timed out'))
+[2023-03-05 21:13:18,565] [DEBUG] (InsertNewItem.py:552) > 감정평가서 다운로드 완료
+[2023-03-05 21:13:51,120] [DEBUG] (InsertNewItem.py:1186) > 감정평가서만 업데이트
+[2023-03-05 21:13:51,121] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:13:56,092] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:14:02,575] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD5901.pdf
+[2023-03-05 21:14:05,755] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:14:05,842] [DEBUG] (InsertNewItem.py:552) > 감정평가서 다운로드 완료
+[2023-03-05 21:14:11,470] [DEBUG] (InsertNewItem.py:1186) > 감정평가서만 업데이트
+[2023-03-05 21:14:11,471] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:14:16,682] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:14:32,449] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD5994.pdf
+[2023-03-05 21:14:35,525] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:14:35,606] [DEBUG] (InsertNewItem.py:552) > 감정평가서 다운로드 완료
+[2023-03-05 21:14:36,331] [DEBUG] (InsertNewItem.py:1186) > 감정평가서만 업데이트
+[2023-03-05 21:14:36,331] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:14:42,216] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:15:01,628] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD6430.pdf
+[2023-03-05 21:15:04,905] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:15:04,983] [DEBUG] (InsertNewItem.py:552) > 감정평가서 다운로드 완료
+[2023-03-05 21:15:05,761] [DEBUG] (InsertNewItem.py:1186) > 감정평가서만 업데이트
+[2023-03-05 21:15:05,762] [DEBUG] (InsertNewItem.py:484) > 감정평가서 다운로드
+[2023-03-05 21:15:11,302] [DEBUG] (InsertNewItem.py:443) > 감정평가서 Upload to Azure
+[2023-03-05 21:15:30,510] [DEBUG] (InsertNewItem.py:474) > https://auctionworld.blob.core.windows.net/valuation/%EA%B0%90%EC%A0%95%ED%8F%89%EA%B0%80%EC%84%9C_2021%ED%83%80%EA%B2%BD6751.pdf
+[2023-03-05 21:15:33,792] [DEBUG] (InsertNewItem.py:261) > Completed  - insert 감정평가서
+[2023-03-05 21:15:33,878] [DEBUG] (InsertNewItem.py:552) > 감정평가서 다운로드 완료
+[2023-03-05 21:15:33,922] [ERROR] (InsertNewItem.py:1212) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101300067681"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x0000000100a3d1c0 chromedriver + 4248000
+1   chromedriver                        0x00000001009bddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000100672ec4 chromedriver + 274116
+3   chromedriver                        0x00000001006aebe4 chromedriver + 519140
+4   chromedriver                        0x00000001006ea054 chromedriver + 761940
+5   chromedriver                        0x00000001006a1200 chromedriver + 463360
+6   chromedriver                        0x00000001006a2318 chromedriver + 467736
+7   chromedriver                        0x0000000100a0b060 chromedriver + 4042848
+8   chromedriver                        0x0000000100a0f8a4 chromedriver + 4061348
+9   chromedriver                        0x0000000100a173d0 chromedriver + 4092880
+10  chromedriver                        0x0000000100a106e4 chromedriver + 4064996
+11  chromedriver                        0x00000001009e60fc chromedriver + 3891452
+12  chromedriver                        0x0000000100a30a64 chromedriver + 4196964
+13  chromedriver                        0x0000000100a30bb8 chromedriver + 4197304
+14  chromedriver                        0x0000000100a44650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:15:33,930] [ERROR] (InsertNewItem.py:1212) > Message: no such element: Unable to locate element: {"method":"css selector","selector":"[name="202101301013281"]"}
+  (Session info: chrome=110.0.5481.177)
+Stacktrace:
+0   chromedriver                        0x0000000100a3d1c0 chromedriver + 4248000
+1   chromedriver                        0x00000001009bddc0 chromedriver + 3726784
+2   chromedriver                        0x0000000100672ec4 chromedriver + 274116
+3   chromedriver                        0x00000001006aebe4 chromedriver + 519140
+4   chromedriver                        0x00000001006ea054 chromedriver + 761940
+5   chromedriver                        0x00000001006a1200 chromedriver + 463360
+6   chromedriver                        0x00000001006a2318 chromedriver + 467736
+7   chromedriver                        0x0000000100a0b060 chromedriver + 4042848
+8   chromedriver                        0x0000000100a0f8a4 chromedriver + 4061348
+9   chromedriver                        0x0000000100a173d0 chromedriver + 4092880
+10  chromedriver                        0x0000000100a106e4 chromedriver + 4064996
+11  chromedriver                        0x00000001009e60fc chromedriver + 3891452
+12  chromedriver                        0x0000000100a30a64 chromedriver + 4196964
+13  chromedriver                        0x0000000100a30bb8 chromedriver + 4197304
+14  chromedriver                        0x0000000100a44650 chromedriver + 4277840
+15  libsystem_pthread.dylib             0x000000018131a26c _pthread_start + 148
+16  libsystem_pthread.dylib             0x000000018131508c thread_start + 8
+
+[2023-03-05 21:15:35,513] [DEBUG] (InsertNewItem.py:1221) > 서울동부지방법원
+[2023-03-05 21:15:37,575] [DEBUG] (InsertNewItem.py:1174) > START GET ITEMS
+[2023-03-05 21:15:40,333] [DEBUG] (InsertNewItem.py:147) > PASS : 20190130005561 1
