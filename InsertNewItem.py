@@ -1181,9 +1181,10 @@ class GetAuctionInfo():
 
                         # 법원경매정보 사건상세 Copy
                         await self.사건상세Copy(itemId)
+
                     # 물건리스트로 돌아가기
                     self.driver.find_element(
-                        By.XPATH, "//div[@id='contents']/div[4]/div/div/a[2]/img").click()
+                        By.XPATH, "//img[@alt='이전']").click()
 
                 except Exception as Error_물건업데이트:
                     log_update.error(Error_물건업데이트)
