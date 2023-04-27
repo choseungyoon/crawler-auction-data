@@ -1,13 +1,14 @@
+datasource db {
+  provider = "mysql"
+  url      = "mysql://4o0lfwecdzr8eg449j2d:pscale_pw_ab7kO806KnrbX6rQ7OOdEpBHmdxinOkceDr52JfPUdh@aws.connect.psdb.cloud/berich?sslaccept=strict'"
+  //relationMode = "prisma"
+}
+
 generator client {
   provider             = "prisma-client-py"
   previewFeatures      = ["fullTextSearch"]
   interface            = "asyncio"
   recursive_type_depth = "5"
-}
-
-datasource db {
-  provider = "mysql"
-  url      = "mysql://2deru4m0qi7e2pf0ymx8:pscale_pw_BU8Vd8IcnZKRfQh0ltEZs2dq9uIcZJQ71Jx3YJEfG1E@us-east.connect.psdb.cloud/auction-market-prod?sslaccept=strict"
 }
 
 model User {
@@ -19,17 +20,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   admin     Boolean  @default(false)
-  tokens    Token[]
   Fav       Fav[]
-}
-
-model Token {
-  id        Int      @id @default(autoincrement())
-  payload   String   @unique
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId    Int
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
 }
 
 model Item {
@@ -58,8 +49,8 @@ model Item {
   status              Int              @default(0)
   lastestStatus       String           @default("")
   numOfPass           Int              @default(0)
-  share               Boolean          @default(false)
-  shareGround         Boolean          @default(false)
+  isShareBuilding     Boolean          @default(false)
+  isShareGround       Boolean          @default(false)
   resultAuction       resultAuction[]
   leaseDetail         leaseDetail[]
   leasePeople         leasePeople[]
@@ -91,6 +82,8 @@ model certification {
   title     String   @default("")
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
+
+  @@index([itemId])
 }
 
 model recommend {
@@ -99,6 +92,8 @@ model recommend {
   updatedAt DateTime @updatedAt
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
+
+  @@index([itemId])
 }
 
 model court {
@@ -162,6 +157,8 @@ model realestateList {
   detail    String?  @db.MediumText
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
+
+  @@index([itemId])
 }
 
 model leaseDetail {
@@ -201,6 +198,9 @@ model Fav {
   userId    Int
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
+
+  @@index([itemId])
+  @@index([userId])
 }
 
 model adminComment {
@@ -212,4 +212,6 @@ model adminComment {
   comment   String   @db.MediumText
   item      Item     @relation(fields: [itemId], references: [id], onDelete: Cascade)
   itemId    Int
+
+  @@index([itemId])
 }

@@ -1,5 +1,4 @@
-import getAuctionList
-import 매각물건명세서
+import crawler.매각물건명세서 as 매각물건명세서
 
 
 def service_func():
